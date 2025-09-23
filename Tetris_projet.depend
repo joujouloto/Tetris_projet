@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1743445502 source:c:\projets_cplusplus\tetris_projet\main.cpp
+	<iostream>
+
+1758654364 source:c:\projets_cplusplus\tetris_projet\src\figure.cpp
+	"Figure.h"
+	<iostream>
+	<sstream>
+
+1758654170 c:\projets_cplusplus\tetris_projet\include\figure.h
+	<string>
+
