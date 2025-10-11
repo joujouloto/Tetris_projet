@@ -1,4 +1,7 @@
 #include <iostream>
+#include <random>
+
+
 #include "Figure.h"
 
 #define LARGEUR_PREMIERE_FENETRE 640
@@ -39,6 +42,11 @@ static int texture_largeur = 0;
 
 static int texture_hauteur = 0;
 
+random_device rd;
+mt19937 gen(rd());
+
+uniform_int_distribution<> dis(0, 4);//le nombre aléatoire peut tomber entre 1 et 10
+Figure ma_figure(/*dis(gen)*/SFigure);
 
 
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
@@ -65,15 +73,46 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
 
     SDL_SetAppMetadata("Tetris", "1.0", "tetris");
 
+    SDL_Surface * surface_grille_jeu = NULL;
+
+    char * chemin_image;
+
+    SDL_asprintf(&chemin_image,"%s..\\..\\images\\grille.xcf" , SDL_GetBasePath());
+
+
+
+    surface_grille_jeu = IMG_LoadXCF_IO(SDL_IOFromFile(chemin_image, "r"));
+
+    if (!surface_grille_jeu) {
+        SDL_Log("N'a pas pu charger le fichier grille.xcf: %s", SDL_GetError());
+        return SDL_APP_FAILURE;
+    }
+
+    texture = SDL_CreateTextureFromSurface(rendu_fenetre_principale, surface_grille_jeu);
+
+    SDL_SetRenderDrawColor(rendu_fenetre_principale, 0, 0, 0, SDL_ALPHA_OPAQUE);  /* black, full alpha */
+
+
+    if (!texture) {
+        SDL_Log("Peut pas utiliser texture de grille: %s", SDL_GetError());
+        return SDL_APP_FAILURE;
+    }
+
+    SDL_FRect dst_rect_grille;
+
+    dst_rect_grille.x = 0;
+    dst_rect_grille.y = 0;
+    dst_rect_grille.w = LARGEUR_PREMIERE_FENETRE;
+    dst_rect_grille.h = HAUTEUR_PREMIERE_FENETRE;
+    SDL_RenderTexture(rendu_fenetre_principale, texture, NULL, &dst_rect_grille);
+
+    SDL_RenderPresent(rendu_fenetre_principale);
+
+
 
 
     /* clear the window to the draw color. */
-    SDL_RenderClear(rendu_fenetre_principale);
-
-
-
-
-
+    //SDL_RenderClear(rendu_fenetre_principale);
 
      return SDL_APP_CONTINUE;
 }
@@ -126,35 +165,35 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_RenderTexture(rendu_fenetre_principale, texture, NULL, &dst_rect_grille);
 
 
+
+	//cout << dis(gen) << endl;
+
     if(temps_courant > 5*UNE_SECONDE + dernier_temps   )
     {
 
 
         //-----------------Affichage de carré
 
-        SDL_Surface * surface_figure_tetris_carre = NULL;
-
-        Figure mon_carre(Carre);
+        SDL_Surface * surface_figure_tetris = NULL;
 
 
+        SDL_asprintf(&chemin_image, ma_figure.get_adresse_image_associee(), SDL_GetBasePath());
 
-        SDL_asprintf(&chemin_image, mon_carre.get_adresse_image_associee(), SDL_GetBasePath());
+        surface_figure_tetris = IMG_LoadXCF_IO(SDL_IOFromFile(chemin_image, "r"));
 
-        surface_figure_tetris_carre = IMG_LoadXCF_IO(SDL_IOFromFile(chemin_image, "r"));
-
-        if (!surface_figure_tetris_carre) {
-            SDL_Log("N'a pas pu charger le fichier  carre.xcf: %s", SDL_GetError());
+        if (!surface_figure_tetris) {
+            SDL_Log("N'a pas pu charger le fichier  .xcf: %s", SDL_GetError());
             return SDL_APP_FAILURE;
         }
 
 
 
 
-        texture = SDL_CreateTextureFromSurface(rendu_fenetre_principale, surface_figure_tetris_carre);
+        texture = SDL_CreateTextureFromSurface(rendu_fenetre_principale, surface_figure_tetris);
 
 
         if (!texture) {
-            SDL_Log("Peut pas utiliser texture de carre: %s", SDL_GetError());
+            SDL_Log("Peut pas utiliser texture de figure: %s", SDL_GetError());
             return SDL_APP_FAILURE;
         }
 
@@ -181,7 +220,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
         //--------------------------------------------------------------------
 
 
-        SDL_DestroySurface(surface_figure_tetris_carre);
+        SDL_DestroySurface(surface_figure_tetris);
 
         /* put the newly-cleared rendering on the screen. */
         SDL_RenderPresent(rendu_fenetre_principale);

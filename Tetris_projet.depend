@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1758725523 source:c:\projets_cplusplus\tetris_projet\main.cpp
+1760190055 source:c:\projets_cplusplus\tetris_projet\main.cpp
 	<iostream>
+	<random>
 	"Figure.h"
 	<SDL3/SDL.h>
 	<SDL3/SDL_main.h>
