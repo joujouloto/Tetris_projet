@@ -43,8 +43,10 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Figure.h" />
+		<Unit filename="include/Grille.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Figure.cpp" />
+		<Unit filename="src/Grille.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

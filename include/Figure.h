@@ -21,6 +21,8 @@ class Figure
 
     protected:
         string nom_forme;
+        int points;
+
         const char * adresse_image_associee;
 
     private:

@@ -3,6 +3,7 @@
 
 
 #include "Figure.h"
+#include "Grille.h"
 
 #define LARGEUR_PREMIERE_FENETRE 640
 #define HAUTEUR_PREMIERE_FENETRE 860
@@ -47,6 +48,8 @@ mt19937 gen(rd());
 
 uniform_int_distribution<> dis(0, 4);//le nombre aléatoire peut tomber entre 1 et 10
 Figure ma_figure(/*dis(gen)*/SFigure);
+
+Grille grille;
 
 
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
@@ -93,6 +96,8 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
     SDL_SetRenderDrawColor(rendu_fenetre_principale, 0, 0, 0, SDL_ALPHA_OPAQUE);  /* black, full alpha */
 
 
+
+
     if (!texture) {
         SDL_Log("Peut pas utiliser texture de grille: %s", SDL_GetError());
         return SDL_APP_FAILURE;
@@ -114,6 +119,14 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
     /* clear the window to the draw color. */
     //SDL_RenderClear(rendu_fenetre_principale);
 
+
+
+
+
+
+
+
+
      return SDL_APP_CONTINUE;
 }
 
@@ -129,6 +142,7 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 /* This function runs once per frame, and is the heart of the program. */
 SDL_AppResult SDL_AppIterate(void *appstate)
 {
+
     temps_courant = SDL_GetTicks();
 
     SDL_Surface * surface_grille_jeu = NULL;
@@ -149,7 +163,6 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     texture = SDL_CreateTextureFromSurface(rendu_fenetre_principale, surface_grille_jeu);
 
     SDL_SetRenderDrawColor(rendu_fenetre_principale, 0, 0, 0, SDL_ALPHA_OPAQUE);  /* black, full alpha */
-
 
     if (!texture) {
         SDL_Log("Peut pas utiliser texture de grille: %s", SDL_GetError());
@@ -202,7 +215,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
 
         dst_rect_figure.x = 100;
-        //dst_rect_figure.y = 400;
+        //dst_rect_figure.y = 200;
         dst_rect_figure.w = texture->w/4;
         dst_rect_figure.h = texture->h/4;
 
@@ -238,5 +251,10 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 /* This function runs once at shutdown. */
 void SDL_AppQuit(void *appstate, SDL_AppResult result)
 {
+
     /* SDL will clean up the window/renderer for us. */
+
+
 }
+
+
