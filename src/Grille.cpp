@@ -12,7 +12,7 @@ Grille::Grille()
     nb_cases_par_ligne = 10;
     nb_lignes = 20;
 
-    nb_cases_total = nb_cases_par_ligne * nb_lignes ;
+
 
 
     vector<int> ligne;

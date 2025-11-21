@@ -23,7 +23,9 @@ class Grille
         int nb_cases_par_ligne;
         int nb_lignes;
 
-        int nb_cases_total;
+        int taille_pixels_cellule;
+
+
         vector<vector<int>> conteneur;
 
 

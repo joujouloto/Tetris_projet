@@ -3,6 +3,9 @@
 
 #include <string>
 
+#include "Couleur.h"
+#include "Position.h"
+
 using namespace std;
 
 
@@ -21,7 +24,11 @@ class Figure
 
     protected:
         string nom_forme;
-        int points;
+        string rotation_etat;
+        map<int,vector<Position>> cellule;
+        int nb_cellules;
+        Couleur couleur_cellule;
+
 
         const char * adresse_image_associee;
 

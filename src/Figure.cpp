@@ -3,6 +3,11 @@
 #include <iostream>
 #include <sstream>
 
+#include <map>
+#include <vector>
+
+#include "Position.h"
+
 using namespace std;
 
 
