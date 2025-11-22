@@ -237,13 +237,76 @@ SDL_AppResult SDL_AppIterate(void *appstate)
         /*SDL_RenderPresent(rendu_fenetre_principale);
     }
 */
-     Couleur couleur_fond(b_leu);
 
 
-    SDL_SetRenderDrawColorFloat(rendu_fenetre_principale, couleur_fond.rouge, couleur_fond.vert, couleur_fond.bleu, SDL_ALPHA_OPAQUE_FLOAT);
+
+/*
+    for(int ligne = 0 ; ligne < 2 ; ligne++ )
+    {
+        for(int colonne = 0 ; colonne < 3 ; colonne++)
+        {
+            rects[ligne][colonne].x = origine_x;
+            rects[ligne][colonne].y = origine_y;
+
+            rects[ligne][colonne].w = rects[ligne][colonne].h = grille.taille_pixels_cellule;
 
 
-    SDL_RenderClear(rendu_fenetre_principale);
+
+
+            if(compteur_couleur==5)
+            {
+                compteur_couleur=0;
+
+            }else
+            {
+                compteur_couleur++;
+            }
+
+            SDL_SetRenderDrawColor(rendu_fenetre_principale, couleur_cellule[compteur_couleur].rouge, couleur_cellule[compteur_couleur].vert, couleur_cellule[compteur_couleur].bleu, SDL_ALPHA_OPAQUE);  /* blue, full alpha */
+      /*      SDL_RenderFillRect(rendu_fenetre_principale, &(rects[ligne][colonne]));
+
+
+            origine_x++;
+        }
+        origine_y++;
+        origine_x = 0;
+
+
+    }*/
+
+    /* those were rectangle _outlines_, really. You can also draw _filled_ rectangles! */
+    /*rects[0].x = 400;
+    rects[0].y = 50;
+    rects[0].w = 100 ;
+    rects[0].h = 50;
+
+    SDL_SetRenderDrawColor(rendu_fenetre_principale, 0, 0, 255, SDL_ALPHA_OPAQUE);  /* blue, full alpha */
+   // SDL_RenderFillRect(rendu_fenetre_principale, &rects[0]);
+
+
+
+/*
+    origine_x++;
+    origine_y++;
+
+    rects[0][1].x = origine_x;
+    rects[0][1].y = origine_y;
+*/
+    /* as you can see from this, rendering draws over whatever was drawn before it. */
+    SDL_SetRenderDrawColor(rendu_fenetre_principale, 150, 150, 150, SDL_ALPHA_OPAQUE);  /* black, full alpha */
+    SDL_RenderClear(rendu_fenetre_principale);  /* start with a blank canvas. */
+
+
+    SDL_FRect rects[16];
+
+
+    rects[0].x = 0;
+    rects[0].y = 0;
+    rects[0].w = 30 ;
+    rects[0].h = 30;
+    SDL_SetRenderDrawColor(rendu_fenetre_principale, 0, 0, 255, SDL_ALPHA_OPAQUE);  /* blue, full alpha */
+    SDL_RenderFillRect(rendu_fenetre_principale, &rects[0]);
+
 
     SDL_RenderPresent(rendu_fenetre_principale);
 

@@ -3,7 +3,10 @@
 #include <array>
 #include <iostream>
 
+
 using namespace std;
+
+
 
 Grille::Grille()
 {
@@ -44,4 +47,12 @@ void Grille::afficher()
     }
 }
 
+
+void Grille::dessiner()
+{
+
+
+
+
+}
 
