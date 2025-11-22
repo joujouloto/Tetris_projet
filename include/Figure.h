@@ -2,6 +2,7 @@
 #define FIGURE_H
 
 #include <string>
+#include <map>
 
 #include "Couleur.h"
 #include "Position.h"

@@ -10,8 +10,9 @@ class Grille
 {
     public:
         Grille();
-        void dessiner_sdl();
-        void afficher_dans_console();
+        void initialiser();
+        int contenu[20][10];
+        void afficher();
 
     protected:
 
@@ -20,13 +21,13 @@ class Grille
 
     private:
 
-        int nb_cases_par_ligne;
+        int nb_colonnes;
         int nb_lignes;
 
         int taille_pixels_cellule;
 
 
-        vector<vector<int>> conteneur;
+
 
 
 };

@@ -9,63 +9,39 @@ Grille::Grille()
 {
     //ctor
 
-    nb_cases_par_ligne = 10;
+    nb_colonnes = 10;
     nb_lignes = 20;
 
 
+    this->taille_pixels_cellule = 30;
 
-
-    vector<int> ligne;
-
-
-    for(int j = 0 ; j < nb_cases_par_ligne ; j++)
-    {
-
-            ligne.push_back(0);
-    }
-
-
-
-
-
-    for(int i = 0; i < nb_lignes ; i++)
-    {
-        conteneur.push_back(ligne);
-
-    }
-
-
-
-
-
-
+    initialiser();
 
 }
 
-void Grille::afficher_dans_console()
+
+void Grille::initialiser()
 {
-    vector<vector<int>>::iterator iterateur_grille_ligne;
-     vector<int>::iterator iterateur_case;
-
-     int  i = 0;
-     int j = 0;
-
-    vector<int> vecteur_de_cases_d_une_ligne;
-
-
-    for(iterateur_grille_ligne = conteneur.begin(); iterateur_grille_ligne != conteneur.end() ; iterateur_grille_ligne++)
+    for(int ligne = 0 ; ligne < nb_lignes ; ligne++ )
     {
-
-        vecteur_de_cases_d_une_ligne = *iterateur_grille_ligne;
-
-        for(iterateur_case = vecteur_de_cases_d_une_ligne.begin(); iterateur_case != vecteur_de_cases_d_une_ligne.end() ; iterateur_case++ )
+        for(int colonne = 0 ; colonne < nb_colonnes ; colonne++)
         {
-             cout << i << "," << j << ":"<< *iterateur_case << endl;
-            j++;
-
+                contenu[ligne][colonne] = 0;
         }
-        i++;
-        j=0;
     }
 
 }
+
+void Grille::afficher()
+{
+    for(int ligne = 0 ; ligne < nb_lignes ; ligne++ )
+    {
+        for(int colonne = 0 ; colonne < nb_colonnes ; colonne++)
+        {
+                cout << contenu[ligne][colonne] << " ";
+        }
+        cout << endl ;
+    }
+}
+
+

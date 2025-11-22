@@ -4,6 +4,8 @@
 
 #include "Figure.h"
 #include "Grille.h"
+#include "Couleur.h"
+#include "Position.h"
 
 #define LARGEUR_PREMIERE_FENETRE 640
 #define HAUTEUR_PREMIERE_FENETRE 860
@@ -76,6 +78,7 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
 
     SDL_SetAppMetadata("Tetris", "1.0", "tetris");
 
+    /*
     SDL_Surface * surface_grille_jeu = NULL;
 
     char * chemin_image;
@@ -92,11 +95,11 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
     }
 
     texture = SDL_CreateTextureFromSurface(rendu_fenetre_principale, surface_grille_jeu);
-
+*/
     SDL_SetRenderDrawColor(rendu_fenetre_principale, 0, 0, 0, SDL_ALPHA_OPAQUE);  /* black, full alpha */
 
 
-
+/*
 
     if (!texture) {
         SDL_Log("Peut pas utiliser texture de grille: %s", SDL_GetError());
@@ -110,20 +113,15 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
     dst_rect_grille.w = LARGEUR_PREMIERE_FENETRE;
     dst_rect_grille.h = HAUTEUR_PREMIERE_FENETRE;
     SDL_RenderTexture(rendu_fenetre_principale, texture, NULL, &dst_rect_grille);
+*/
+
 
     SDL_RenderPresent(rendu_fenetre_principale);
 
 
 
-
     /* clear the window to the draw color. */
     //SDL_RenderClear(rendu_fenetre_principale);
-
-
-
-
-
-
 
 
 
@@ -142,7 +140,7 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 /* This function runs once per frame, and is the heart of the program. */
 SDL_AppResult SDL_AppIterate(void *appstate)
 {
-
+/*
     temps_courant = SDL_GetTicks();
 
     SDL_Surface * surface_grille_jeu = NULL;
@@ -163,7 +161,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     texture = SDL_CreateTextureFromSurface(rendu_fenetre_principale, surface_grille_jeu);
 
     SDL_SetRenderDrawColor(rendu_fenetre_principale, 0, 0, 0, SDL_ALPHA_OPAQUE);  /* black, full alpha */
-
+/*
     if (!texture) {
         SDL_Log("Peut pas utiliser texture de grille: %s", SDL_GetError());
         return SDL_APP_FAILURE;
@@ -236,13 +234,18 @@ SDL_AppResult SDL_AppIterate(void *appstate)
         SDL_DestroySurface(surface_figure_tetris);
 
         /* put the newly-cleared rendering on the screen. */
-        SDL_RenderPresent(rendu_fenetre_principale);
+        /*SDL_RenderPresent(rendu_fenetre_principale);
     }
+*/
+     Couleur couleur_fond(b_leu);
 
 
+    SDL_SetRenderDrawColorFloat(rendu_fenetre_principale, couleur_fond.rouge, couleur_fond.vert, couleur_fond.bleu, SDL_ALPHA_OPAQUE_FLOAT);
 
 
+    SDL_RenderClear(rendu_fenetre_principale);
 
+    SDL_RenderPresent(rendu_fenetre_principale);
 
 
     return SDL_APP_CONTINUE;  /* carry on with the program! */

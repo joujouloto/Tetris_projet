@@ -2,22 +2,28 @@
 #define COULEUR_H
 
 #include <string>
+#include <vector>
 
-enum couleur {gris_fonce,vert,rouge,orange,jaune,vioelt,cyan,bleu};
+using namespace std;
+
+enum couleur {v_ert,r_ouge,jaune,violet,cyan,b_leu};
 
 
 class Couleur
 {
     public:
+        Couleur();
         Couleur(int p_couleur);
         vector<Couleur> get_cellules_couleur();
 
+        float rouge;
+        float vert;
+        float bleu;
+        string nom_couleur;
+
 
     protected:
-        int rouge;
-        int vert;
-        int bleu;
-        string nom_couleur;
+
 
     private:
 };

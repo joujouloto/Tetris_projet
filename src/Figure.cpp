@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "Position.h"
+#include "Couleur.h"
 
 using namespace std;
 
