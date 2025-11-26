@@ -20,6 +20,7 @@ class Couleur
         float vert;
         float bleu;
         string nom_couleur;
+        int id;
 
 
     protected:

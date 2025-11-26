@@ -4,6 +4,7 @@
 Couleur::Couleur()
 {
     nom_couleur = "noir";
+    id=-1;
 
     rouge=0;
     vert=0;
@@ -28,6 +29,8 @@ Couleur::Couleur( int p_couleur)
         vert = 255;
         bleu = 0;
 
+        id = p_couleur;
+
         break;
 
         case r_ouge:
@@ -38,6 +41,9 @@ Couleur::Couleur( int p_couleur)
         rouge = 255;
         vert = 0;
         bleu = 0;
+
+        id = p_couleur;
+
         break;
 
         case jaune:
@@ -47,6 +53,8 @@ Couleur::Couleur( int p_couleur)
         rouge = 255;
         vert = 255;
         bleu = 0;
+
+        id = p_couleur;
 
         break;
 
@@ -59,6 +67,8 @@ Couleur::Couleur( int p_couleur)
         vert = 0;
         bleu = 255;
 
+        id = p_couleur;
+
         break;
 
         case cyan:
@@ -69,6 +79,8 @@ Couleur::Couleur( int p_couleur)
         rouge = 0;
         vert = 255;
         bleu = 255;
+
+        id = p_couleur;
 
         break;
 
@@ -81,6 +93,8 @@ Couleur::Couleur( int p_couleur)
         vert = 0;
         bleu = 255;
 
+        id = p_couleur;
+
         break;
 
         case orange:
@@ -92,6 +106,8 @@ Couleur::Couleur( int p_couleur)
         vert = 165;
         bleu = 0;
 
+        id = p_couleur;
+
         break;
 
         case gris_clair:
@@ -102,10 +118,24 @@ Couleur::Couleur( int p_couleur)
         vert = 211;
         bleu = 211;
 
+        id = p_couleur;
+
+        break;
+
+        default:
+        nom_couleur = "noir";
+        id=-1;
+
+        rouge=0;
+        vert=0;
+        bleu=0;
+
         break;
 
 
     }
+
+
 
 }
 

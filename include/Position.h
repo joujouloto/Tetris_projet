@@ -6,10 +6,10 @@ class Position
 {
     public:
         Position(int p_ligne, int p_colonne);
-
-    protected:
         int ligne;
         int colonne;
+    protected:
+
 
     private:
 };

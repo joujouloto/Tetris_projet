@@ -3,6 +3,7 @@
 
 #include <vector>
 
+#include "Couleur.h"
 
 
 using namespace std;
@@ -15,7 +16,7 @@ class Grille
         void initialiser();
         vector <vector<int>> contenu;
         void afficher();
-        void dessiner();
+        void dessiner(int num_ligne, int num_colonne, Couleur c);
 
         int nb_colonnes;
         int nb_lignes;

@@ -6,6 +6,7 @@
 #include "Grille.h"
 #include "Couleur.h"
 #include "Position.h"
+#include "Carre.h"
 
 #define LARGEUR_PREMIERE_FENETRE 640
 #define HAUTEUR_PREMIERE_FENETRE 860
@@ -22,7 +23,6 @@
 
 using namespace std;
 
-enum Forme {Carre, Barre, LFigure, SFigure, TFigure};
 
 int temps_courant = 0;
 int dernier_temps = 0;
@@ -50,11 +50,13 @@ random_device rd;
 mt19937 gen(rd());
 
 uniform_int_distribution<> dis(0, 4);//le nombre aléatoire peut tomber entre 1 et 10
-Figure ma_figure(/*dis(gen)*/SFigure);
+
 
 Grille grille;
 
-void dessiner_carre(SDL_FRect rect,int pos_x, int pos_y, int cellule_taille, Couleur c)
+Carre un_carre(orange);
+
+void dessiner_case(SDL_FRect rect,int pos_x, int pos_y, int cellule_taille, Couleur c)
 {
     rect.x = pos_x;
     rect.y = pos_y;
@@ -85,17 +87,9 @@ void dessiner_grille()
 
         for(int colonne = 0 ; colonne < grille.nb_colonnes ; colonne++)
         {
-            Couleur c(compteur_couleur);
-            dessiner_carre(rects[ligne][colonne],colonne*grille.taille_pixels_cellule, ligne*grille.taille_pixels_cellule, grille.taille_pixels_cellule,c);
+            Couleur c = grille.contenu[ligne][colonne];
+            dessiner_case(rects[ligne][colonne],colonne*grille.taille_pixels_cellule, ligne*grille.taille_pixels_cellule, grille.taille_pixels_cellule,c);
 
-            if(compteur_couleur==c.get_cellules_couleur().size()-1)
-            {
-                compteur_couleur=0;
-
-            }else
-            {
-                compteur_couleur++;
-            }
         }
 
 
@@ -129,42 +123,8 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
 
     SDL_SetAppMetadata("Tetris", "1.0", "tetris");
 
-    /*
-    SDL_Surface * surface_grille_jeu = NULL;
 
-    char * chemin_image;
-
-    SDL_asprintf(&chemin_image,"%s..\\..\\images\\grille.xcf" , SDL_GetBasePath());
-
-
-
-    surface_grille_jeu = IMG_LoadXCF_IO(SDL_IOFromFile(chemin_image, "r"));
-
-    if (!surface_grille_jeu) {
-        SDL_Log("N'a pas pu charger le fichier grille.xcf: %s", SDL_GetError());
-        return SDL_APP_FAILURE;
-    }
-
-    texture = SDL_CreateTextureFromSurface(rendu_fenetre_principale, surface_grille_jeu);
-*/
     SDL_SetRenderDrawColor(rendu_fenetre_principale, 0, 0, 0, SDL_ALPHA_OPAQUE);  /* black, full alpha */
-
-
-/*
-
-    if (!texture) {
-        SDL_Log("Peut pas utiliser texture de grille: %s", SDL_GetError());
-        return SDL_APP_FAILURE;
-    }
-
-    SDL_FRect dst_rect_grille;
-
-    dst_rect_grille.x = 0;
-    dst_rect_grille.y = 0;
-    dst_rect_grille.w = LARGEUR_PREMIERE_FENETRE;
-    dst_rect_grille.h = HAUTEUR_PREMIERE_FENETRE;
-    SDL_RenderTexture(rendu_fenetre_principale, texture, NULL, &dst_rect_grille);
-*/
 
 
     SDL_RenderPresent(rendu_fenetre_principale);
@@ -199,7 +159,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_SetRenderDrawColor(rendu_fenetre_principale, 150, 150, 150, SDL_ALPHA_OPAQUE);  /* black, full alpha */
     SDL_RenderClear(rendu_fenetre_principale);  /* start with a blank canvas. */
 
-
+    un_carre.dessiner(&grille);
 
     dessiner_grille();
 
@@ -211,19 +171,13 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
         dernier_temps = temps_courant;
 
+
+
+
         grille.afficher();
 
 
     }
-
-
-
-
-
-
-
-
-
 
 
     return SDL_APP_CONTINUE;  /* carry on with the program! */

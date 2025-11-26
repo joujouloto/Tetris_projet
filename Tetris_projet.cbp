@@ -42,11 +42,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Carre.h" />
 		<Unit filename="include/Couleur.h" />
 		<Unit filename="include/Figure.h" />
 		<Unit filename="include/Grille.h" />
 		<Unit filename="include/Position.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Carre.cpp" />
 		<Unit filename="src/Couleur.cpp" />
 		<Unit filename="src/Figure.cpp" />
 		<Unit filename="src/Grille.cpp" />

@@ -6,42 +6,35 @@
 
 #include "Couleur.h"
 #include "Position.h"
+#include "Grille.h"
 
 using namespace std;
 
-
+enum Forme {C_arre, B_arre, L_Figure, S_Figure, T_Figure};
 
 class Figure
 {
     public:
-        Figure(int p_num_forme);
-        string get_nom_forme(); // Il y a 5 formes (Carré, Barre, LFigure, SFigure, TFigure)
-        const char * get_adresse_image_associee(); //L'image que l'on affichera dans le jeu par exemple: .../Barre.png
+        int id;
 
+        Figure();
 
         string nom_forme;
-
-        map<int,vector<Position>> cellule;
-        int nb_cellules;
+        map<int,vector<Position>> cellules;
+        int cellule_taille;
+        int rotation_etat;
+        string to_string();
         Couleur couleur_cellule;
 
+        void dessiner(Grille * grille);
 
-
-
-        string to_string();
-
-        virtual ~Figure();
 
     protected:
 
 
-
-        const char * adresse_image_associee;
-
     private:
 
-        int cellule_taille;
-        int rotation_etat;
+
 
 };
 

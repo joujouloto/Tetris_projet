@@ -63,16 +63,16 @@ void Grille::afficher()
         contenu_ligne = (*it);
         for(vector<int>::iterator it_ligne = contenu_ligne.begin() ; it_ligne!=contenu_ligne.end(); it_ligne++)
         {
-            cout << (*it_ligne);
+            cout << (*it_ligne) << " ";
         }
         cout << endl;
     }
 }
 
 
-void Grille::dessiner()
+void Grille::dessiner(int num_ligne, int num_colonne, Couleur c)
 {
 
-
+    contenu[num_ligne][num_colonne] = c.id;
 }
 
