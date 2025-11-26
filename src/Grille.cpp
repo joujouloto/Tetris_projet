@@ -6,8 +6,6 @@
 
 using namespace std;
 
-
-
 Grille::Grille()
 {
     //ctor
@@ -51,7 +49,14 @@ void Grille::afficher()
 void Grille::dessiner()
 {
 
+    for(int ligne = 0 ; ligne < nb_lignes ; ligne++ )
+        {
+            for(int colonne = 0 ; colonne < nb_colonnes ; colonne++)
+            {
+                    int cellule_valeur = contenu[ligne][colonne];
 
+            }
+        }
 
 
 }

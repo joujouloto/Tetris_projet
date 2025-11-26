@@ -53,6 +53,56 @@ Figure ma_figure(/*dis(gen)*/SFigure);
 
 Grille grille;
 
+void dessiner_carre(SDL_FRect rect,int pos_x, int pos_y, int cellule_taille, Couleur c)
+{
+    rect.x = pos_x;
+    rect.y = pos_y;
+    rect.w = cellule_taille ;
+    rect.h = cellule_taille;
+
+    int r,g,b;
+    r = c.rouge;
+    g = c.vert;
+    b = c.bleu;
+
+
+
+    SDL_SetRenderDrawColor(rendu_fenetre_principale, r, g, b, SDL_ALPHA_OPAQUE);  /* blue, full alpha */
+    SDL_RenderFillRect(rendu_fenetre_principale, &rect);
+
+}
+
+void dessiner_grille()
+{
+    SDL_FRect rects[grille.nb_lignes][grille.nb_colonnes];
+
+    int compteur_couleur = 0;
+
+
+    for(int ligne = 0 ; ligne < grille.nb_lignes ; ligne++)
+    {
+
+        for(int colonne = 0 ; colonne < grille.nb_colonnes ; colonne++)
+        {
+            Couleur c(compteur_couleur);
+            dessiner_carre(rects[ligne][colonne], ligne*grille.taille_pixels_cellule, colonne*grille.taille_pixels_cellule, grille.taille_pixels_cellule,c);
+
+            if(compteur_couleur==c.get_cellules_couleur().size()-1)
+            {
+                compteur_couleur=0;
+
+            }else
+            {
+                compteur_couleur++;
+            }
+        }
+
+
+
+
+    }
+}
+
 
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
 {
@@ -297,15 +347,10 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_RenderClear(rendu_fenetre_principale);  /* start with a blank canvas. */
 
 
-    SDL_FRect rects[16];
+
+    dessiner_grille();
 
 
-    rects[0].x = 0;
-    rects[0].y = 0;
-    rects[0].w = 30 ;
-    rects[0].h = 30;
-    SDL_SetRenderDrawColor(rendu_fenetre_principale, 0, 0, 255, SDL_ALPHA_OPAQUE);  /* blue, full alpha */
-    SDL_RenderFillRect(rendu_fenetre_principale, &rects[0]);
 
 
     SDL_RenderPresent(rendu_fenetre_principale);
@@ -322,5 +367,8 @@ void SDL_AppQuit(void *appstate, SDL_AppResult result)
 
 
 }
+
+
+
 
 

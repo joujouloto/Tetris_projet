@@ -82,6 +82,29 @@ Couleur::Couleur( int p_couleur)
         bleu = 255;
 
         break;
+
+        case orange:
+
+        nom_couleur = "orange";
+
+
+        rouge = 255;
+        vert = 165;
+        bleu = 0;
+
+        break;
+
+        case gris_clair:
+
+        nom_couleur = "gris_clair";
+
+        rouge = 211;
+        vert = 211;
+        bleu = 211;
+
+        break;
+
+
     }
 
 }
@@ -98,6 +121,8 @@ Couleur::Couleur( int p_couleur)
     couleurs.push_back (Couleur(violet));
     couleurs.push_back (Couleur(cyan));
     couleurs.push_back (Couleur(b_leu));
+    couleurs.push_back (Couleur(orange));
+    couleurs.push_back (Couleur(gris_clair));
 
 
     return couleurs;

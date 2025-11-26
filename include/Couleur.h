@@ -6,7 +6,7 @@
 
 using namespace std;
 
-enum couleur {v_ert,r_ouge,jaune,violet,cyan,b_leu};
+enum couleur {v_ert,r_ouge,jaune,violet,cyan,b_leu,orange,gris_clair};
 
 
 class Couleur
