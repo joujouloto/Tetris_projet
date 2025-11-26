@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1764173832 source:c:\projets_cplusplus\tetris_projet\main.cpp
+1764190708 source:c:\projets_cplusplus\tetris_projet\main.cpp
 	<iostream>
 	<random>
 	"Figure.h"
@@ -19,7 +19,7 @@
 	"Position.h"
 	"Couleur.h"
 
-1763804954 c:\projets_cplusplus\tetris_projet\include\figure.h
+1764185756 c:\projets_cplusplus\tetris_projet\include\figure.h
 	<string>
 	<map>
 	"Couleur.h"
@@ -522,12 +522,12 @@
 	<SDL3/SDL_begin_code.h>
 	<SDL3/SDL_close_code.h>
 
-1764172379 source:c:\projets_cplusplus\tetris_projet\src\grille.cpp
+1764190798 source:c:\projets_cplusplus\tetris_projet\src\grille.cpp
 	"Grille.h"
-	<array>
 	<iostream>
+	"Couleur.h"
 
-1763823494 c:\projets_cplusplus\tetris_projet\include\grille.h
+1764187599 c:\projets_cplusplus\tetris_projet\include\grille.h
 	<vector>
 
 1763746763 source:c:\projets_cplusplus\tetris_projet\src\position.cpp

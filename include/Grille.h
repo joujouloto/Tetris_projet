@@ -13,7 +13,7 @@ class Grille
     public:
         Grille();
         void initialiser();
-        int contenu[20][10];
+        vector <vector<int>> contenu;
         void afficher();
         void dessiner();
 

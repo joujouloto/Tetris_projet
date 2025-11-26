@@ -19,21 +19,29 @@ class Figure
         const char * get_adresse_image_associee(); //L'image que l'on affichera dans le jeu par exemple: .../Barre.png
 
 
-        string to_string();
-
-        virtual ~Figure();
-
-    protected:
         string nom_forme;
-        string rotation_etat;
+
         map<int,vector<Position>> cellule;
         int nb_cellules;
         Couleur couleur_cellule;
 
 
+
+
+        string to_string();
+
+        virtual ~Figure();
+
+    protected:
+
+
+
         const char * adresse_image_associee;
 
     private:
+
+        int cellule_taille;
+        int rotation_etat;
 
 };
 

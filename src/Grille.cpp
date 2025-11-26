@@ -1,7 +1,8 @@
 #include "Grille.h"
 
-#include <array>
 #include <iostream>
+
+#include "Couleur.h"
 
 
 using namespace std;
@@ -10,9 +11,10 @@ Grille::Grille()
 {
     //ctor
 
-    nb_colonnes = 10;
+    nb_colonnes = 15;
     nb_lignes = 20;
 
+    initialiser();
 
     this->taille_pixels_cellule = 30;
 
@@ -23,40 +25,53 @@ Grille::Grille()
 
 void Grille::initialiser()
 {
-    for(int ligne = 0 ; ligne < nb_lignes ; ligne++ )
+    vector<int> contenu_ligne;
+
+    int compteur_couleur = 0;
+    Couleur c(compteur_couleur);
+
+    for(int i=0 ; i< nb_lignes; i++)
     {
-        for(int colonne = 0 ; colonne < nb_colonnes ; colonne++)
+        for(int j=0 ; j<nb_colonnes; j++)
         {
-                contenu[ligne][colonne] = 0;
+            contenu_ligne.push_back(compteur_couleur);
+            if(compteur_couleur==c.get_cellules_couleur().size()-1)
+            {
+                compteur_couleur=0;
+
+            }else
+            {
+                compteur_couleur++;
+            }
         }
+
+        contenu.push_back(contenu_ligne);
+        contenu_ligne.clear();
     }
+
+
+
 
 }
 
 void Grille::afficher()
 {
-    for(int ligne = 0 ; ligne < nb_lignes ; ligne++ )
+    vector<int> contenu_ligne;
+
+    for(vector<vector<int>>::iterator it = contenu.begin(); it!=contenu.end() ; it++ )
     {
-        for(int colonne = 0 ; colonne < nb_colonnes ; colonne++)
+        contenu_ligne = (*it);
+        for(vector<int>::iterator it_ligne = contenu_ligne.begin() ; it_ligne!=contenu_ligne.end(); it_ligne++)
         {
-                cout << contenu[ligne][colonne] << " ";
+            cout << (*it_ligne);
         }
-        cout << endl ;
+        cout << endl;
     }
 }
 
 
 void Grille::dessiner()
 {
-
-    for(int ligne = 0 ; ligne < nb_lignes ; ligne++ )
-        {
-            for(int colonne = 0 ; colonne < nb_colonnes ; colonne++)
-            {
-                    int cellule_valeur = contenu[ligne][colonne];
-
-            }
-        }
 
 
 }
