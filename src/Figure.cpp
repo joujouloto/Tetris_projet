@@ -62,3 +62,16 @@ void Figure::dessiner(Grille * grille)
     }
 
 }
+
+void Figure::setPosition(Position p)
+{
+    this->origine_x = p.ligne;
+    this->origine_y = p.colonne;
+}
+
+
+void Figure::setPosition(int p_x, int p_y)
+{
+    this->origine_x = p_x;
+    this->origine_y = p_y;
+}

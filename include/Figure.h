@@ -32,6 +32,9 @@ class Figure
 
         void dessiner(Grille * grille);
 
+        void setPosition(Position p);
+        void setPosition(int p_x, int p_y);
+
 
     protected:
 

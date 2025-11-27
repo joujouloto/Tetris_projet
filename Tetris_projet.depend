@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1764198901 source:c:\projets_cplusplus\tetris_projet\main.cpp
+1764273630 source:c:\projets_cplusplus\tetris_projet\main.cpp
 	<iostream>
 	<random>
 	"Figure.h"
@@ -7,11 +7,12 @@
 	"Couleur.h"
 	"Position.h"
 	"Carre.h"
+	"Barre.h"
 	<SDL3/SDL.h>
 	<SDL3/SDL_main.h>
 	<SDL3_image/SDL_image.h>
 
-1764208306 source:c:\projets_cplusplus\tetris_projet\src\figure.cpp
+1764272778 source:c:\projets_cplusplus\tetris_projet\src\figure.cpp
 	"Figure.h"
 	<iostream>
 	<sstream>
@@ -21,7 +22,7 @@
 	"Couleur.h"
 	"Grille.h"
 
-1764208238 c:\projets_cplusplus\tetris_projet\include\figure.h
+1764272797 c:\projets_cplusplus\tetris_projet\include\figure.h
 	<string>
 	<map>
 	"Couleur.h"
@@ -525,7 +526,7 @@
 	<SDL3/SDL_begin_code.h>
 	<SDL3/SDL_close_code.h>
 
-1764196395 source:c:\projets_cplusplus\tetris_projet\src\grille.cpp
+1764272659 source:c:\projets_cplusplus\tetris_projet\src\grille.cpp
 	"Grille.h"
 	<iostream>
 	"Couleur.h"
@@ -556,7 +557,7 @@
 1764208486 source:c:\projets_cplusplus\tetris_projet\src\barre.cpp
 	"Barre.h"
 
-1764208756 c:\projets_cplusplus\tetris_projet\include\barre.h
+1764273656 c:\projets_cplusplus\tetris_projet\include\barre.h
 	"Couleur.h"
 	"Figure.h"
 

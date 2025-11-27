@@ -55,8 +55,13 @@ uniform_int_distribution<> dis(0, 4);//le nombre aléatoire peut tomber entre 1 e
 
 Grille grille;
 
+int x_barre = 6;
+
 Carre un_carre(2,0,orange);
-Barre une_barre(6,0,gris_clair);
+Barre une_barre(x_barre,0,gris_clair);
+
+
+
 
 void dessiner_case(SDL_FRect rect,int pos_x, int pos_y, int cellule_taille, Couleur c)
 {
@@ -161,20 +166,24 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_SetRenderDrawColor(rendu_fenetre_principale, 150, 150, 150, SDL_ALPHA_OPAQUE);  /* black, full alpha */
     SDL_RenderClear(rendu_fenetre_principale);  /* start with a blank canvas. */
 
+    une_barre.setPosition(x_barre,0);
     un_carre.dessiner(&grille);
     une_barre.dessiner(&grille);
+
+
 
     dessiner_grille();
 
 
     SDL_RenderPresent(rendu_fenetre_principale);
 
-    if(temps_courant > 10*UNE_SECONDE + dernier_temps   )
+    if(temps_courant > 1.5*UNE_SECONDE + dernier_temps   )
     {
 
         dernier_temps = temps_courant;
 
-
+        x_barre++;
+        une_barre.maj_position();
 
 
         grille.afficher();
