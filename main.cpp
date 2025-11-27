@@ -7,6 +7,7 @@
 #include "Couleur.h"
 #include "Position.h"
 #include "Carre.h"
+#include "Barre.h"
 
 #define LARGEUR_PREMIERE_FENETRE 640
 #define HAUTEUR_PREMIERE_FENETRE 860
@@ -54,7 +55,8 @@ uniform_int_distribution<> dis(0, 4);//le nombre aléatoire peut tomber entre 1 e
 
 Grille grille;
 
-Carre un_carre(orange);
+Carre un_carre(2,0,orange);
+Barre une_barre(6,0,gris_clair);
 
 void dessiner_case(SDL_FRect rect,int pos_x, int pos_y, int cellule_taille, Couleur c)
 {
@@ -160,6 +162,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_RenderClear(rendu_fenetre_principale);  /* start with a blank canvas. */
 
     un_carre.dessiner(&grille);
+    une_barre.dessiner(&grille);
 
     dessiner_grille();
 

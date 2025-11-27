@@ -16,13 +16,17 @@ class Figure
 {
     public:
         int id;
-
-        Figure();
+        Figure ();
+        Figure(int origine_ligne, int origine_colonne);
 
         string nom_forme;
         map<int,vector<Position>> cellules;
         int cellule_taille;
         int rotation_etat;
+
+        int origine_x;
+        int origine_y;
+
         string to_string();
         Couleur couleur_cellule;
 

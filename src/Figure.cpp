@@ -12,16 +12,29 @@
 
 using namespace std;
 
-
-
-
-
-
 Figure::Figure()
 {
     cellule_taille = 30;
     rotation_etat = 0;
     this->couleur_cellule = -1;
+
+    this->origine_x=0;
+    this->origine_y=0;
+
+}
+
+
+
+
+Figure::Figure(int origine_ligne, int origine_colonne)
+{
+    cellule_taille = 30;
+    rotation_etat = 0;
+    this->couleur_cellule = -1;
+
+    this->origine_x=origine_ligne;
+    this->origine_y=origine_colonne;
+
 
 }
 

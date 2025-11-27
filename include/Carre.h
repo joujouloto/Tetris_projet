@@ -6,7 +6,7 @@
 class Carre: public Figure
 {
     public:
-        Carre(int p_couleur);
+        Carre(int origine_ligne, int origine_colonne, int p_couleur);
 
     protected:
 

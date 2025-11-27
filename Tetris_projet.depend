@@ -11,7 +11,7 @@
 	<SDL3/SDL_main.h>
 	<SDL3_image/SDL_image.h>
 
-1764198624 source:c:\projets_cplusplus\tetris_projet\src\figure.cpp
+1764208306 source:c:\projets_cplusplus\tetris_projet\src\figure.cpp
 	"Figure.h"
 	<iostream>
 	<sstream>
@@ -21,7 +21,7 @@
 	"Couleur.h"
 	"Grille.h"
 
-1764200887 c:\projets_cplusplus\tetris_projet\include\figure.h
+1764208238 c:\projets_cplusplus\tetris_projet\include\figure.h
 	<string>
 	<map>
 	"Couleur.h"
@@ -546,10 +546,17 @@
 	<string>
 	<vector>
 
-1764198702 source:c:\projets_cplusplus\tetris_projet\src\carre.cpp
+1764208192 source:c:\projets_cplusplus\tetris_projet\src\carre.cpp
 	"Carre.h"
 	"Figure.h"
 
-1764198570 c:\projets_cplusplus\tetris_projet\include\carre.h
+1764208098 c:\projets_cplusplus\tetris_projet\include\carre.h
+	"Figure.h"
+
+1764208486 source:c:\projets_cplusplus\tetris_projet\src\barre.cpp
+	"Barre.h"
+
+1764208756 c:\projets_cplusplus\tetris_projet\include\barre.h
+	"Couleur.h"
 	"Figure.h"
 
