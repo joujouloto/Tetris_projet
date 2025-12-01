@@ -31,9 +31,11 @@ class Figure
         Couleur couleur_cellule;
 
         void dessiner(Grille * grille);
+        void effacer(Grille * grille);
 
         void setPosition(Position p);
         void setPosition(int p_x, int p_y);
+
 
 
     protected:

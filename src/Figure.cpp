@@ -75,3 +75,17 @@ void Figure::setPosition(int p_x, int p_y)
     this->origine_x = p_x;
     this->origine_y = p_y;
 }
+
+void Figure::effacer(Grille * grille)
+{
+    vector<Position> tiles = this->cellules[this->rotation_etat];
+
+    for(Position item: tiles)
+    {
+        grille->dessiner(item.ligne,item.colonne,grille->couleur_fonds);
+
+    }
+
+}
+
+

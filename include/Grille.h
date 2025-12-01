@@ -22,6 +22,7 @@ class Grille
         int nb_lignes;
 
         int taille_pixels_cellule;
+        Couleur couleur_fonds;
 
     protected:
 

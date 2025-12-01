@@ -14,6 +14,10 @@ Grille::Grille()
     nb_colonnes = 15;
     nb_lignes = 20;
 
+    couleur_fonds = Couleur(gris_fonce);
+
+
+
     initialiser();
 
     this->taille_pixels_cellule = 30;
@@ -28,21 +32,14 @@ void Grille::initialiser()
     vector<int> contenu_ligne;
 
     int compteur_couleur = 0;
-    Couleur c(compteur_couleur);
+
 
     for(int i=0 ; i< nb_lignes; i++)
     {
         for(int j=0 ; j<nb_colonnes; j++)
         {
-            contenu_ligne.push_back(compteur_couleur);
-            if(compteur_couleur==c.get_cellules_couleur().size()-1)
-            {
-                compteur_couleur=0;
+            contenu_ligne.push_back(couleur_fonds.id);
 
-            }else
-            {
-                compteur_couleur++;
-            }
         }
 
         contenu.push_back(contenu_ligne);

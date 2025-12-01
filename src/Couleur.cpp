@@ -122,6 +122,23 @@ Couleur::Couleur( int p_couleur)
 
         break;
 
+        case gris_fonce:
+
+        nom_couleur = "gris_fonce";
+
+        rouge = 169;
+        vert = 169;
+        bleu = 169;
+
+        id = p_couleur;
+
+        break;
+
+
+
+
+
+
         default:
         nom_couleur = "noir";
         id=-1;

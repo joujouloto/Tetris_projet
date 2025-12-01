@@ -56,9 +56,10 @@ uniform_int_distribution<> dis(0, 4);//le nombre aléatoire peut tomber entre 1 e
 Grille grille;
 
 int x_barre = 6;
+int y_barre = 4;
 
 Carre un_carre(2,0,orange);
-Barre une_barre(x_barre,0,gris_clair);
+Barre une_barre(x_barre,y_barre,gris_clair);
 
 
 
@@ -75,10 +76,15 @@ void dessiner_case(SDL_FRect rect,int pos_x, int pos_y, int cellule_taille, Coul
     g = c.vert;
     b = c.bleu;
 
+    const SDL_FRect * const_rect = &rect;
+
 
 
     SDL_SetRenderDrawColor(rendu_fenetre_principale, r, g, b, SDL_ALPHA_OPAQUE);  /* blue, full alpha */
-    SDL_RenderFillRect(rendu_fenetre_principale, &rect);
+    SDL_RenderFillRect(rendu_fenetre_principale, const_rect);
+
+    SDL_SetRenderDrawColor(rendu_fenetre_principale, 0, 0, 0, SDL_ALPHA_OPAQUE);  /* blue, full alpha */
+    SDL_RenderRects(rendu_fenetre_principale,const_rect,1);
 
 }
 
@@ -94,7 +100,7 @@ void dessiner_grille()
 
         for(int colonne = 0 ; colonne < grille.nb_colonnes ; colonne++)
         {
-            Couleur c = grille.contenu[ligne][colonne];
+            Couleur c = Couleur (grille.contenu[ligne][colonne]);
             dessiner_case(rects[ligne][colonne],colonne*grille.taille_pixels_cellule, ligne*grille.taille_pixels_cellule, grille.taille_pixels_cellule,c);
 
         }
@@ -166,7 +172,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_SetRenderDrawColor(rendu_fenetre_principale, 150, 150, 150, SDL_ALPHA_OPAQUE);  /* black, full alpha */
     SDL_RenderClear(rendu_fenetre_principale);  /* start with a blank canvas. */
 
-    une_barre.setPosition(x_barre,0);
+    une_barre.setPosition(x_barre,y_barre);
     un_carre.dessiner(&grille);
     une_barre.dessiner(&grille);
 
@@ -182,6 +188,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
         dernier_temps = temps_courant;
 
+        une_barre.effacer(&grille);
         x_barre++;
         une_barre.maj_position();
 
