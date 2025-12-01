@@ -58,7 +58,12 @@ Grille grille;
 int x_barre = 6;
 int y_barre = 4;
 
-Carre un_carre(2,0,orange);
+int x_carre = 2;
+int y_carre = 0;
+
+
+
+Carre un_carre(x_carre,y_carre,orange);
 Barre une_barre(x_barre,y_barre,gris_clair);
 
 
@@ -173,6 +178,8 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_RenderClear(rendu_fenetre_principale);  /* start with a blank canvas. */
 
     une_barre.setPosition(x_barre,y_barre);
+    un_carre.setPosition(x_carre,y_carre);
+
     un_carre.dessiner(&grille);
     une_barre.dessiner(&grille);
 
@@ -190,7 +197,13 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
         une_barre.effacer(&grille);
         x_barre++;
+        une_barre.rotation();
         une_barre.maj_position();
+
+        un_carre.effacer(&grille);
+        x_carre++;
+        un_carre.maj_position();
+
 
 
         grille.afficher();

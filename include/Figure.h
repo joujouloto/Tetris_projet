@@ -37,6 +37,12 @@ class Figure
         void setPosition(int p_x, int p_y);
 
 
+        virtual void maj_position() = 0;
+        virtual void rotation() = 0;
+
+
+
+
 
     protected:
 
