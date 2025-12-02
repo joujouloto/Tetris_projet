@@ -10,7 +10,7 @@
 
 using namespace std;
 
-enum Forme {C_arre, B_arre, L_Figure, S_Figure, T_Figure};
+enum Forme {C_arre, B_arre, L_Figure, S_Figure, T_Figure,J_Figure,Z_Figure};
 
 class Figure
 {

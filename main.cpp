@@ -9,6 +9,8 @@
 #include "Carre.h"
 #include "Barre.h"
 
+#include "JFigure.h"
+
 #define LARGEUR_PREMIERE_FENETRE 640
 #define HAUTEUR_PREMIERE_FENETRE 860
 #define ORIGINE_POS_X_PREMIERE_FENETRE 750
@@ -85,10 +87,10 @@ void dessiner_case(SDL_FRect rect,int pos_x, int pos_y, int cellule_taille, Coul
 
 
 
-    SDL_SetRenderDrawColor(rendu_fenetre_principale, r, g, b, SDL_ALPHA_OPAQUE);  /* blue, full alpha */
+    SDL_SetRenderDrawColor(rendu_fenetre_principale, r, g, b, SDL_ALPHA_OPAQUE);
     SDL_RenderFillRect(rendu_fenetre_principale, const_rect);
 
-    SDL_SetRenderDrawColor(rendu_fenetre_principale, 0, 0, 0, SDL_ALPHA_OPAQUE);  /* blue, full alpha */
+    SDL_SetRenderDrawColor(rendu_fenetre_principale, 0, 0, 0, SDL_ALPHA_OPAQUE);
     SDL_RenderRects(rendu_fenetre_principale,const_rect,1);
 
 }
@@ -97,7 +99,7 @@ void dessiner_grille()
 {
     SDL_FRect rects[grille.nb_lignes][grille.nb_colonnes];
 
-    int compteur_couleur = 0;
+
 
 
     for(int ligne = 0 ; ligne < grille.nb_lignes ; ligne++)
