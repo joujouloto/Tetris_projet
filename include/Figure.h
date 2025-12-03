@@ -40,6 +40,10 @@ class Figure
         virtual void maj_position() = 0;
         virtual void rotation() = 0;
 
+        virtual void descendre() = 0;
+        void aller_a_gauche();
+        void aller_a_droite();
+
 
 
 

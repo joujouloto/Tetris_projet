@@ -41,12 +41,6 @@ SDL_Window *fenetre_principale;
 
 SDL_Renderer *rendu_fenetre_principale;
 
-//texture pour dessiner dans la fenêtre
-static SDL_Texture *texture = NULL;
-
-static int texture_largeur = 0;
-
-static int texture_hauteur = 0;
 
 
 random_device rd;
@@ -63,10 +57,14 @@ int y_barre = 4;
 int x_carre = 2;
 int y_carre = 0;
 
+int x_jfigure = 2;
+int y_jfigure = 12;
+
 
 
 Carre un_carre(x_carre,y_carre,orange);
 Barre une_barre(x_barre,y_barre,gris_clair);
+JFigure une_jfigure(x_jfigure,y_jfigure,violet);
 
 
 
@@ -179,12 +177,11 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_SetRenderDrawColor(rendu_fenetre_principale, 150, 150, 150, SDL_ALPHA_OPAQUE);  /* black, full alpha */
     SDL_RenderClear(rendu_fenetre_principale);  /* start with a blank canvas. */
 
-    une_barre.setPosition(x_barre,y_barre);
-    un_carre.setPosition(x_carre,y_carre);
+
 
     un_carre.dessiner(&grille);
     une_barre.dessiner(&grille);
-
+    une_jfigure.dessiner(&grille);
 
 
     dessiner_grille();
@@ -198,17 +195,21 @@ SDL_AppResult SDL_AppIterate(void *appstate)
         dernier_temps = temps_courant;
 
         une_barre.effacer(&grille);
-        x_barre++;
+        une_barre.descendre();
         une_barre.rotation();
-        une_barre.maj_position();
+
 
         un_carre.effacer(&grille);
-        x_carre++;
-        un_carre.maj_position();
+        un_carre.descendre();
 
+
+        une_jfigure.effacer(&grille);
+        une_jfigure.descendre();
+        une_jfigure.rotation();
 
 
         grille.afficher();
+        cout << endl << endl;
 
 
     }

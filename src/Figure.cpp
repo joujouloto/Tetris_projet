@@ -89,3 +89,5 @@ void Figure::effacer(Grille * grille)
 }
 
 
+
+
