@@ -10,6 +10,7 @@
 #include "Barre.h"
 
 #include "JFigure.h"
+#include "LFigure.h"
 
 #define LARGEUR_PREMIERE_FENETRE 640
 #define HAUTEUR_PREMIERE_FENETRE 860
@@ -65,6 +66,7 @@ int y_jfigure = 12;
 Carre un_carre(x_carre,y_carre,orange);
 Barre une_barre(x_barre,y_barre,gris_clair);
 JFigure une_jfigure(x_jfigure,y_jfigure,violet);
+LFigure une_lfigure(10,10,r_ouge);
 
 
 
@@ -179,9 +181,10 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
 
 
-    un_carre.dessiner(&grille);
-    une_barre.dessiner(&grille);
-    une_jfigure.dessiner(&grille);
+    //un_carre.dessiner(&grille);
+    //une_barre.dessiner(&grille);
+    //une_jfigure.dessiner(&grille);
+    une_lfigure.dessiner(&grille);
 
 
     dessiner_grille();
@@ -194,7 +197,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
         dernier_temps = temps_courant;
 
-        une_barre.effacer(&grille);
+        /*une_barre.effacer(&grille);
         une_barre.descendre();
         une_barre.rotation();
 
@@ -204,8 +207,11 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
 
         une_jfigure.effacer(&grille);
-        une_jfigure.descendre();
+        //une_jfigure.descendre();
         une_jfigure.rotation();
+*/
+        une_lfigure.effacer(&grille);
+        une_lfigure.rotation();
 
 
         grille.afficher();

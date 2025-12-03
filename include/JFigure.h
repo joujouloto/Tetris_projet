@@ -11,8 +11,6 @@ class JFigure: public Figure
         void maj_position() override;
         void rotation() override;
 
-        void descendre() override;
-
     protected:
 
     private:

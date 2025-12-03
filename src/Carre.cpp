@@ -13,7 +13,7 @@ Carre::Carre(int origine_ligne, int origine_colonne, int p_couleur)
 
     this->id = C_arre;
     this->couleur_cellule = c;
-    this->cellules[0] = { Position(origine_ligne,origine_colonne),Position(origine_ligne,origine_colonne+1),Position(origine_ligne+1,origine_colonne),Position(origine_ligne+1,origine_colonne+1)};
+    maj_position();
 
 }
 
@@ -34,9 +34,4 @@ void Carre::rotation()
 
 }
 
-void Carre::descendre()
-{
-    setPosition(origine_x+1,origine_y);
-    maj_position();
 
-}

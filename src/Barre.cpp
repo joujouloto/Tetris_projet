@@ -12,11 +12,8 @@ Barre::Barre(int origine_ligne, int origine_colonne, int p_couleur)
     this->origine_x = origine_ligne;
     this->origine_y = origine_colonne;
 
+    maj_position();
 
-
-
-    this->cellules[0] = { Position(origine_ligne,origine_colonne),Position(origine_ligne,origine_colonne+1),Position(origine_ligne,origine_colonne+2),Position(origine_ligne,origine_colonne+3)};
-    this->cellules[1] = { Position(origine_ligne-1,origine_colonne+1),Position(origine_ligne,origine_colonne+1),Position(origine_ligne+1,origine_colonne+1),Position(origine_ligne+2,origine_colonne+1)};
 
 }
 
@@ -43,8 +40,4 @@ void Barre::rotation()
     }
 }
 
-void Barre::descendre()
-{
-    setPosition(origine_x+1,origine_y);
-    maj_position();
-}
+

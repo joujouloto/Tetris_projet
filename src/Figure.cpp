@@ -88,6 +88,12 @@ void Figure::effacer(Grille * grille)
 
 }
 
+void Figure::descendre()
+{
+    setPosition(origine_x+1,origine_y);
+    maj_position();
+
+}
 
 
 
