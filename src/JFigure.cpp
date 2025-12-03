@@ -11,9 +11,11 @@ JFigure::JFigure(int origine_ligne, int origine_colonne, int p_couleur)
     this->origine_x = origine_ligne;
     this->origine_y = origine_colonne;
 
+    this->nb_rotations_possibles = 4;
+
     maj_position();
 
-    this->nb_rotations_possibles = 4;
+
 
 }
 
@@ -29,7 +31,7 @@ void JFigure::maj_position()
     Position(origine_ligne+2,origine_colonne+1),
     Position(origine_ligne+2,origine_colonne)};
 
-    this->cellules[1] =
+    this->cellules[3] =
      { Position(origine_ligne,origine_colonne),
      Position(origine_ligne+1,origine_colonne),
      Position(origine_ligne+1,origine_colonne+1),
@@ -43,7 +45,7 @@ void JFigure::maj_position()
      Position(origine_ligne+1,origine_colonne+1),
      Position(origine_ligne+2,origine_colonne+1)};
 
-    this->cellules[3] =
+    this->cellules[1] =
      { Position(origine_ligne+1,origine_colonne),
      Position(origine_ligne+1,origine_colonne+1),
      Position(origine_ligne+1,origine_colonne+2),

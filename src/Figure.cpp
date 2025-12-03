@@ -101,7 +101,7 @@ void Figure::descendre()
 
 void Figure::rotation_sens_antihoraire()
 {
-     if(this->rotation_etat==this->nb_rotations_possibles)
+     if(this->rotation_etat==this->nb_rotations_possibles-1)
     {
         rotation_etat = 0;
 
@@ -124,4 +124,14 @@ void Figure::rotation_sens_horaire()
 
 }
 
+void Figure::aller_a_gauche()
+{
+    setPosition(origine_x,origine_y-1);
+    maj_position();
+}
 
+void Figure::aller_a_droite()
+{
+    setPosition(origine_x,origine_y+1);
+    maj_position();
+}

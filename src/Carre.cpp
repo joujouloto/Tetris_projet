@@ -24,7 +24,11 @@ void Carre::maj_position()
     int origine_ligne  = this->origine_x;
     int origine_colonne  = this->origine_y;
 
-    this->cellules[0] = { Position(origine_ligne,origine_colonne),Position(origine_ligne,origine_colonne+1),Position(origine_ligne+1,origine_colonne),Position(origine_ligne+1,origine_colonne+1)};
+    this->cellules[0] =
+    { Position(origine_ligne,origine_colonne),
+    Position(origine_ligne,origine_colonne+1),
+    Position(origine_ligne+1,origine_colonne),
+    Position(origine_ligne+1,origine_colonne+1)};
 
 }
 
