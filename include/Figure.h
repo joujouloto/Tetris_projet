@@ -23,6 +23,7 @@ class Figure
         map<int,vector<Position>> cellules;
         int cellule_taille;
         int rotation_etat;
+        int nb_rotations_possibles;
 
         int origine_x;
         int origine_y;
@@ -38,7 +39,8 @@ class Figure
 
 
         virtual void maj_position() = 0;
-        virtual void rotation() = 0;
+        void rotation_sens_antihoraire();
+        void rotation_sens_horaire();
 
         void descendre();
         void aller_a_gauche();

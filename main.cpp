@@ -199,7 +199,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
         /*une_barre.effacer(&grille);
         une_barre.descendre();
-        une_barre.rotation();
+        une_barre.rotation_sens_antihoraire();
 
 
         un_carre.effacer(&grille);
@@ -208,10 +208,10 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
         une_jfigure.effacer(&grille);
         //une_jfigure.descendre();
-        une_jfigure.rotation();
+        une_jfigure.rotation_sens_antihoraire();
 */
         une_lfigure.effacer(&grille);
-        une_lfigure.rotation();
+        une_lfigure.rotation_sens_horaire();
 
 
         grille.afficher();

@@ -28,16 +28,6 @@ void Barre::maj_position()
 }
 
 
-void Barre::rotation()
-{
-    if(this->rotation_etat==1)
-    {
-        rotation_etat = 0;
 
-    }else
-    {
-        rotation_etat++;
-    }
-}
 
 

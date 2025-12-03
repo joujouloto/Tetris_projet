@@ -13,6 +13,8 @@ JFigure::JFigure(int origine_ligne, int origine_colonne, int p_couleur)
 
     maj_position();
 
+    this->nb_rotations_possibles = 4;
+
 }
 
 void JFigure::maj_position()
@@ -52,16 +54,5 @@ void JFigure::maj_position()
 
 }
 
-void JFigure::rotation()
-{
-     if(this->rotation_etat==3)
-    {
-        rotation_etat = 0;
-
-    }else
-    {
-        rotation_etat++;
-    }
-}
 
 

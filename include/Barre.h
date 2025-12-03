@@ -11,7 +11,6 @@ class Barre: public Figure
         Barre(int origine_ligne, int origine_colonne, int p_couleur);
 
         void maj_position() override;
-        void rotation() override;
 
 
     protected:

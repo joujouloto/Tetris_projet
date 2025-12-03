@@ -2,7 +2,7 @@
 
 ZFigure::ZFigure(int origine_ligne, int origine_colonne, int p_couleur)
 {
-    //ctor
+   this->nb_rotations_possibles = 4;
 }
 
 
@@ -12,7 +12,3 @@ void ZFigure::maj_position()
 
 }
 
-void ZFigure::rotation()
-{
-
-}

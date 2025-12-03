@@ -9,7 +9,6 @@ class TFigure: public Figure
         TFigure(int origine_ligne, int origine_colonne, int p_couleur);
 
         void maj_position() override;
-        void rotation() override;
 
     protected:
 

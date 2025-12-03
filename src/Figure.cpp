@@ -21,6 +21,8 @@ Figure::Figure()
     this->origine_x=0;
     this->origine_y=0;
 
+    this->nb_rotations_possibles = 1;
+
 }
 
 
@@ -34,6 +36,8 @@ Figure::Figure(int origine_ligne, int origine_colonne)
 
     this->origine_x=origine_ligne;
     this->origine_y=origine_colonne;
+
+    this->nb_rotations_possibles = 1;
 
 
 }
@@ -95,5 +99,29 @@ void Figure::descendre()
 
 }
 
+void Figure::rotation_sens_antihoraire()
+{
+     if(this->rotation_etat==this->nb_rotations_possibles)
+    {
+        rotation_etat = 0;
+
+    }else
+    {
+        rotation_etat++;
+    }
+}
+
+void Figure::rotation_sens_horaire()
+{
+    if(this->rotation_etat==0)
+    {
+        rotation_etat = this->nb_rotations_possibles-1;
+
+    }else
+    {
+        rotation_etat--;
+    }
+
+}
 
 
