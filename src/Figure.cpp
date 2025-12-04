@@ -57,11 +57,11 @@ string Figure::to_string()
 
 void Figure::dessiner(Grille * grille)
 {
-    vector<Position> tiles = this->cellules[this->rotation_etat];
+    vector<Position> figure = this->cellules[this->rotation_etat];
 
-    for(Position item: tiles)
+    for(Position cellule: figure)
     {
-        grille->dessiner(item.ligne,item.colonne,this->couleur_cellule);
+        grille->dessiner(cellule.ligne,cellule.colonne,this->couleur_cellule);
 
     }
 
@@ -82,11 +82,11 @@ void Figure::setPosition(int p_x, int p_y)
 
 void Figure::effacer(Grille * grille)
 {
-    vector<Position> tiles = this->cellules[this->rotation_etat];
+    vector<Position> figure = this->cellules[this->rotation_etat];
 
-    for(Position item: tiles)
+    for(Position cellule: figure)
     {
-        grille->dessiner(item.ligne,item.colonne,grille->couleur_fonds);
+        grille->dessiner(cellule.ligne,cellule.colonne,grille->couleur_fonds);
 
     }
 

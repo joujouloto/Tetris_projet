@@ -9,8 +9,12 @@
 #include "Carre.h"
 #include "Barre.h"
 
+
 #include "JFigure.h"
 #include "LFigure.h"
+#include "ZFigure.h"
+#include "SFigure.h"
+#include "TFigure.h"
 
 #define LARGEUR_PREMIERE_FENETRE 640
 #define HAUTEUR_PREMIERE_FENETRE 860
@@ -52,21 +56,15 @@ uniform_int_distribution<> dis(0, 4);//le nombre aléatoire peut tomber entre 1 e
 
 Grille grille;
 
-int x_barre = 6;
-int y_barre = 4;
-
-int x_carre = 2;
-int y_carre = 0;
-
-int x_jfigure = 2;
-int y_jfigure = 12;
-
-
-
-Carre un_carre(x_carre,y_carre,orange);
-Barre une_barre(x_barre,y_barre,gris_clair);
-JFigure une_jfigure(x_jfigure,y_jfigure,violet);
+Carre un_carre(2,0,orange);
+Barre une_barre(6,4,gris_clair);
+JFigure une_jfigure(2,12,violet);
 LFigure une_lfigure(10,10,r_ouge);
+
+TFigure une_tfigure(10,3,cyan);
+SFigure une_sfigure(7,7,b_leu);
+ZFigure une_zfigure(15,5,jaune);
+
 
 
 
@@ -179,12 +177,20 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_SetRenderDrawColor(rendu_fenetre_principale, 150, 150, 150, SDL_ALPHA_OPAQUE);  /* black, full alpha */
     SDL_RenderClear(rendu_fenetre_principale);  /* start with a blank canvas. */
 
-
+    if(temps_courant > 1.5*UNE_SECONDE + dernier_temps   )
+    {
+        grille.afficher();
+        cout << endl << endl;
+    }
 
     un_carre.dessiner(&grille);
     une_barre.dessiner(&grille);
     une_jfigure.dessiner(&grille);
     une_lfigure.dessiner(&grille);
+
+    une_sfigure.dessiner(&grille);
+    une_zfigure.dessiner(&grille);
+    une_tfigure.dessiner(&grille);
 
 
     dessiner_grille();
@@ -195,32 +201,40 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     if(temps_courant > 1.5*UNE_SECONDE + dernier_temps   )
     {
 
+
         dernier_temps = temps_courant;
 
+        /*
         une_barre.effacer(&grille);
-        //une_barre.descendre();
-      //  une_barre.rotation_sens_antihoraire();
+        une_barre.descendre();
+        une_barre.rotation_sens_antihoraire();
         une_barre.aller_a_gauche();
 
 
-        /*un_carre.effacer(&grille);
+        un_carre.effacer(&grille);
         un_carre.aller_a_droite();
 
 
-/*
+
         une_jfigure.effacer(&grille);
-        //une_jfigure.descendre();
+        une_jfigure.descendre();
         une_jfigure.rotation_sens_antihoraire();
 
         une_lfigure.effacer(&grille);
         une_lfigure.rotation_sens_horaire();
+
 */
-
-        grille.afficher();
-        cout << endl << endl;
-
+       /* une_sfigure.effacer(&grille);
+        une_sfigure.rotation_sens_horaire();
+*/
+        une_tfigure.effacer(&grille);
+        une_tfigure.rotation_sens_horaire();
 
     }
+
+
+
+
 
 
     return SDL_APP_CONTINUE;  /* carry on with the program! */

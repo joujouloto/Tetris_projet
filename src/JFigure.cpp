@@ -31,20 +31,6 @@ void JFigure::maj_position()
     Position(origine_ligne+2,origine_colonne+1),
     Position(origine_ligne+2,origine_colonne)};
 
-    this->cellules[3] =
-     { Position(origine_ligne,origine_colonne),
-     Position(origine_ligne+1,origine_colonne),
-     Position(origine_ligne+1,origine_colonne+1),
-     Position(origine_ligne+1,origine_colonne+2)};
-
-
-
-     this->cellules[2] =
-     { Position(origine_ligne,origine_colonne+1),
-     Position(origine_ligne,origine_colonne+2),
-     Position(origine_ligne+1,origine_colonne+1),
-     Position(origine_ligne+2,origine_colonne+1)};
-
     this->cellules[1] =
      { Position(origine_ligne+1,origine_colonne),
      Position(origine_ligne+1,origine_colonne+1),
@@ -52,7 +38,19 @@ void JFigure::maj_position()
      Position(origine_ligne+2,origine_colonne+2)
      };
 
+     this->cellules[2] =
+     { Position(origine_ligne,origine_colonne+1),
+     Position(origine_ligne,origine_colonne+2),
+     Position(origine_ligne+1,origine_colonne+1),
+     Position(origine_ligne+2,origine_colonne+1)};
 
+
+
+    this->cellules[3] =
+     { Position(origine_ligne,origine_colonne),
+     Position(origine_ligne+1,origine_colonne),
+     Position(origine_ligne+1,origine_colonne+1),
+     Position(origine_ligne+1,origine_colonne+2)};
 
 }
 

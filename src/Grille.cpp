@@ -39,10 +39,13 @@ void Grille::initialiser()
         for(int j=0 ; j<nb_colonnes; j++)
         {
             contenu_ligne.push_back(couleur_fonds.id);
+
         }
 
         contenu.push_back(contenu_ligne);
         contenu_ligne.clear();
+
+
     }
 
 

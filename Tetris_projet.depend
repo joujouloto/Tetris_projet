@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1764775678 source:c:\projets_cplusplus\tetris_projet\main.cpp
+1764828400 source:c:\projets_cplusplus\tetris_projet\main.cpp
 	<iostream>
 	<random>
 	"Figure.h"
@@ -10,11 +10,14 @@
 	"Barre.h"
 	"JFigure.h"
 	"LFigure.h"
+	"ZFigure.h"
+	"SFigure.h"
+	"TFigure.h"
 	<SDL3/SDL.h>
 	<SDL3/SDL_main.h>
 	<SDL3_image/SDL_image.h>
 
-1764775955 source:c:\projets_cplusplus\tetris_projet\src\figure.cpp
+1764827166 source:c:\projets_cplusplus\tetris_projet\src\figure.cpp
 	"Figure.h"
 	<iostream>
 	<sstream>
@@ -528,7 +531,7 @@
 	<SDL3/SDL_begin_code.h>
 	<SDL3/SDL_close_code.h>
 
-1764609159 source:c:\projets_cplusplus\tetris_projet\src\grille.cpp
+1764791771 source:c:\projets_cplusplus\tetris_projet\src\grille.cpp
 	"Grille.h"
 	<iostream>
 	"Couleur.h"
@@ -566,28 +569,28 @@
 1764773811 c:\projets_cplusplus\tetris_projet\include\jfigure.h
 	"Figure.h"
 
-1764773836 source:c:\projets_cplusplus\tetris_projet\src\lfigure.cpp
+1764791438 source:c:\projets_cplusplus\tetris_projet\src\lfigure.cpp
 	"LFigure.h"
 
 1764773636 c:\projets_cplusplus\tetris_projet\include\lfigure.h
 	"Figure.h"
 
-1764773706 source:c:\projets_cplusplus\tetris_projet\src\sfigure.cpp
+1764827895 source:c:\projets_cplusplus\tetris_projet\src\sfigure.cpp
 	"SFigure.h"
 
 1764773704 c:\projets_cplusplus\tetris_projet\include\sfigure.h
 	"Figure.h"
 
-1764773817 source:c:\projets_cplusplus\tetris_projet\src\zfigure.cpp
+1764828202 source:c:\projets_cplusplus\tetris_projet\src\zfigure.cpp
 	"ZFigure.h"
 
 1764773718 c:\projets_cplusplus\tetris_projet\include\zfigure.h
 	"Figure.h"
 
-1764775752 source:c:\projets_cplusplus\tetris_projet\src\jfigure.cpp
+1764825438 source:c:\projets_cplusplus\tetris_projet\src\jfigure.cpp
 	"JFigure.h"
 
-1764773727 source:c:\projets_cplusplus\tetris_projet\src\tfigure.cpp
+1764828498 source:c:\projets_cplusplus\tetris_projet\src\tfigure.cpp
 	"TFigure.h"
 
 1764773703 c:\projets_cplusplus\tetris_projet\include\tfigure.h
