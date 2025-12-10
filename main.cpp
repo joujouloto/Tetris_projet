@@ -66,7 +66,9 @@ SFigure une_sfigure(7,7,b_leu);
 ZFigure une_zfigure(15,5,jaune);
 
 
+enum deplacement{bas,rotation};
 
+int deplacement =bas;
 
 
 void dessiner_case(SDL_FRect rect,int pos_x, int pos_y, int cellule_taille, Couleur c)
@@ -201,6 +203,9 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
     SDL_RenderPresent(rendu_fenetre_principale);
 
+
+
+
     if(temps_courant > 1.5*UNE_SECONDE + dernier_temps   )
     {
 
@@ -209,7 +214,19 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
 
         une_barre.effacer(&grille);
-        une_barre.descendre(&grille);
+
+        if(deplacement==bas)
+        {
+            une_barre.descendre(&grille);
+            deplacement=rotation;
+        }
+        else
+        {
+            une_barre.rotation_sens_antihoraire(&grille);
+            deplacement=bas;
+        }
+
+
 
 
 

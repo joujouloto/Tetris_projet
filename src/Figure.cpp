@@ -116,28 +116,37 @@ void Figure::descendre(Grille * grille)
     }
 }
 
-void Figure::rotation_sens_antihoraire()
+void Figure::rotation_sens_antihoraire(Grille * grille) // de droite à gauche attention la barre n'a que 2 rotations possibles
+//donc antihoraire est pareil que horaire
 {
-     if(this->rotation_etat==this->nb_rotations_possibles-1)
+    if(!this->est_en_collision_en_rotation_gauche(grille))
     {
-        rotation_etat = 0;
+         if(this->rotation_etat==this->nb_rotations_possibles-1)
+        {
+            rotation_etat = 0;
 
-    }else
-    {
-        rotation_etat++;
+        }else
+        {
+            rotation_etat++;
+        }
     }
 }
 
-void Figure::rotation_sens_horaire()
+void Figure::rotation_sens_horaire(Grille * grille) // de gauche à droite attention la barre n'a que 2 rotations possibles
+//donc antihoraire est pareil que horaire
 {
-    if(this->rotation_etat==0)
+    if(!this->est_en_collision_en_rotation_droite(grille))
     {
-        rotation_etat = this->nb_rotations_possibles-1;
+        if(this->rotation_etat==0)
+        {
+            rotation_etat = this->nb_rotations_possibles-1;
 
-    }else
-    {
-        rotation_etat--;
+        }else
+        {
+            rotation_etat--;
+        }
     }
+
 
 }
 
@@ -222,6 +231,55 @@ bool Figure::est_en_collision_a_droite(Grille * grille)
             return true;
         }
     }
+
+    return false;
+}
+
+bool Figure::est_en_collision_en_rotation_droite(Grille * grille)
+{
+    int future_rotation = rotation_etat-1;
+
+
+    if(future_rotation<0)
+    {
+            future_rotation= this->nb_rotations_possibles-1;
+    }
+
+    vector<Position> figure = this->cellules[future_rotation];
+
+    for(Position cellule: figure)
+    {
+        if(!grille->est_vide(cellule.ligne,cellule.colonne))
+        {
+            return true;
+        }
+    }
+
+    return false;
+
+}
+
+bool Figure::est_en_collision_en_rotation_gauche(Grille * grille)
+{
+    int future_rotation = rotation_etat+1;
+
+
+    if(future_rotation>this->nb_rotations_possibles-1)
+    {
+            future_rotation=0;
+
+    }
+
+    vector<Position> figure = this->cellules[future_rotation];
+
+        for(Position cellule: figure)
+        {
+            if(!grille->est_vide(cellule.ligne,cellule.colonne))
+            {
+                return true;
+            }
+        }
+
 
     return false;
 }

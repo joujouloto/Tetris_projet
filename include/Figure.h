@@ -39,8 +39,8 @@ class Figure
 
 
         virtual void maj_position() = 0;
-        void rotation_sens_antihoraire();
-        void rotation_sens_horaire();
+        void rotation_sens_antihoraire(Grille * grille);
+        void rotation_sens_horaire(Grille * grille);
 
         void descendre(Grille * grille);
         void aller_a_gauche(Grille * grille);
@@ -49,6 +49,9 @@ class Figure
         bool est_en_collision_en_bas(Grille * grille);
         bool est_en_collision_a_gauche(Grille * grille);
         bool est_en_collision_a_droite(Grille * grille);
+
+        bool est_en_collision_en_rotation_droite(Grille * grille);
+        bool est_en_collision_en_rotation_gauche(Grille * grille);
 
 
 
