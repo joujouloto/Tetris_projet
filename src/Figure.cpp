@@ -65,6 +65,10 @@ void Figure::dessiner(Grille * grille)
 
     }
 
+
+
+
+
 }
 
 void Figure::setPosition(Position p)
@@ -95,17 +99,17 @@ void Figure::effacer(Grille * grille)
 
 void Figure::descendre(Grille * grille)
 {
-    int nouvel_abscisse = origine_x+1;
-    int nouvelle_ordonne = origine_y;
+    int nouvel_abscisse_origine = origine_x+1;
+    int nouvelle_ordonne_origine = origine_y;
 
 
 
-    if(! grille->est_hors_grille(nouvel_abscisse,nouvelle_ordonne)
+    if(! grille->est_hors_grille(nouvel_abscisse_origine,nouvelle_ordonne_origine)
        &&
-        ! est_en_collision_avec_une_autre_figure(grille,nouvel_abscisse,nouvelle_ordonne)
+        ! est_en_collision_avec_une_autre_figure(grille,nouvel_abscisse_origine,nouvelle_ordonne_origine)
        )
     {
-        setPosition(nouvel_abscisse,nouvelle_ordonne);
+        setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
         maj_position();
     }
 }
@@ -137,17 +141,17 @@ void Figure::rotation_sens_horaire()
 
 void Figure::aller_a_gauche(Grille * grille)
 {
-    int nouvel_abscisse = origine_x;
-    int nouvelle_ordonne = origine_y-1;
+    int nouvel_abscisse_origine = origine_x;
+    int nouvelle_ordonne_origine = origine_y-1;
 
 
 
-    if(! grille->est_hors_grille(nouvel_abscisse,nouvelle_ordonne)
+    if(! grille->est_hors_grille(nouvel_abscisse_origine,nouvelle_ordonne_origine)
        &&
-        ! est_en_collision_avec_une_autre_figure(grille,nouvel_abscisse,nouvelle_ordonne)
+        ! est_en_collision_avec_une_autre_figure(grille,nouvel_abscisse_origine,nouvelle_ordonne_origine)
        )
     {
-        setPosition(nouvel_abscisse,nouvelle_ordonne-1);
+        setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine-1);
         maj_position();
     }
 
@@ -158,17 +162,17 @@ void Figure::aller_a_gauche(Grille * grille)
 
 void Figure::aller_a_droite(Grille * grille)
 {
-    int nouvel_abscisse = origine_x;
-    int nouvelle_ordonne = origine_y+1;
+    int nouvel_abscisse_origine = origine_x;
+    int nouvelle_ordonne_origine = origine_y+1;
 
 
 
-    if(! grille->est_hors_grille(nouvel_abscisse,nouvelle_ordonne)
+    if(! grille->est_hors_grille(nouvel_abscisse_origine,nouvelle_ordonne_origine)
        &&
-        ! est_en_collision_avec_une_autre_figure(grille,nouvel_abscisse,nouvelle_ordonne)
+        ! est_en_collision_avec_une_autre_figure(grille,nouvel_abscisse_origine,nouvelle_ordonne_origine)
        )
     {
-        setPosition(nouvel_abscisse,nouvelle_ordonne);
+        setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
         maj_position();
     }
 
