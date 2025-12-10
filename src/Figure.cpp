@@ -154,7 +154,7 @@ void Figure::aller_a_gauche(Grille * grille)
 
        )
     {
-        setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine-1);
+        setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
         maj_position();
     }
 
