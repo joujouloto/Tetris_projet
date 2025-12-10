@@ -16,7 +16,7 @@
 #include "SFigure.h"
 #include "TFigure.h"
 
-#define LARGEUR_PREMIERE_FENETRE 640
+#define LARGEUR_PREMIERE_FENETRE 1120
 #define HAUTEUR_PREMIERE_FENETRE 860
 #define ORIGINE_POS_X_PREMIERE_FENETRE 750
 #define ORIGINE_POS_Y_PREMIERE_FENETRE 50
@@ -179,11 +179,14 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
     if(temps_courant > 1.5*UNE_SECONDE + dernier_temps   )
     {
-        grille.afficher();
-        cout << endl << endl;
+        /*grille.afficher();
+        cout << endl << endl;*/
     }
 
-    un_carre.dessiner(&grille);
+
+
+
+   // un_carre.dessiner(&grille);
     une_barre.dessiner(&grille);
     une_jfigure.dessiner(&grille);
     une_lfigure.dessiner(&grille);
@@ -204,13 +207,19 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
         dernier_temps = temps_courant;
 
-        /*
-        une_barre.effacer(&grille);
-        une_barre.descendre();
-        une_barre.rotation_sens_antihoraire();
-        une_barre.aller_a_gauche();
+
+        //une_barre.effacer(&grille);
+        une_barre.descendre(&grille);
+
+        cout << une_barre.origine_x << endl;
+        cout << une_barre.origine_y << endl;
 
 
+
+        //une_barre.rotation_sens_antihoraire();
+        //une_barre.aller_a_gauche(&grille);
+
+/*
         un_carre.effacer(&grille);
         un_carre.aller_a_droite();
 
@@ -227,8 +236,8 @@ SDL_AppResult SDL_AppIterate(void *appstate)
        /* une_sfigure.effacer(&grille);
         une_sfigure.rotation_sens_horaire();
 */
-        une_tfigure.effacer(&grille);
-        une_tfigure.rotation_sens_horaire();
+        /*une_tfigure.effacer(&grille);
+        une_tfigure.rotation_sens_horaire();*/
 
     }
 

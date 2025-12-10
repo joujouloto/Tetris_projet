@@ -16,9 +16,9 @@ class Couleur
         Couleur(int p_couleur);
         vector<Couleur> get_cellules_couleur();
 
-        float rouge;
-        float vert;
-        float bleu;
+        int rouge;
+        int vert;
+        int bleu;
         string nom_couleur;
         int id;
 

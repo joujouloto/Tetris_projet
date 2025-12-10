@@ -24,6 +24,8 @@ class Grille
         int taille_pixels_cellule;
         Couleur couleur_fonds;
 
+        bool est_hors_grille(int num_ligne, int num_colonne);
+
     protected:
 
 

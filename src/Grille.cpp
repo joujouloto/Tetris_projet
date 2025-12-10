@@ -20,7 +20,7 @@ Grille::Grille()
 
     initialiser();
 
-    this->taille_pixels_cellule = 30;
+    this->taille_pixels_cellule = 40;
 
     initialiser();
 
@@ -30,8 +30,6 @@ Grille::Grille()
 void Grille::initialiser()
 {
     vector<int> contenu_ligne;
-
-    int compteur_couleur = 0;
 
 
     for(int i=0 ; i< nb_lignes; i++)
@@ -71,7 +69,22 @@ void Grille::afficher()
 
 void Grille::dessiner(int num_ligne, int num_colonne, Couleur c)
 {
-
     contenu[num_ligne][num_colonne] = c.id;
 }
+
+bool Grille::est_hors_grille(int num_ligne, int num_colonne)
+{
+    bool est_en_dehors = false;
+
+    if( num_ligne<0 || num_ligne >= this->nb_lignes || num_colonne < 0 || num_colonne >= this->nb_colonnes)
+    {
+        est_en_dehors = true;
+    }
+
+    return est_en_dehors;
+
+
+
+}
+
 

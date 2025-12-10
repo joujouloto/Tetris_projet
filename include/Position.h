@@ -5,6 +5,7 @@
 class Position
 {
     public:
+        Position ();
         Position(int p_ligne, int p_colonne);
         int ligne;
         int colonne;
