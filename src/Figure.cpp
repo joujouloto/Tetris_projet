@@ -59,6 +59,7 @@ void Figure::dessiner(Grille * grille)
 {
     vector<Position> figure = this->cellules[this->rotation_etat];
 
+
     for(Position cellule: figure)
     {
         grille->dessiner(cellule.ligne,cellule.colonne,this->couleur_cellule);
@@ -104,13 +105,14 @@ void Figure::descendre(Grille * grille)
 
 
 
-    if(! grille->est_hors_grille(nouvel_abscisse_origine,nouvelle_ordonne_origine)
-       &&
-        ! est_en_collision_avec_une_autre_figure(grille,nouvel_abscisse_origine,nouvelle_ordonne_origine)
+    if( grille->est_dans_la_grille(nouvel_abscisse_origine,nouvelle_ordonne_origine)
+        &&
+        !est_en_collision_en_bas(grille)
        )
     {
         setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
         maj_position();
+
     }
 }
 
@@ -146,9 +148,10 @@ void Figure::aller_a_gauche(Grille * grille)
 
 
 
-    if(! grille->est_hors_grille(nouvel_abscisse_origine,nouvelle_ordonne_origine)
-       &&
-        ! est_en_collision_avec_une_autre_figure(grille,nouvel_abscisse_origine,nouvelle_ordonne_origine)
+    if( grille->est_dans_la_grille(nouvel_abscisse_origine,nouvelle_ordonne_origine)
+    &&
+        ! this->est_en_collision_a_gauche(grille)
+
        )
     {
         setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine-1);
@@ -167,42 +170,59 @@ void Figure::aller_a_droite(Grille * grille)
 
 
 
-    if(! grille->est_hors_grille(nouvel_abscisse_origine,nouvelle_ordonne_origine)
-       &&
-        ! est_en_collision_avec_une_autre_figure(grille,nouvel_abscisse_origine,nouvelle_ordonne_origine)
+    if( grille->est_dans_la_grille(nouvel_abscisse_origine,nouvelle_ordonne_origine)
+    &&
+       !this->est_en_collision_a_droite(grille)
+
        )
     {
         setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
         maj_position();
     }
-
-
-
-
-
 }
 
-bool Figure::est_en_collision_avec_une_autre_figure(Grille * grille, int p_ligne, int p_colonne)
+bool Figure::est_en_collision_en_bas(Grille * grille)
 {
-    vector<Position> figure = this->cellules[this->rotation_etat];
-    bool en_collision = false;
-    Position p;
+    vector<Position> figure = this->cellules[rotation_etat];
 
-
-    for(vector<Position>::iterator it = figure.begin();it!=figure.end()&&!en_collision;it++)
+    for(Position cellule: figure)
     {
-        p = (*it);
-
-
-        if( grille->contenu[p_ligne][p_colonne]!=grille->couleur_fonds.id
-           &&
-            grille->contenu[p.ligne][p.colonne] != grille->contenu[p_ligne][p_colonne])
+        if(!grille->est_vide(cellule.ligne+1,cellule.colonne))
         {
-
-            cout << "p.ligne " <<p.ligne << " p.colonne " << p.colonne <<" en collision" << endl;
-            en_collision =  true;
+            return true;
         }
     }
 
-    return en_collision;
+    return false;
 }
+
+bool Figure::est_en_collision_a_gauche(Grille * grille)
+{
+    vector<Position> figure = this->cellules[rotation_etat];
+
+    for(Position cellule: figure)
+    {
+        if(!grille->est_vide(cellule.ligne,cellule.colonne-1))
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool Figure::est_en_collision_a_droite(Grille * grille)
+{
+    vector<Position> figure = this->cellules[rotation_etat];
+
+    for(Position cellule: figure)
+    {
+        if(!grille->est_vide(cellule.ligne,cellule.colonne+1))
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+

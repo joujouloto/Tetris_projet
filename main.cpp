@@ -188,12 +188,12 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
    // un_carre.dessiner(&grille);
     une_barre.dessiner(&grille);
-    une_jfigure.dessiner(&grille);
-    une_lfigure.dessiner(&grille);
+   // une_jfigure.dessiner(&grille);
+    //une_lfigure.dessiner(&grille);
 
     une_sfigure.dessiner(&grille);
-    une_zfigure.dessiner(&grille);
-    une_tfigure.dessiner(&grille);
+   // une_zfigure.dessiner(&grille);
+   // une_tfigure.dessiner(&grille);
 
 
     dessiner_grille();
@@ -208,11 +208,10 @@ SDL_AppResult SDL_AppIterate(void *appstate)
         dernier_temps = temps_courant;
 
 
-        //une_barre.effacer(&grille);
+        une_barre.effacer(&grille);
         une_barre.descendre(&grille);
 
-        cout << une_barre.origine_x << endl;
-        cout << une_barre.origine_y << endl;
+
 
 
 

@@ -46,7 +46,9 @@ class Figure
         void aller_a_gauche(Grille * grille);
         void aller_a_droite(Grille * grille);
 
-        bool est_en_collision_avec_une_autre_figure(Grille * grille, int p_ligne, int p_colonne);
+        bool est_en_collision_en_bas(Grille * grille);
+        bool est_en_collision_a_gauche(Grille * grille);
+        bool est_en_collision_a_droite(Grille * grille);
 
 
 

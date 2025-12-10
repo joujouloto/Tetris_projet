@@ -72,19 +72,23 @@ void Grille::dessiner(int num_ligne, int num_colonne, Couleur c)
     contenu[num_ligne][num_colonne] = c.id;
 }
 
-bool Grille::est_hors_grille(int num_ligne, int num_colonne)
+bool Grille::est_dans_la_grille(int num_ligne, int num_colonne)
 {
-    bool est_en_dehors = false;
-
     if( num_ligne<0 || num_ligne >= this->nb_lignes || num_colonne < 0 || num_colonne >= this->nb_colonnes)
     {
-        est_en_dehors = true;
+        return false;
     }
 
-    return est_en_dehors;
+    return true;
+}
 
-
-
+bool Grille::est_vide(int num_ligne, int num_colonne)
+{
+    if( contenu[num_ligne][num_colonne]!=couleur_fonds.id)
+    {
+        return false;
+    }
+    return true;
 }
 
 
