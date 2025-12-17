@@ -7,6 +7,7 @@ class JFigure: public Figure
 {
     public:
         JFigure(int origine_ligne, int origine_colonne, int p_couleur);
+        JFigure ();
 
         void maj_position() override;
 

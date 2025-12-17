@@ -19,6 +19,22 @@ Barre::Barre(int origine_ligne, int origine_colonne, int p_couleur)
 
 }
 
+Barre::Barre()
+{
+    int noir = -1;
+
+    this->id = B_arre;
+    Couleur c(noir);//noir
+
+    this->nb_rotations_possibles = 2;
+
+    this->origine_x = -1;
+    this->origine_y = -1;
+
+}
+
+
+
 
 void Barre::maj_position()
 {

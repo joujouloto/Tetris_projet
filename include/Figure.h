@@ -38,7 +38,7 @@ class Figure
         void setPosition(int p_x, int p_y);
 
 
-        virtual void maj_position() = 0;
+        virtual void maj_position();
         void rotation_sens_antihoraire(Grille * grille);
         void rotation_sens_horaire(Grille * grille);
 

@@ -20,6 +20,21 @@ TFigure::TFigure(int origine_ligne, int origine_colonne, int p_couleur)
 
 }
 
+TFigure::TFigure()
+{
+    int noir = -1;
+
+    Couleur c(noir);
+
+    this->id = T_Figure;
+    this->couleur_cellule = c;
+
+    this->origine_x = -1;
+    this->origine_y = -1;
+
+    this->nb_rotations_possibles = 4;
+}
+
 
 
 void TFigure::maj_position()

@@ -19,6 +19,21 @@ Carre::Carre(int origine_ligne, int origine_colonne, int p_couleur)
 
 }
 
+Carre::Carre()
+{
+    int noir = -1;
+
+    Couleur c(noir);
+    this->id = C_arre;
+    this->couleur_cellule = c;
+
+    this->nb_rotations_possibles = 1;
+
+    this->origine_x = -1;
+    this->origine_y = -1;
+
+}
+
 void Carre::maj_position()
 {
     int origine_ligne  = this->origine_x;

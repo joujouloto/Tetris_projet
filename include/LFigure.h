@@ -7,6 +7,7 @@ class LFigure: public Figure
 {
     public:
         LFigure(int origine_ligne, int origine_colonne, int p_couleur);
+        LFigure();
 
         void maj_position() override;
 

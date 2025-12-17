@@ -51,7 +51,7 @@ SDL_Renderer *rendu_fenetre_principale;
 random_device rd;
 mt19937 gen(rd());
 
-uniform_int_distribution<> dis(0, 4);//le nombre aléatoire peut tomber entre 1 et 10
+uniform_int_distribution<> dis(0, 4);//le nombre aléatoire peut tomber entre 1 et 4
 
 
 Grille grille;

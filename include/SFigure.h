@@ -7,6 +7,7 @@ class SFigure: public Figure
 {
     public:
         SFigure(int origine_ligne, int origine_colonne, int p_couleur);
+        SFigure();
 
         void maj_position() override;
 

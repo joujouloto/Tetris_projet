@@ -116,7 +116,7 @@ void Figure::descendre(Grille * grille)
     }
 }
 
-void Figure::rotation_sens_antihoraire(Grille * grille) // de droite à gauche attention la barre n'a que 2 rotations possibles
+void Figure::rotation_sens_antihoraire(Grille * grille) //  attention la barre n'a que 2 rotations possibles
 //donc antihoraire est pareil que horaire
 {
     if(!this->est_en_collision_en_rotation_gauche(grille))
@@ -132,7 +132,7 @@ void Figure::rotation_sens_antihoraire(Grille * grille) // de droite à gauche at
     }
 }
 
-void Figure::rotation_sens_horaire(Grille * grille) // de gauche à droite attention la barre n'a que 2 rotations possibles
+void Figure::rotation_sens_horaire(Grille * grille) //  attention la barre n'a que 2 rotations possibles
 //donc antihoraire est pareil que horaire
 {
     if(!this->est_en_collision_en_rotation_droite(grille))
@@ -282,5 +282,10 @@ bool Figure::est_en_collision_en_rotation_gauche(Grille * grille)
 
 
     return false;
+}
+
+void Figure::maj_position()
+{
+
 }
 
