@@ -42,9 +42,9 @@ class Figure
         void rotation_sens_antihoraire(Grille * grille);
         void rotation_sens_horaire(Grille * grille);
 
-        void descendre(Grille * grille);
-        void aller_a_gauche(Grille * grille);
-        void aller_a_droite(Grille * grille);
+        void descendre();
+        void aller_a_gauche();
+        void aller_a_droite();
 
         bool est_en_collision_en_bas(Grille * grille);
         bool est_en_collision_a_gauche(Grille * grille);

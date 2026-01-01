@@ -98,22 +98,18 @@ void Figure::effacer(Grille * grille)
 
 }
 
-void Figure::descendre(Grille * grille)
+void Figure::descendre()
 {
     int nouvel_abscisse_origine = origine_x+1;
     int nouvelle_ordonne_origine = origine_y;
 
 
 
-    if( grille->est_dans_la_grille(nouvel_abscisse_origine,nouvelle_ordonne_origine)
-        &&
-        !est_en_collision_en_bas(grille)
-       )
-    {
+
         setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
         maj_position();
 
-    }
+
 }
 
 void Figure::rotation_sens_antihoraire(Grille * grille) //  attention la barre n'a que 2 rotations possibles
@@ -150,44 +146,27 @@ void Figure::rotation_sens_horaire(Grille * grille) //  attention la barre n'a q
 
 }
 
-void Figure::aller_a_gauche(Grille * grille)
+void Figure::aller_a_gauche()
 {
     int nouvel_abscisse_origine = origine_x;
     int nouvelle_ordonne_origine = origine_y-1;
 
 
-
-    if( grille->est_dans_la_grille(nouvel_abscisse_origine,nouvelle_ordonne_origine)
-    &&
-        ! this->est_en_collision_a_gauche(grille)
-
-       )
-    {
-        setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
-        maj_position();
-    }
-
-
-
-
+    setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
+    maj_position();
 }
 
-void Figure::aller_a_droite(Grille * grille)
+void Figure::aller_a_droite()
 {
     int nouvel_abscisse_origine = origine_x;
     int nouvelle_ordonne_origine = origine_y+1;
 
 
 
-    if( grille->est_dans_la_grille(nouvel_abscisse_origine,nouvelle_ordonne_origine)
-    &&
-       !this->est_en_collision_a_droite(grille)
 
-       )
-    {
         setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
         maj_position();
-    }
+
 }
 
 bool Figure::est_en_collision_en_bas(Grille * grille)

@@ -3,13 +3,14 @@
 
 
 #include "Figure.h"
+#include "Jeu.h"
 #include "Grille.h"
 #include "Couleur.h"
 #include "Position.h"
+
+
 #include "Carre.h"
 #include "Barre.h"
-
-
 #include "JFigure.h"
 #include "LFigure.h"
 #include "ZFigure.h"
@@ -47,28 +48,7 @@ SDL_Window *fenetre_principale;
 SDL_Renderer *rendu_fenetre_principale;
 
 
-
-random_device rd;
-mt19937 gen(rd());
-
-uniform_int_distribution<> dis(0, 4);//le nombre aléatoire peut tomber entre 1 et 4
-
-
-Grille grille;
-
-Carre un_carre(2,0,orange);
-Barre une_barre(6,4,gris_clair);
-JFigure une_jfigure(2,12,violet);
-LFigure une_lfigure(10,10,r_ouge);
-
-TFigure une_tfigure(10,3,cyan);
-SFigure une_sfigure(7,7,b_leu);
-ZFigure une_zfigure(15,5,jaune);
-
-
-enum deplacement{bas,rotation};
-
-int deplacement =bas;
+Jeu jeu;
 
 
 void dessiner_case(SDL_FRect rect,int pos_x, int pos_y, int cellule_taille, Couleur c)
@@ -97,18 +77,18 @@ void dessiner_case(SDL_FRect rect,int pos_x, int pos_y, int cellule_taille, Coul
 
 void dessiner_grille()
 {
-    SDL_FRect rects[grille.nb_lignes][grille.nb_colonnes];
+    SDL_FRect rects[jeu.grille.nb_lignes][jeu.grille.nb_colonnes];
 
 
 
 
-    for(int ligne = 0 ; ligne < grille.nb_lignes ; ligne++)
+    for(int ligne = 0 ; ligne < jeu.grille.nb_lignes ; ligne++)
     {
 
-        for(int colonne = 0 ; colonne < grille.nb_colonnes ; colonne++)
+        for(int colonne = 0 ; colonne < jeu.grille.nb_colonnes ; colonne++)
         {
-            Couleur c = Couleur (grille.contenu[ligne][colonne]);
-            dessiner_case(rects[ligne][colonne],colonne*grille.taille_pixels_cellule, ligne*grille.taille_pixels_cellule, grille.taille_pixels_cellule,c);
+            Couleur c = Couleur (jeu.grille.contenu[ligne][colonne]);
+            dessiner_case(rects[ligne][colonne],colonne*jeu.grille.taille_pixels_cellule, ligne*jeu.grille.taille_pixels_cellule, jeu.grille.taille_pixels_cellule,c);
 
         }
 
@@ -165,6 +145,26 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
     if (event->type == SDL_EVENT_QUIT) {
         return SDL_APP_SUCCESS;  /* end the program, reporting success to the OS. */
     }
+
+    switch(event->key.scancode)
+    {
+        case SDLK_DOWN:
+            jeu.deplacer_vers_le_bas_la_figure_courante();
+            break;
+
+        case SDLK_LEFT:
+            jeu.deplacer_vers_la_gauche_la_figure_courante();
+            break;
+
+        case SDLK_RIGHT:
+            jeu.deplacer_vers_la_droite_la_figure_courante();
+            break;
+    }
+
+
+
+
+
     return SDL_APP_CONTINUE;  /* carry on with the program! */
 }
 
@@ -186,24 +186,10 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     }
 
 
-
-
-   // un_carre.dessiner(&grille);
-    une_barre.dessiner(&grille);
-   // une_jfigure.dessiner(&grille);
-    //une_lfigure.dessiner(&grille);
-
-    une_sfigure.dessiner(&grille);
-   // une_zfigure.dessiner(&grille);
-   // une_tfigure.dessiner(&grille);
-
-
     dessiner_grille();
 
 
     SDL_RenderPresent(rendu_fenetre_principale);
-
-
 
 
     if(temps_courant > 1.5*UNE_SECONDE + dernier_temps   )
@@ -211,49 +197,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
 
         dernier_temps = temps_courant;
-
-
-        une_barre.effacer(&grille);
-
-        if(deplacement==bas)
-        {
-            une_barre.descendre(&grille);
-            deplacement=rotation;
-        }
-        else
-        {
-            une_barre.rotation_sens_antihoraire(&grille);
-            deplacement=bas;
-        }
-
-
-
-
-
-
-
-        //une_barre.rotation_sens_antihoraire();
-        //une_barre.aller_a_gauche(&grille);
-
-/*
-        un_carre.effacer(&grille);
-        un_carre.aller_a_droite();
-
-
-
-        une_jfigure.effacer(&grille);
-        une_jfigure.descendre();
-        une_jfigure.rotation_sens_antihoraire();
-
-        une_lfigure.effacer(&grille);
-        une_lfigure.rotation_sens_horaire();
-
-*/
-       /* une_sfigure.effacer(&grille);
-        une_sfigure.rotation_sens_horaire();
-*/
-        /*une_tfigure.effacer(&grille);
-        une_tfigure.rotation_sens_horaire();*/
+        jeu.deplacer_vers_le_bas_la_figure_courante();
 
     }
 

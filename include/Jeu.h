@@ -3,32 +3,32 @@
 
 #include "Grille.h"
 #include "Figure.h"
+#include <vector>
 
-#include <SDL3/SDL.h>
-#include <SDL3/SDL_main.h>
-#include <SDL3_image/SDL_image.h>
 
 class Jeu
 {
     public:
         Jeu();
         Grille grille;
-        Figure get_figure_aleatoire();
-        vector<Figure> figures;
-        vector<Figure> get_toutes_les_figures();
 
+
+        Figure get_figure_aleatoire();
+        vector<Figure> get_tous_les_figures();
         void dessiner();
+
+
+        void deplacer_vers_le_bas_la_figure_courante();
+        void deplacer_vers_la_droite_la_figure_courante();
+        void deplacer_vers_la_gauche_la_figure_courante();
 
 
     protected:
 
     private:
-
+        vector <Figure> figures;
         Figure figure_courante;
-        Figure prochaine_figure;
-
-
-
+        Figure figure_suivante;
 
 };
 
