@@ -10,12 +10,14 @@ class Jeu
 {
     public:
         Jeu();
-        Grille grille;
+        Grille * grille;
 
+
+        vector <Couleur> couleurs;
 
         Figure get_figure_aleatoire();
         vector<Figure> get_tous_les_figures();
-        void dessiner();
+        void dessiner_figure_courante();
 
 
         void deplacer_vers_le_bas_la_figure_courante();
@@ -23,12 +25,18 @@ class Jeu
         void deplacer_vers_la_gauche_la_figure_courante();
 
 
-    protected:
 
-    private:
+        Couleur set_figure_courante_couleur_aleatoire();
+
         vector <Figure> figures;
         Figure figure_courante;
         Figure figure_suivante;
+
+
+    protected:
+
+    private:
+
 
 };
 

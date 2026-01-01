@@ -31,9 +31,6 @@ class Figure
         string to_string();
         Couleur couleur_cellule;
 
-        void dessiner(Grille * grille);
-        void effacer(Grille * grille);
-
         void setPosition(Position p);
         void setPosition(int p_x, int p_y);
 
@@ -53,7 +50,8 @@ class Figure
         bool est_en_collision_en_rotation_droite(Grille * grille);
         bool est_en_collision_en_rotation_gauche(Grille * grille);
 
-
+        void setCouleur(Couleur c);
+        Couleur getCouleur();
 
 
     protected:

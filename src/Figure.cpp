@@ -16,7 +16,7 @@ Figure::Figure()
 {
     cellule_taille = 30;
     rotation_etat = 0;
-    this->couleur_cellule = -1;
+    this->couleur_cellule = noir;
 
     this->origine_x=0;
     this->origine_y=0;
@@ -32,7 +32,7 @@ Figure::Figure(int origine_ligne, int origine_colonne)
 {
     cellule_taille = 30;
     rotation_etat = 0;
-    this->couleur_cellule = -1;
+    this->couleur_cellule = noir;
 
     this->origine_x=origine_ligne;
     this->origine_y=origine_colonne;
@@ -55,23 +55,6 @@ string Figure::to_string()
 
 }
 
-void Figure::dessiner(Grille * grille)
-{
-    vector<Position> figure = this->cellules[this->rotation_etat];
-
-
-    for(Position cellule: figure)
-    {
-        grille->dessiner(cellule.ligne,cellule.colonne,this->couleur_cellule);
-
-    }
-
-
-
-
-
-}
-
 void Figure::setPosition(Position p)
 {
     this->origine_x = p.ligne;
@@ -86,28 +69,13 @@ void Figure::setPosition(int p_x, int p_y)
     this->origine_y = p_y;
 }
 
-void Figure::effacer(Grille * grille)
-{
-    vector<Position> figure = this->cellules[this->rotation_etat];
-
-    for(Position cellule: figure)
-    {
-        grille->dessiner(cellule.ligne,cellule.colonne,grille->couleur_fonds);
-
-    }
-
-}
-
 void Figure::descendre()
 {
     int nouvel_abscisse_origine = origine_x+1;
     int nouvelle_ordonne_origine = origine_y;
 
-
-
-
-        setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
-        maj_position();
+    setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
+    maj_position();
 
 
 }
@@ -266,5 +234,15 @@ bool Figure::est_en_collision_en_rotation_gauche(Grille * grille)
 void Figure::maj_position()
 {
 
+}
+
+void Figure::setCouleur(Couleur c)
+{
+    this->couleur_cellule = c;
+}
+
+Couleur Figure::getCouleur()
+{
+    return this->couleur_cellule;
 }
 

@@ -15,20 +15,24 @@ LFigure::LFigure(int origine_ligne, int origine_colonne, int p_couleur)
     this->nb_rotations_possibles = 4;
 
     maj_position();
+
+    this->nom_forme = "LFigure";
 }
 
 LFigure::LFigure()
 {
-    int noir = -1;
-
     Couleur c(noir);
     this->id = J_Figure;
     this->couleur_cellule = c;
 
-    this->origine_x = -1;
-    this->origine_y = -1;
+    this->origine_x = 0;
+    this->origine_y = 0;
 
     this->nb_rotations_possibles = 4;
+
+    this->nom_forme = "LFigure";
+
+    maj_position();
 }
 
 

@@ -17,21 +17,25 @@ SFigure::SFigure(int origine_ligne, int origine_colonne, int p_couleur)
 
     maj_position();
 
+    this->nom_forme = "SFigure";
+
 }
 
 SFigure::SFigure()
 {
-    int noir = -1;
-
     Couleur c(noir);
 
     this->id = S_Figure;
     this->couleur_cellule = c;
 
-    this->origine_x = -1;
-    this->origine_y = -1;
+    this->origine_x = 0;
+    this->origine_y = 0;
 
     this->nb_rotations_possibles = 2;
+
+    this->nom_forme = "SFigure";
+
+    maj_position();
 }
 
 

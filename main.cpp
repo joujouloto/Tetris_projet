@@ -77,18 +77,18 @@ void dessiner_case(SDL_FRect rect,int pos_x, int pos_y, int cellule_taille, Coul
 
 void dessiner_grille()
 {
-    SDL_FRect rects[jeu.grille.nb_lignes][jeu.grille.nb_colonnes];
+    SDL_FRect rects[jeu.grille->nb_lignes][jeu.grille->nb_colonnes];
 
 
 
 
-    for(int ligne = 0 ; ligne < jeu.grille.nb_lignes ; ligne++)
+    for(int ligne = 0 ; ligne < jeu.grille->nb_lignes ; ligne++)
     {
 
-        for(int colonne = 0 ; colonne < jeu.grille.nb_colonnes ; colonne++)
+        for(int colonne = 0 ; colonne < jeu.grille->nb_colonnes ; colonne++)
         {
-            Couleur c = Couleur (jeu.grille.contenu[ligne][colonne]);
-            dessiner_case(rects[ligne][colonne],colonne*jeu.grille.taille_pixels_cellule, ligne*jeu.grille.taille_pixels_cellule, jeu.grille.taille_pixels_cellule,c);
+            Couleur c = Couleur (jeu.grille->contenu[ligne][colonne]);
+            dessiner_case(rects[ligne][colonne],colonne*jeu.grille->taille_pixels_cellule, ligne*jeu.grille->taille_pixels_cellule, jeu.grille->taille_pixels_cellule,c);
 
         }
 
@@ -179,14 +179,20 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_SetRenderDrawColor(rendu_fenetre_principale, 150, 150, 150, SDL_ALPHA_OPAQUE);  /* black, full alpha */
     SDL_RenderClear(rendu_fenetre_principale);  /* start with a blank canvas. */
 
-    if(temps_courant > 1.5*UNE_SECONDE + dernier_temps   )
-    {
-        /*grille.afficher();
-        cout << endl << endl;*/
-    }
 
+     if(temps_courant > 1.5*UNE_SECONDE + dernier_temps   && tour ==1 )
+     {
+            jeu.grille->afficher();
+            cout << endl << endl;
+            tour++;
+     }
+
+    //jeu.figure_courante.dessiner(jeu.grille);
 
     dessiner_grille();
+
+
+
 
 
     SDL_RenderPresent(rendu_fenetre_principale);
@@ -198,6 +204,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
         dernier_temps = temps_courant;
         jeu.deplacer_vers_le_bas_la_figure_courante();
+
 
     }
 

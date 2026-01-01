@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1765396299 source:c:\projets_cplusplus\tetris_projet\main.cpp
+1767292432 source:c:\projets_cplusplus\tetris_projet\main.cpp
 	<iostream>
 	<random>
 	"Figure.h"
+	"Jeu.h"
 	"Grille.h"
 	"Couleur.h"
 	"Position.h"
@@ -17,7 +18,7 @@
 	<SDL3/SDL_main.h>
 	<SDL3_image/SDL_image.h>
 
-1767279474 source:c:\projets_cplusplus\tetris_projet\src\figure.cpp
+1767292215 source:c:\projets_cplusplus\tetris_projet\src\figure.cpp
 	"Figure.h"
 	<iostream>
 	<sstream>
@@ -27,7 +28,7 @@
 	"Couleur.h"
 	"Grille.h"
 
-1767279325 c:\projets_cplusplus\tetris_projet\include\figure.h
+1767290943 c:\projets_cplusplus\tetris_projet\include\figure.h
 	<string>
 	<map>
 	"Couleur.h"
@@ -531,7 +532,7 @@
 	<SDL3/SDL_begin_code.h>
 	<SDL3/SDL_close_code.h>
 
-1765387135 source:c:\projets_cplusplus\tetris_projet\src\grille.cpp
+1767288296 source:c:\projets_cplusplus\tetris_projet\src\grille.cpp
 	"Grille.h"
 	<iostream>
 	"Couleur.h"
@@ -545,21 +546,21 @@
 
 1765359405 c:\projets_cplusplus\tetris_projet\include\position.h
 
-1764598221 source:c:\projets_cplusplus\tetris_projet\src\couleur.cpp
+1767291321 source:c:\projets_cplusplus\tetris_projet\src\couleur.cpp
 	"Couleur.h"
 
-1764828775 c:\projets_cplusplus\tetris_projet\include\couleur.h
+1767291238 c:\projets_cplusplus\tetris_projet\include\couleur.h
 	<string>
 	<vector>
 
-1765956841 source:c:\projets_cplusplus\tetris_projet\src\carre.cpp
+1767292273 source:c:\projets_cplusplus\tetris_projet\src\carre.cpp
 	"Carre.h"
 	"Figure.h"
 
 1765956183 c:\projets_cplusplus\tetris_projet\include\carre.h
 	"Figure.h"
 
-1765956274 source:c:\projets_cplusplus\tetris_projet\src\barre.cpp
+1767292265 source:c:\projets_cplusplus\tetris_projet\src\barre.cpp
 	"Barre.h"
 
 1765955973 c:\projets_cplusplus\tetris_projet\include\barre.h
@@ -569,34 +570,34 @@
 1765956357 c:\projets_cplusplus\tetris_projet\include\jfigure.h
 	"Figure.h"
 
-1765956901 source:c:\projets_cplusplus\tetris_projet\src\lfigure.cpp
+1767292286 source:c:\projets_cplusplus\tetris_projet\src\lfigure.cpp
 	"LFigure.h"
 
 1765956603 c:\projets_cplusplus\tetris_projet\include\lfigure.h
 	"Figure.h"
 
-1765956905 source:c:\projets_cplusplus\tetris_projet\src\sfigure.cpp
+1767292303 source:c:\projets_cplusplus\tetris_projet\src\sfigure.cpp
 	"SFigure.h"
 
 1765956704 c:\projets_cplusplus\tetris_projet\include\sfigure.h
 	"Figure.h"
 
-1765957318 source:c:\projets_cplusplus\tetris_projet\src\zfigure.cpp
+1767292301 source:c:\projets_cplusplus\tetris_projet\src\zfigure.cpp
 	"ZFigure.h"
 
 1765957057 c:\projets_cplusplus\tetris_projet\include\zfigure.h
 	"Figure.h"
 
-1765956899 source:c:\projets_cplusplus\tetris_projet\src\jfigure.cpp
+1767292303 source:c:\projets_cplusplus\tetris_projet\src\jfigure.cpp
 	"JFigure.h"
 
-1765957034 source:c:\projets_cplusplus\tetris_projet\src\tfigure.cpp
+1767292303 source:c:\projets_cplusplus\tetris_projet\src\tfigure.cpp
 	"TFigure.h"
 
 1765956895 c:\projets_cplusplus\tetris_projet\include\tfigure.h
 	"Figure.h"
 
-1767284856 source:c:\projets_cplusplus\tetris_projet\src\jeu.cpp
+1767292149 source:c:\projets_cplusplus\tetris_projet\src\jeu.cpp
 	"Jeu.h"
 	"Carre.h"
 	"Barre.h"
@@ -605,9 +606,11 @@
 	"ZFigure.h"
 	"SFigure.h"
 	"TFigure.h"
+	<iostream>
+	<chrono>
 	<random>
 
-1767280012 c:\projets_cplusplus\tetris_projet\include\jeu.h
+1767292500 c:\projets_cplusplus\tetris_projet\include\jeu.h
 	"Grille.h"
 	"Figure.h"
 	<vector>

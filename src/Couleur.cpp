@@ -135,13 +135,9 @@ Couleur::Couleur( int p_couleur)
         break;
 
 
-
-
-
-
         default:
         nom_couleur = "noir";
-        id=-1;
+        id = p_couleur;
 
         rouge=0;
         vert=0;
@@ -162,6 +158,7 @@ Couleur::Couleur( int p_couleur)
     vector<Couleur> couleurs;
 
 
+    couleurs.push_back (Couleur(noir));
     couleurs.push_back (Couleur(v_ert));
     couleurs.push_back (Couleur(r_ouge));
     couleurs.push_back (Couleur(jaune));

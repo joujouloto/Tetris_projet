@@ -55,7 +55,9 @@ void Grille::afficher()
 {
     vector<int> contenu_ligne;
 
-    for(vector<vector<int>>::iterator it = contenu.begin(); it!=contenu.end() ; it++ )
+    int i=1;
+
+    for(vector<vector<int>>::iterator it = contenu.begin(); it!=contenu.end()&&i==1 ; it++ )
     {
         contenu_ligne = (*it);
         for(vector<int>::iterator it_ligne = contenu_ligne.begin() ; it_ligne!=contenu_ligne.end(); it_ligne++)
@@ -63,6 +65,8 @@ void Grille::afficher()
             cout << (*it_ligne) << " ";
         }
         cout << endl;
+
+        i++;
     }
 }
 
