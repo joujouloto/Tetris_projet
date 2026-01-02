@@ -48,6 +48,7 @@
 		<Unit filename="include/Figure.h" />
 		<Unit filename="include/Grille.h" />
 		<Unit filename="include/JFigure.h" />
+		<Unit filename="include/Jeu.h" />
 		<Unit filename="include/LFigure.h" />
 		<Unit filename="include/Position.h" />
 		<Unit filename="include/SFigure.h" />
@@ -60,6 +61,7 @@
 		<Unit filename="src/Figure.cpp" />
 		<Unit filename="src/Grille.cpp" />
 		<Unit filename="src/JFigure.cpp" />
+		<Unit filename="src/Jeu.cpp" />
 		<Unit filename="src/LFigure.cpp" />
 		<Unit filename="src/Position.cpp" />
 		<Unit filename="src/SFigure.cpp" />

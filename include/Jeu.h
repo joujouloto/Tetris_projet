@@ -17,7 +17,10 @@ class Jeu
 
         Figure get_figure_aleatoire();
         vector<Figure> get_tous_les_figures();
+
+
         void dessiner_figure_courante();
+        void effacer_figure_courante();
 
 
         void deplacer_vers_le_bas_la_figure_courante();
@@ -29,8 +32,9 @@ class Jeu
         Couleur set_figure_courante_couleur_aleatoire();
 
         vector <Figure> figures;
-        Figure figure_courante;
+        Figure * figure_courante;
         Figure figure_suivante;
+
 
 
     protected:

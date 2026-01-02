@@ -180,22 +180,13 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_RenderClear(rendu_fenetre_principale);  /* start with a blank canvas. */
 
 
-     if(temps_courant > 1.5*UNE_SECONDE + dernier_temps   && tour ==1 )
+     if(temps_courant > 1.5*UNE_SECONDE + dernier_temps )
      {
             jeu.grille->afficher();
             cout << endl << endl;
-            tour++;
+
      }
 
-    //jeu.figure_courante.dessiner(jeu.grille);
-
-    dessiner_grille();
-
-
-
-
-
-    SDL_RenderPresent(rendu_fenetre_principale);
 
 
     if(temps_courant > 1.5*UNE_SECONDE + dernier_temps   )
@@ -206,10 +197,11 @@ SDL_AppResult SDL_AppIterate(void *appstate)
         jeu.deplacer_vers_le_bas_la_figure_courante();
 
 
+
+
     }
-
-
-
+    dessiner_grille();
+    SDL_RenderPresent(rendu_fenetre_principale);
 
 
 
