@@ -137,13 +137,27 @@ void Figure::aller_a_droite()
 
 }
 
+
+/*
+    La condition est toujours vrai pour le carre car je verifie sur chaque cellule si la cellule d'en bas
+    est occupee et bien sur c'est occupée car le carre est composee de 2 cellules en haut
+    et 2 cellules en bas.
+    Il faut verifier si les cellule les plus en bas rentrent en collision.
+
+
+    Retour en arriere, mal compris la condition est vide je me suis trompé et me suis mélangé les pinceaux
+    la fatigue, j'ai visionné le tuto raylib tetris il ne fait pas pareil que moi
+
+*/
+
+
 bool Figure::est_en_collision_en_bas(Grille * grille)
 {
     vector<Position> figure = this->cellules[rotation_etat];
 
     for(Position cellule: figure)
     {
-        if(!grille->est_vide(cellule.ligne+1,cellule.colonne))
+        if(!grille->est_vide(cellule.ligne,cellule.colonne))
         {
             return true;
         }
@@ -244,5 +258,14 @@ void Figure::setCouleur(Couleur c)
 Couleur Figure::getCouleur()
 {
     return this->couleur_cellule;
+}
+
+void Figure::monter()
+{
+    int nouvel_abscisse_origine = origine_x-1;
+    int nouvelle_ordonne_origine = origine_y;
+
+    setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
+    maj_position();
 }
 

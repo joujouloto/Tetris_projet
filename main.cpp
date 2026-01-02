@@ -150,6 +150,7 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
     {
         case SDLK_DOWN:
             jeu.deplacer_vers_le_bas_la_figure_courante();
+            cout << "bas" << endl;
             break;
 
         case SDLK_LEFT:
@@ -189,14 +190,12 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
 
 
-    if(temps_courant > 1.5*UNE_SECONDE + dernier_temps   )
+    if(temps_courant > 0.4*UNE_SECONDE + dernier_temps   )
     {
 
 
         dernier_temps = temps_courant;
         jeu.deplacer_vers_le_bas_la_figure_courante();
-
-
 
 
     }

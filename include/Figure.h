@@ -40,6 +40,9 @@ class Figure
         void rotation_sens_horaire(Grille * grille);
 
         void descendre();
+        void monter();//undo descendre
+
+
         void aller_a_gauche();
         void aller_a_droite();
 

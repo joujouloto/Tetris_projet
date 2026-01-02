@@ -6,6 +6,7 @@
 #include "Couleur.h"
 
 
+
 using namespace std;
 
 
@@ -25,7 +26,8 @@ class Grille
         Couleur couleur_fonds;
 
         bool est_vide(int num_ligne, int num_colonne);
-        bool est_dans_la_grille(int num_ligne, int num_colonne);
+
+
 
     protected:
 
