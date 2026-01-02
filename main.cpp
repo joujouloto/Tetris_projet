@@ -190,7 +190,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
 
 
-    if(temps_courant > 0.4*UNE_SECONDE + dernier_temps   )
+    if(temps_courant > 0.2*UNE_SECONDE + dernier_temps   )
     {
 
 

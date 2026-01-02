@@ -35,7 +35,7 @@ class Jeu
         Couleur set_figure_courante_couleur_aleatoire();
 
         vector <Figure> figures;
-        Figure * figure_courante;
+        Figure figure_courante;
         Figure figure_suivante;
 
 
