@@ -28,6 +28,9 @@ class Jeu
         void deplacer_vers_la_gauche_la_figure_courante();
 
         bool figure_courante_a_atteint_le_bas();
+        bool figure_courante_a_atteint_le_haut();
+
+
         bool figure_courante_en_collision_par_le_bas();
 
 

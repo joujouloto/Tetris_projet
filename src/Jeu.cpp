@@ -123,6 +123,7 @@ void Jeu::dessiner_figure_courante()
 
 void Jeu::deplacer_vers_le_bas_la_figure_courante()
 {
+
     effacer_figure_courante();
     figure_courante.descendre();
 
@@ -130,12 +131,14 @@ void Jeu::deplacer_vers_le_bas_la_figure_courante()
     {
         dessiner_figure_courante();
 
-    }else if ( figure_courante_a_atteint_le_bas() && !figure_courante_en_collision_par_le_bas() )
+    }else if ( figure_courante_a_atteint_le_bas() && !figure_courante_en_collision_par_le_bas()  )
     {
+
+
+
         effacer_figure_courante();
         figure_courante.monter();
         dessiner_figure_courante();
-
 
         figure_courante = get_figure_aleatoire();
 
@@ -146,6 +149,10 @@ void Jeu::deplacer_vers_le_bas_la_figure_courante()
     else if(!figure_courante_a_atteint_le_bas() && figure_courante_en_collision_par_le_bas())
     {
         figure_courante.monter();
+
+
+
+
         dessiner_figure_courante();
 
 
@@ -156,6 +163,17 @@ void Jeu::deplacer_vers_le_bas_la_figure_courante()
 
 
     }
+
+
+    //Ne rentre jamais dans la boucle
+    if(figure_courante_en_collision_par_le_bas())
+    {
+        int x=0;
+
+        x++;
+    }
+
+
 
 
 
@@ -253,13 +271,33 @@ bool Jeu::figure_courante_a_atteint_le_bas()
     return false;
 }
 
+bool Jeu::figure_courante_a_atteint_le_haut()
+{
+
+    vector<Position> figure = figure_courante.cellules[figure_courante.rotation_etat];
+
+    for(Position cellule: figure)
+    {
+        if( figure_courante.origine_x+cellule.ligne < 0 )
+        {
+            return true;
+        }
+    }
+
+    return false;
+
+}
+
+
+
 bool Jeu::figure_courante_en_collision_par_le_bas()
 {
     vector<Position> figure = figure_courante.cellules[figure_courante.rotation_etat];
 
     for(Position cellule: figure)
     {
-        if( grille->contenu[figure_courante.origine_x+cellule.ligne][figure_courante.origine_y+cellule.colonne]!= gris_fonce )
+        if( grille->contenu[figure_courante.origine_x+cellule.ligne][figure_courante.origine_y+cellule.colonne]!= gris_fonce
+           && grille->contenu[figure_courante.origine_x+cellule.ligne][figure_courante.origine_y+cellule.colonne]!= figure_courante.couleur_cellule.id )
         {
             return true;
         }
