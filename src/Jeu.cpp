@@ -50,6 +50,15 @@ Jeu::Jeu()
 Figure Jeu::get_figure_aleatoire()
 {
 
+
+    if(figures.empty())
+    {
+
+        figures = get_tous_les_figures();
+
+    }
+
+
     // construct a trivial random generator engine from a time-based seed:
     unsigned seed = chrono::system_clock::now().time_since_epoch().count();
     default_random_engine generator (seed);
@@ -67,9 +76,36 @@ Figure Jeu::get_figure_aleatoire()
     return figure;
 }
 
+/*
+return {Barre(),Carre(),JFigure(),LFigure(),SFigure(),TFigure(),ZFigure()};
+
+J'avais codé ceci mais ça plantait le programme, ça tombait sur un segmentation fault. Je vais copier
+comme j'ai fait pour get couleur de couleur
+
+Apparament c'est l'oubli de Figure devant chauqe figure qui fait planter le programme
+
+Je suppose qu'on fournit une variable y a pas d'adresse mémoire ça marche pour l'initialisation mais apres qu'il y ait plus de
+figures, ca plante
+
+*/
+
+
 vector<Figure> Jeu::get_tous_les_figures()
 {
-    return {Barre(),Carre(),JFigure(),LFigure(),SFigure(),TFigure(),ZFigure()};
+    vector<Figure> nouvelles_figures;
+
+
+    nouvelles_figures.push_back(Barre());
+    nouvelles_figures.push_back(Carre());
+    nouvelles_figures.push_back(JFigure());
+    nouvelles_figures.push_back(LFigure());
+    nouvelles_figures.push_back(SFigure());
+    nouvelles_figures.push_back(TFigure());
+    nouvelles_figures.push_back(ZFigure());
+
+    return nouvelles_figures;
+
+    //return {Barre(),Carre(),JFigure(),LFigure(),SFigure(),TFigure(),ZFigure()}; CA FAIT PLANTER!!!
 }
 
 void Jeu::dessiner_figure_courante()
