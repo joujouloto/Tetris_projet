@@ -164,13 +164,9 @@ void Jeu::deplacer_vers_le_bas_la_figure_courante()
 
     }
 
-
-    //Ne rentre jamais dans la boucle
-    if(figure_courante_en_collision_par_le_bas())
+    if(figure_courante_est_en_haut()&&figure_courante_en_collision_par_le_bas())
     {
-        int x=0;
-
-        x++;
+        jeu_termine = true;
     }
 
 
@@ -271,15 +267,25 @@ bool Jeu::figure_courante_a_atteint_le_bas()
     return false;
 }
 
-bool Jeu::figure_courante_a_atteint_le_haut()
+bool Jeu::figure_courante_est_en_haut()
 {
 
     vector<Position> figure = figure_courante.cellules[figure_courante.rotation_etat];
 
+
+    /*
+        Ne passe jamais dans la condition suivante
+        figure_courante.origine_x+cellule.ligne < 0
+    */
+
+
+
     for(Position cellule: figure)
     {
-        if( figure_courante.origine_x+cellule.ligne < 0 )
+        if( figure_courante.origine_x+cellule.ligne-1 < 0  )
         {
+            int x = figure_courante.origine_x+cellule.ligne;
+            x=x;
             return true;
         }
     }

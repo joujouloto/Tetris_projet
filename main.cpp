@@ -195,7 +195,13 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
 
         dernier_temps = temps_courant;
-        jeu.deplacer_vers_le_bas_la_figure_courante();
+
+
+        if(!jeu.jeu_termine)
+        {
+            jeu.deplacer_vers_le_bas_la_figure_courante();
+        }
+
 
 
     }
