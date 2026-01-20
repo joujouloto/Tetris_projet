@@ -50,13 +50,6 @@ Jeu::Jeu()
 Figure Jeu::get_figure_aleatoire()
 {
 
-    if(figures.empty())
-    {
-        figures = get_tous_les_figures();
-
-    }
-
-
     // construct a trivial random generator engine from a time-based seed:
     unsigned seed = chrono::system_clock::now().time_since_epoch().count();
     default_random_engine generator (seed);
@@ -64,10 +57,13 @@ Figure Jeu::get_figure_aleatoire()
     uniform_int_distribution<int> distribution(0,figures.size()-1);
 
 
+
+
     int index_aleatoire =  distribution(generator) ;
+
+
     Figure figure = figures[index_aleatoire];
 
-    figures.erase(figures.begin()+index_aleatoire);
     return figure;
 }
 
@@ -107,11 +103,8 @@ void Jeu::deplacer_vers_le_bas_la_figure_courante()
 
         figure_courante = get_figure_aleatoire();
 
-
-        figure_suivante = get_figure_aleatoire();
-
         figure_courante.setCouleur(set_figure_courante_couleur_aleatoire());
-        figure_suivante.setCouleur(set_figure_courante_couleur_aleatoire());
+
 
     }
     else if(!figure_courante_a_atteint_le_bas() && figure_courante_en_collision_par_le_bas())
@@ -123,10 +116,8 @@ void Jeu::deplacer_vers_le_bas_la_figure_courante()
         figure_courante = get_figure_aleatoire();
 
 
-        figure_suivante = get_figure_aleatoire();
-
         figure_courante.setCouleur(set_figure_courante_couleur_aleatoire());
-        figure_suivante.setCouleur(set_figure_courante_couleur_aleatoire());
+
 
     }
 
@@ -165,12 +156,16 @@ void Jeu::deplacer_vers_la_gauche_la_figure_courante()
 
 Couleur Jeu::set_figure_courante_couleur_aleatoire()
 {
-    Couleur c;
+    Couleur c(gris_fonce);
 
 
     if(couleurs.empty())
     {
+
+
+
         couleurs = c.get_cellules_couleur();
+
 
     }
 
@@ -186,6 +181,8 @@ Couleur Jeu::set_figure_courante_couleur_aleatoire()
     c = couleurs[index_aleatoire];
 
     couleurs.erase(couleurs.begin()+index_aleatoire);
+
+
     return c;
 
 }

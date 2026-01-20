@@ -4,7 +4,7 @@
 Couleur::Couleur()
 {
     nom_couleur = "noir";
-    id=-1;
+    id=noir;
 
     rouge=0;
     vert=0;
@@ -137,7 +137,7 @@ Couleur::Couleur( int p_couleur)
 
         default:
         nom_couleur = "noir";
-        id = p_couleur;
+        id = 0;
 
         rouge=0;
         vert=0;
