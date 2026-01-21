@@ -27,12 +27,14 @@ class Jeu
         void deplacer_vers_la_droite_la_figure_courante();
         void deplacer_vers_la_gauche_la_figure_courante();
 
-        bool figure_courante_a_atteint_le_bas();
+        bool figure_courante_va_atteindre_le_bas();
         bool figure_courante_est_en_haut();
 
 
         bool figure_courante_en_collision_par_le_bas();
+        bool cellule_vide(int num_ligne, int num_colonne);
 
+        bool en_collision_vers_le_bas();
 
 
         Couleur set_figure_courante_couleur_aleatoire();

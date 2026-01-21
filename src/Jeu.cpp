@@ -123,48 +123,27 @@ void Jeu::dessiner_figure_courante()
 
 void Jeu::deplacer_vers_le_bas_la_figure_courante()
 {
-
     effacer_figure_courante();
-    figure_courante.descendre();
-
-    if( !figure_courante_a_atteint_le_bas() && !figure_courante_en_collision_par_le_bas() )
-    {
-        dessiner_figure_courante();
-
-    }else if ( figure_courante_a_atteint_le_bas() && !figure_courante_en_collision_par_le_bas()  )
+    if( !figure_courante_va_atteindre_le_bas() && !en_collision_vers_le_bas() )
     {
 
-
-
-        effacer_figure_courante();
-        figure_courante.monter();
+        figure_courante.descendre();
         dessiner_figure_courante();
 
+
+    }
+    else if(figure_courante_va_atteindre_le_bas() || en_collision_vers_le_bas())
+    {
+        dessiner_figure_courante();
         figure_courante = get_figure_aleatoire();
 
         figure_courante.setCouleur(set_figure_courante_couleur_aleatoire());
 
 
     }
-    else if(!figure_courante_a_atteint_le_bas() && figure_courante_en_collision_par_le_bas())
-    {
-        figure_courante.monter();
 
 
-
-
-        dessiner_figure_courante();
-
-
-        figure_courante = get_figure_aleatoire();
-
-
-        figure_courante.setCouleur(set_figure_courante_couleur_aleatoire());
-
-
-    }
-
-    if(figure_courante_est_en_haut()&&figure_courante_en_collision_par_le_bas())
+    if(figure_courante_est_en_haut()&&en_collision_vers_le_bas())
     {
         jeu_termine = true;
     }
@@ -252,13 +231,13 @@ void Jeu::effacer_figure_courante()
     }
 }
 
-bool Jeu::figure_courante_a_atteint_le_bas()
+bool Jeu::figure_courante_va_atteindre_le_bas()
 {
     vector<Position> figure = figure_courante.cellules[figure_courante.rotation_etat];
 
     for(Position cellule: figure)
     {
-        if( figure_courante.origine_x+cellule.ligne >= grille->nb_lignes )
+        if( figure_courante.origine_x+cellule.ligne+1 >= grille->nb_lignes )
         {
             return true;
         }
@@ -302,8 +281,18 @@ bool Jeu::figure_courante_en_collision_par_le_bas()
 
     for(Position cellule: figure)
     {
+        /*
+            Attention quand il y a 2 figures consécutives qui ont la même couleur ça s'écrase ATTENTION
+        */
+
+
+
         if( grille->contenu[figure_courante.origine_x+cellule.ligne][figure_courante.origine_y+cellule.colonne]!= gris_fonce
-           && grille->contenu[figure_courante.origine_x+cellule.ligne][figure_courante.origine_y+cellule.colonne]!= figure_courante.couleur_cellule.id )
+           && grille->contenu[figure_courante.origine_x+cellule.ligne][figure_courante.origine_y+cellule.colonne]
+           != figure_courante.couleur_cellule.id
+
+
+            )
         {
             return true;
         }
@@ -311,3 +300,30 @@ bool Jeu::figure_courante_en_collision_par_le_bas()
 
     return false;
 }
+
+bool Jeu::cellule_vide(int num_ligne, int num_colonne)
+{
+    if(grille->contenu[num_ligne][num_colonne]!= gris_fonce)
+    {
+        return false;
+    }
+
+    return true;
+}
+
+bool Jeu::en_collision_vers_le_bas()
+{
+    vector<Position> figure = figure_courante.cellules[figure_courante.rotation_etat];
+
+    for(Position cellule: figure)
+    {
+        if(!cellule_vide(figure_courante.origine_x+cellule.ligne+1,figure_courante.origine_y+cellule.colonne ))
+        {
+            return true;
+        }
+
+    }
+    return false;
+}
+
+
