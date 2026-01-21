@@ -71,7 +71,15 @@ Figure Jeu::get_figure_aleatoire()
     int index_aleatoire =  distribution(generator) ;
 
 
+
     Figure figure = figures[index_aleatoire];
+    //figures.erase(figures.begin()+index_aleatoire);
+    /*
+        Erreur de segmentation fault
+    */
+
+
+
 
     return figure;
 }
@@ -275,31 +283,7 @@ bool Jeu::figure_courante_est_en_haut()
 
 
 
-bool Jeu::figure_courante_en_collision_par_le_bas()
-{
-    vector<Position> figure = figure_courante.cellules[figure_courante.rotation_etat];
 
-    for(Position cellule: figure)
-    {
-        /*
-            Attention quand il y a 2 figures consécutives qui ont la même couleur ça s'écrase ATTENTION
-        */
-
-
-
-        if( grille->contenu[figure_courante.origine_x+cellule.ligne][figure_courante.origine_y+cellule.colonne]!= gris_fonce
-           && grille->contenu[figure_courante.origine_x+cellule.ligne][figure_courante.origine_y+cellule.colonne]
-           != figure_courante.couleur_cellule.id
-
-
-            )
-        {
-            return true;
-        }
-    }
-
-    return false;
-}
 
 bool Jeu::cellule_vide(int num_ligne, int num_colonne)
 {
