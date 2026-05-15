@@ -28,7 +28,7 @@ ZFigure::ZFigure()
 
 
     this->origine_x = 0;
-    this->origine_y = 0;
+    this->origine_y = 5;
 
 
 

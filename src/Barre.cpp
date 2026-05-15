@@ -30,7 +30,7 @@ Barre::Barre()
     this->nb_rotations_possibles = 2;
 
     this->origine_x = 0;
-    this->origine_y = 0;
+    this->origine_y = 5;
 
     this->nom_forme = "Barre";
 

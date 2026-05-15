@@ -180,31 +180,53 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_SetRenderDrawColor(rendu_fenetre_principale, 150, 150, 150, SDL_ALPHA_OPAQUE);  /* black, full alpha */
     SDL_RenderClear(rendu_fenetre_principale);  /* start with a blank canvas. */
 
-
+/*
      if(temps_courant > 1.5*UNE_SECONDE + dernier_temps )
      {
             jeu.grille->afficher();
             cout << endl << endl;
 
-     }
+     }*/
+
+    const bool *key_states = SDL_GetKeyboardState(NULL);
 
 
 
     if(temps_courant > 0.2*UNE_SECONDE + dernier_temps   )
     {
 
-
-        dernier_temps = temps_courant;
-
-
         if(!jeu.jeu_termine)
         {
-            jeu.deplacer_vers_le_bas_la_figure_courante();
+
+
+
+
+            if (key_states[SDL_SCANCODE_RIGHT]) {
+                jeu.deplacer_vers_la_droite_la_figure_courante();  /* pressed what would be "W" on a US QWERTY keyboard. Move forward! */
+            }
+            else if(key_states[SDL_SCANCODE_LEFT])
+            {
+                jeu.deplacer_vers_la_gauche_la_figure_courante();
+            }
+            else
+            {
+                jeu.deplacer_vers_le_bas_la_figure_courante();
+            }
+
+
         }
 
-
-
+        dernier_temps = temps_courant;
     }
+
+
+
+
+
+
+
+
+
     dessiner_grille();
     SDL_RenderPresent(rendu_fenetre_principale);
 

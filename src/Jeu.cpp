@@ -90,7 +90,7 @@ return {Barre(),Carre(),JFigure(),LFigure(),SFigure(),TFigure(),ZFigure()};
 J'avais codé ceci mais ça plantait le programme, ça tombait sur un segmentation fault. Je vais copier
 comme j'ai fait pour get couleur de couleur
 
-Apparament c'est l'oubli de Figure devant chauqe figure qui fait planter le programme
+Apparament c'est l'oubli de Figure devant chaque figure qui fait planter le programme
 
 Je suppose qu'on fournit une variable y a pas d'adresse mémoire ça marche pour l'initialisation mais apres qu'il y ait plus de
 figures, ca plante
@@ -164,31 +164,24 @@ void Jeu::deplacer_vers_le_bas_la_figure_courante()
 
 void Jeu::deplacer_vers_la_droite_la_figure_courante()
 {
-    /*if( grille->est_dans_la_grille(figure_courante.origine_x,figure_courante.origine_y+1)
-    &&
-       !figure_courante.est_en_collision_a_droite(grille)
-
-       )
-    {*/
+    if( !figure_courante.est_en_collision_a_droite(grille) )
+    {
+        effacer_figure_courante();
         this->figure_courante.aller_a_droite();
         dessiner_figure_courante();
-    //}
+    }
 
 
 }
 
 void Jeu::deplacer_vers_la_gauche_la_figure_courante()
 {
-    /*if( grille->est_dans_la_grille(figure_courante.origine_x,figure_courante.origine_y-1)
-    &&
-        ! figure_courante.est_en_collision_a_gauche(grille)
-
-       )
-    {*/
-
+    if( ! figure_courante.est_en_collision_a_gauche(grille))
+    {
+        effacer_figure_courante();
         this->figure_courante.aller_a_gauche();
         dessiner_figure_courante();
-    //}
+    }
 }
 
 Couleur Jeu::set_figure_courante_couleur_aleatoire()

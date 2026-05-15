@@ -30,7 +30,7 @@ Carre::Carre()
     this->nb_rotations_possibles = 1;
 
     this->origine_x = 0;
-    this->origine_y = 0;
+    this->origine_y = 5;
 
     this->nom_forme = "Carre";
 

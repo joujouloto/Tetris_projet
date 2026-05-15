@@ -129,11 +129,8 @@ void Figure::aller_a_droite()
     int nouvel_abscisse_origine = origine_x;
     int nouvelle_ordonne_origine = origine_y+1;
 
-
-
-
-        setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
-        maj_position();
+    setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
+    maj_position();
 
 }
 

@@ -30,7 +30,7 @@ TFigure::TFigure()
     this->couleur_cellule = c;
 
     this->origine_x = 0;
-    this->origine_y = 0;
+    this->origine_y = 5;
 
     this->nb_rotations_possibles = 4;
 
