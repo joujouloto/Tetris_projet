@@ -154,7 +154,22 @@ bool Figure::est_en_collision_en_bas(Grille * grille)
 
     for(Position cellule: figure)
     {
-        if(!grille->est_vide(cellule.ligne,cellule.colonne))
+        if(!grille->est_vide(cellule.ligne+1,cellule.colonne))
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool Figure::est_en_collision_en_haut(Grille * grille)
+{
+    vector<Position> figure = this->cellules[rotation_etat];
+
+    for(Position cellule: figure)
+    {
+        if(!grille->est_vide(cellule.ligne-1,cellule.colonne))
         {
             return true;
         }

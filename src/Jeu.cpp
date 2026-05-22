@@ -132,7 +132,7 @@ void Jeu::dessiner_figure_courante()
 void Jeu::deplacer_vers_le_bas_la_figure_courante()
 {
     effacer_figure_courante();
-    if( !figure_courante_va_atteindre_le_bas() && !en_collision_vers_le_bas() )
+    if( !figure_courante_va_atteindre_le_bas() && !figure_courante.est_en_collision_en_bas(this->grille) )
     {
 
         figure_courante.descendre();
@@ -140,7 +140,7 @@ void Jeu::deplacer_vers_le_bas_la_figure_courante()
 
 
     }
-    else if(figure_courante_va_atteindre_le_bas() || en_collision_vers_le_bas())
+    else if(figure_courante_va_atteindre_le_bas() || figure_courante.est_en_collision_en_bas(this->grille))
     {
         dessiner_figure_courante();
         figure_courante = get_figure_aleatoire();
@@ -151,7 +151,7 @@ void Jeu::deplacer_vers_le_bas_la_figure_courante()
     }
 
 
-    if(figure_courante_est_en_haut()&&en_collision_vers_le_bas())
+    if(figure_courante_est_en_haut()&&figure_courante.est_en_collision_en_haut(this->grille))
     {
         jeu_termine = true;
     }
@@ -164,7 +164,7 @@ void Jeu::deplacer_vers_le_bas_la_figure_courante()
 
 void Jeu::deplacer_vers_la_droite_la_figure_courante()
 {
-    if( !figure_courante.est_en_collision_a_droite(grille) )
+    if( !figure_courante.est_en_collision_a_droite(this->grille))
     {
         effacer_figure_courante();
         this->figure_courante.aller_a_droite();
@@ -176,12 +176,13 @@ void Jeu::deplacer_vers_la_droite_la_figure_courante()
 
 void Jeu::deplacer_vers_la_gauche_la_figure_courante()
 {
-    if( ! figure_courante.est_en_collision_a_gauche(grille))
+    if( !figure_courante.est_en_collision_a_gauche(this->grille))
     {
         effacer_figure_courante();
         this->figure_courante.aller_a_gauche();
         dessiner_figure_courante();
     }
+
 }
 
 Couleur Jeu::set_figure_courante_couleur_aleatoire()
@@ -276,8 +277,6 @@ bool Jeu::figure_courante_est_en_haut()
 
 
 
-
-
 bool Jeu::cellule_vide(int num_ligne, int num_colonne)
 {
     if(grille->contenu[num_ligne][num_colonne]!= gris_fonce)
@@ -288,19 +287,8 @@ bool Jeu::cellule_vide(int num_ligne, int num_colonne)
     return true;
 }
 
-bool Jeu::en_collision_vers_le_bas()
-{
-    vector<Position> figure = figure_courante.cellules[figure_courante.rotation_etat];
 
-    for(Position cellule: figure)
-    {
-        if(!cellule_vide(figure_courante.origine_x+cellule.ligne+1,figure_courante.origine_y+cellule.colonne ))
-        {
-            return true;
-        }
 
-    }
-    return false;
-}
+
 
 

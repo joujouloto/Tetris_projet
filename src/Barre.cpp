@@ -1,5 +1,6 @@
 #include "Barre.h"
 
+
 Barre::Barre(int origine_ligne, int origine_colonne, int p_couleur)
 {
     //ctor

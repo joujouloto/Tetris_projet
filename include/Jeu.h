@@ -32,7 +32,6 @@ class Jeu
 
         bool cellule_vide(int num_ligne, int num_colonne);
 
-        bool en_collision_vers_le_bas();
 
 
         Couleur set_figure_courante_couleur_aleatoire();

@@ -36,6 +36,7 @@ using namespace std;
 int temps_courant = 0;
 int dernier_temps = 0;
 int tour = 1;
+bool touche_pressee = false;
 
 
 
@@ -146,26 +147,6 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
         return SDL_APP_SUCCESS;  /* end the program, reporting success to the OS. */
     }
 
-    switch(event->key.scancode)
-    {
-        case SDLK_DOWN:
-            jeu.deplacer_vers_le_bas_la_figure_courante();
-            cout << "bas" << endl;
-            break;
-
-        case SDLK_LEFT:
-            jeu.deplacer_vers_la_gauche_la_figure_courante();
-            break;
-
-        case SDLK_RIGHT:
-            jeu.deplacer_vers_la_droite_la_figure_courante();
-            break;
-    }
-
-
-
-
-
     return SDL_APP_CONTINUE;  /* carry on with the program! */
 }
 
@@ -190,33 +171,45 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
     const bool *key_states = SDL_GetKeyboardState(NULL);
 
+    if(!touche_pressee)
+    {
+        if (key_states[SDL_SCANCODE_RIGHT]) {
+            jeu.deplacer_vers_la_droite_la_figure_courante();  /* pressed what would be "W" on a US QWERTY keyboard. Move forward! */
+            touche_pressee= true;
+
+        }
+        else if(key_states[SDL_SCANCODE_LEFT])
+        {
+                jeu.deplacer_vers_la_gauche_la_figure_courante();
+                touche_pressee= true;
+        }
+
+    }
+
+
+
+
 
 
     if(temps_courant > 0.2*UNE_SECONDE + dernier_temps   )
     {
 
-        if(!jeu.jeu_termine)
+        if(!jeu.jeu_termine&&!touche_pressee)
         {
 
 
 
 
-            if (key_states[SDL_SCANCODE_RIGHT]) {
-                jeu.deplacer_vers_la_droite_la_figure_courante();  /* pressed what would be "W" on a US QWERTY keyboard. Move forward! */
-            }
-            else if(key_states[SDL_SCANCODE_LEFT])
-            {
-                jeu.deplacer_vers_la_gauche_la_figure_courante();
-            }
-            else
-            {
-                jeu.deplacer_vers_le_bas_la_figure_courante();
-            }
+
+
+            jeu.deplacer_vers_le_bas_la_figure_courante();
+
 
 
         }
 
         dernier_temps = temps_courant;
+        touche_pressee=false;
     }
 
 
