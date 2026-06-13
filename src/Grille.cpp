@@ -73,7 +73,19 @@ void Grille::afficher()
 
 void Grille::dessiner(int num_ligne, int num_colonne, Couleur c)
 {
-    contenu[num_ligne][num_colonne] = c.id;
+    if((num_ligne>=0||num_ligne<this->nb_lignes) && (num_colonne>=0||num_colonne<this->nb_colonnes))
+    {
+
+        contenu[num_ligne][num_colonne] = c.id;
+
+
+
+    }
+
+
+
+
+
 }
 
 

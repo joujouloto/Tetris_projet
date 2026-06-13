@@ -98,6 +98,12 @@ figures, ca plante
 */
 
 
+/*
+    penser a ne pas appeler tableau mais c'est un vecteur je veux dire ne pas appele rles indices juste changer la position
+
+*/
+
+
 vector<Figure> Jeu::get_tous_les_figures()
 {
     vector<Figure> nouvelles_figures;
@@ -140,7 +146,7 @@ void Jeu::deplacer_vers_le_bas_la_figure_courante()
     if( !figure_courante_va_atteindre_le_bas() && !figure_courante.est_en_collision_en_bas(this->grille) )
     {
 
-        figure_courante.descendre();
+        /*figure_courante.descendre();*/
         dessiner_figure_courante();
 
 

@@ -11,7 +11,7 @@
 using namespace std;
 
 
-#define ORIGINE_X_DEFAULT 5
+#define ORIGINE_X_DEFAULT 1
 #define ORIGINE_Y_DEFAULT 0
 
 enum Forme {C_arre, B_arre, L_Figure, S_Figure, T_Figure,J_Figure,Z_Figure};
