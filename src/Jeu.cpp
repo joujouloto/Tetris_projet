@@ -130,14 +130,14 @@ void Jeu::dessiner_figure_courante()
     for(Position cellule: figure)
     {
         grille->
-        dessiner(figure_courante.origine_x+cellule.ligne,
-                 figure_courante.origine_y+cellule.colonne,
+        dessiner(cellule.ligne,
+                 cellule.colonne,
                  figure_courante.couleur_cellule);
 
 
     }
 
-    cout << figure_courante.origine_x << " " << figure_courante.origine_y << endl;
+
 }
 
 void Jeu::deplacer_vers_le_bas_la_figure_courante()
@@ -148,6 +148,8 @@ void Jeu::deplacer_vers_le_bas_la_figure_courante()
 
         /*figure_courante.descendre();*/
         dessiner_figure_courante();
+
+        jeu_termine = true;
 
 
     }

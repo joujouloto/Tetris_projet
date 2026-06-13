@@ -33,8 +33,7 @@ Figure::Figure(int origine_ligne, int origine_colonne)
     rotation_etat = 0;
     this->couleur_cellule = noir;
 
-    this->origine_x=origine_ligne;
-    this->origine_y=origine_colonne;
+    setPosition(origine_ligne,origine_colonne);
 
     this->nb_rotations_possibles = 1;
 
