@@ -615,3 +615,619 @@
 	"Figure.h"
 	<vector>
 
+1779434128 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\main.cpp
+	<iostream>
+	<random>
+	"Figure.h"
+	"Jeu.h"
+	"Grille.h"
+	"Couleur.h"
+	"Position.h"
+	"Carre.h"
+	"Barre.h"
+	"JFigure.h"
+	"LFigure.h"
+	"ZFigure.h"
+	"SFigure.h"
+	"TFigure.h"
+	<SDL3/SDL.h>
+	<SDL3/SDL_main.h>
+	<SDL3_image/SDL_image.h>
+
+1781368639 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\figure.h
+	<string>
+	<map>
+	"Couleur.h"
+	"Position.h"
+	"Grille.h"
+
+1767291238 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\couleur.h
+	<string>
+	<vector>
+
+1765359405 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\position.h
+
+1767352264 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\grille.h
+	<vector>
+	"Couleur.h"
+
+1781359428 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\jeu.h
+	"Grille.h"
+	"Figure.h"
+	<vector>
+
+1765956183 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\carre.h
+	"Figure.h"
+
+1765955973 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\barre.h
+	"Couleur.h"
+	"Figure.h"
+
+1765956357 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\jfigure.h
+	"Figure.h"
+
+1765956603 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\lfigure.h
+	"Figure.h"
+
+1765957057 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\zfigure.h
+	"Figure.h"
+
+1765956704 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\sfigure.h
+	"Figure.h"
+
+1765956895 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\tfigure.h
+	"Figure.h"
+
+1748813843 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_assert.h>
+	<SDL3/SDL_asyncio.h>
+	<SDL3/SDL_atomic.h>
+	<SDL3/SDL_audio.h>
+	<SDL3/SDL_bits.h>
+	<SDL3/SDL_blendmode.h>
+	<SDL3/SDL_camera.h>
+	<SDL3/SDL_clipboard.h>
+	<SDL3/SDL_cpuinfo.h>
+	<SDL3/SDL_dialog.h>
+	<SDL3/SDL_endian.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_events.h>
+	<SDL3/SDL_filesystem.h>
+	<SDL3/SDL_gamepad.h>
+	<SDL3/SDL_gpu.h>
+	<SDL3/SDL_guid.h>
+	<SDL3/SDL_haptic.h>
+	<SDL3/SDL_hidapi.h>
+	<SDL3/SDL_hints.h>
+	<SDL3/SDL_init.h>
+	<SDL3/SDL_iostream.h>
+	<SDL3/SDL_joystick.h>
+	<SDL3/SDL_keyboard.h>
+	<SDL3/SDL_keycode.h>
+	<SDL3/SDL_loadso.h>
+	<SDL3/SDL_locale.h>
+	<SDL3/SDL_log.h>
+	<SDL3/SDL_messagebox.h>
+	<SDL3/SDL_metal.h>
+	<SDL3/SDL_misc.h>
+	<SDL3/SDL_mouse.h>
+	<SDL3/SDL_mutex.h>
+	<SDL3/SDL_pen.h>
+	<SDL3/SDL_pixels.h>
+	<SDL3/SDL_platform.h>
+	<SDL3/SDL_power.h>
+	<SDL3/SDL_process.h>
+	<SDL3/SDL_properties.h>
+	<SDL3/SDL_rect.h>
+	<SDL3/SDL_render.h>
+	<SDL3/SDL_scancode.h>
+	<SDL3/SDL_sensor.h>
+	<SDL3/SDL_storage.h>
+	<SDL3/SDL_surface.h>
+	<SDL3/SDL_system.h>
+	<SDL3/SDL_thread.h>
+	<SDL3/SDL_time.h>
+	<SDL3/SDL_timer.h>
+	<SDL3/SDL_tray.h>
+	<SDL3/SDL_touch.h>
+	<SDL3/SDL_version.h>
+	<SDL3/SDL_video.h>
+	<SDL3/SDL_oldnames.h>
+
+1747921971 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_stdinc.h
+	<SDL3/SDL_platform_defines.h>
+	<stdarg.h>
+	<stdint.h>
+	<string.h>
+	<wchar.h>
+	<inttypes.h>
+	<stdbool.h>
+	<alloca.h>
+	<stdlib.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	<sal.h>
+	<SDL3/SDL_begin_code.h>
+	<stdio.h>
+	<stdlib.h>
+	<SDL3/SDL_close_code.h>
+
+1738706261 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_platform_defines.h
+	<AvailabilityMacros.h>
+	<TargetConditionals.h>
+	<TargetConditionals.h>
+	<winapifamily.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_begin_code.h
+
+1735746352 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_close_code.h
+
+1740164874 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_assert.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_begin_code.h>
+	<assert.h>
+	<signal.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_asyncio.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1738090876 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_atomic.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_platform_defines.h>
+	<SDL3/SDL_begin_code.h>
+	<mbarrier.h>
+	<SDL3/SDL_close_code.h>
+
+1742513404 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_audio.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_endian.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_mutex.h>
+	<SDL3/SDL_properties.h>
+	<SDL3/SDL_iostream.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_endian.h
+	<SDL3/SDL_stdinc.h>
+	<intrin.h>
+	<endian.h>
+	<sys/byteorder.h>
+	<endian.h>
+	<sys/endian.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_error.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_mutex.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_atomic.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_thread.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1738631006 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_thread.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_properties.h>
+	<SDL3/SDL_atomic.h>
+	<process.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_properties.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_iostream.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_properties.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_bits.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_blendmode.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1738201793 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_camera.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_pixels.h>
+	<SDL3/SDL_properties.h>
+	<SDL3/SDL_surface.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1748541834 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_pixels.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_endian.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1748534969 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_surface.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_blendmode.h>
+	<SDL3/SDL_pixels.h>
+	<SDL3/SDL_properties.h>
+	<SDL3/SDL_rect.h>
+	<SDL3/SDL_iostream.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1738640796 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_rect.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_clipboard.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_cpuinfo.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1740846379 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_dialog.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_properties.h>
+	<SDL3/SDL_video.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1743695667 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_video.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_pixels.h>
+	<SDL3/SDL_properties.h>
+	<SDL3/SDL_rect.h>
+	<SDL3/SDL_surface.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1746157914 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_events.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_audio.h>
+	<SDL3/SDL_camera.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_gamepad.h>
+	<SDL3/SDL_joystick.h>
+	<SDL3/SDL_keyboard.h>
+	<SDL3/SDL_keycode.h>
+	<SDL3/SDL_mouse.h>
+	<SDL3/SDL_pen.h>
+	<SDL3/SDL_power.h>
+	<SDL3/SDL_sensor.h>
+	<SDL3/SDL_scancode.h>
+	<SDL3/SDL_touch.h>
+	<SDL3/SDL_video.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737694023 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_gamepad.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_guid.h>
+	<SDL3/SDL_iostream.h>
+	<SDL3/SDL_joystick.h>
+	<SDL3/SDL_power.h>
+	<SDL3/SDL_properties.h>
+	<SDL3/SDL_sensor.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1738867461 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_guid.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_joystick.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_guid.h>
+	<SDL3/SDL_mutex.h>
+	<SDL3/SDL_power.h>
+	<SDL3/SDL_properties.h>
+	<SDL3/SDL_sensor.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1743436399 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_power.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_sensor.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_properties.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_keyboard.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_keycode.h>
+	<SDL3/SDL_properties.h>
+	<SDL3/SDL_rect.h>
+	<SDL3/SDL_scancode.h>
+	<SDL3/SDL_video.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_keycode.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_scancode.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_scancode.h
+	<SDL3/SDL_stdinc.h>
+
+1738631006 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_mouse.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_surface.h>
+	<SDL3/SDL_video.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483561 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_pen.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_mouse.h>
+	<SDL3/SDL_touch.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_touch.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_mouse.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_filesystem.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1745450184 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_gpu.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_pixels.h>
+	<SDL3/SDL_properties.h>
+	<SDL3/SDL_rect.h>
+	<SDL3/SDL_surface.h>
+	<SDL3/SDL_video.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_haptic.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_joystick.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_hidapi.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1748364718 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_hints.h
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1748473043 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_init.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_events.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_loadso.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_locale.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1739425178 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_log.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_messagebox.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_video.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_metal.h
+	<SDL3/SDL_video.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_misc.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_platform.h
+	<SDL3/SDL_platform_defines.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1738631006 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_process.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_iostream.h>
+	<SDL3/SDL_properties.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1745342277 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_render.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_blendmode.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_events.h>
+	<SDL3/SDL_pixels.h>
+	<SDL3/SDL_properties.h>
+	<SDL3/SDL_rect.h>
+	<SDL3/SDL_surface.h>
+	<SDL3/SDL_video.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1740502692 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_storage.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_filesystem.h>
+	<SDL3/SDL_properties.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_system.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_keyboard.h>
+	<SDL3/SDL_video.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_time.h
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1737483145 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_timer.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1738770341 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_tray.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_surface.h>
+	<SDL3/SDL_video.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1748813843 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_version.h
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1735867089 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_oldnames.h
+	<SDL3/SDL_platform_defines.h>
+
+1740501596 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_main.h
+	<SDL3/SDL_platform_defines.h>
+	<SDL3/SDL_stdinc.h>
+	<SDL3/SDL_error.h>
+	<SDL3/SDL_events.h>
+	"SDL_main_private.h"
+	<SDL3/SDL_init.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+	<SDL3/SDL_main_impl.h>
+
+1735746352 c:\users\julie\documents\projets_cplusplus\sdl3-devel-3.2.16-mingw\sdl3-3.2.16\x86_64-w64-mingw32\include\sdl3\sdl_main_impl.h
+	"SDL_main_impl_private.h"
+
+1741038197 c:\users\julie\documents\projets_cplusplus\sdl3_image-devel-3.2.4-mingw\sdl3_image-3.2.4\x86_64-w64-mingw32\include\sdl3_image\sdl_image.h
+	<SDL3/SDL.h>
+	<SDL3/SDL_begin_code.h>
+	<SDL3/SDL_close_code.h>
+
+1781368469 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\barre.cpp
+	"Barre.h"
+
+1781368476 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\carre.cpp
+	"Carre.h"
+	"Figure.h"
+
+1768153828 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\couleur.cpp
+	"Couleur.h"
+
+1781367940 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\figure.cpp
+	"Figure.h"
+	<iostream>
+	<sstream>
+	<map>
+	<vector>
+	"Position.h"
+	"Couleur.h"
+	"Grille.h"
+
+1781359256 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\grille.cpp
+	"Grille.h"
+	<iostream>
+	"Couleur.h"
+
+1781367430 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\jeu.cpp
+	"Jeu.h"
+	"Carre.h"
+	"Barre.h"
+	"JFigure.h"
+	"LFigure.h"
+	"ZFigure.h"
+	"SFigure.h"
+	"TFigure.h"
+	<iostream>
+	<chrono>
+	<random>
+
+1781368482 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\jfigure.cpp
+	"JFigure.h"
+
+1781368488 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\lfigure.cpp
+	"LFigure.h"
+
+1765359460 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\position.cpp
+	"Position.h"
+
+1781368495 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\sfigure.cpp
+	"SFigure.h"
+
+1781368501 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\tfigure.cpp
+	"TFigure.h"
+
+1781368508 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\zfigure.cpp
+	"ZFigure.h"
+

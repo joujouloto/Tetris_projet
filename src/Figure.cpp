@@ -18,8 +18,7 @@ Figure::Figure()
     rotation_etat = 0;
     this->couleur_cellule = noir;
 
-    this->origine_x=0;
-    this->origine_y=0;
+    this->initialiser_coordonnees();
 
     this->nb_rotations_possibles = 1;
 
@@ -148,13 +147,16 @@ void Figure::aller_a_droite()
 */
 
 
-bool Figure::est_en_collision_en_bas(Grille * grille)
+bool Figure::est_en_collision_en_bas(Grille *grille)
 {
-    vector<Position> figure = this->cellules[rotation_etat];
+    vector<Position> figure = cellules[rotation_etat];
 
-    for(Position cellule: figure)
+    for(Position cellule : figure)
     {
-        if(!grille->est_vide(cellule.ligne+1,cellule.colonne))
+        int ligne = origine_x + cellule.ligne;
+        int colonne = origine_y + cellule.colonne;
+
+        if(!grille->est_vide(ligne + 1, colonne))
         {
             return true;
         }
@@ -280,4 +282,12 @@ void Figure::monter()
     setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
     maj_position();
 }
+
+
+void Figure::initialiser_coordonnees()
+{
+    origine_x = ORIGINE_X_DEFAULT;
+    origine_y = ORIGINE_Y_DEFAULT;
+}
+
 

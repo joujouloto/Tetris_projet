@@ -30,9 +30,6 @@ class Jeu
         bool figure_courante_va_atteindre_le_bas();
         bool figure_courante_est_en_haut();
 
-        bool cellule_vide(int num_ligne, int num_colonne);
-
-
 
         Couleur set_figure_courante_couleur_aleatoire();
 

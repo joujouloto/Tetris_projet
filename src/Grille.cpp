@@ -82,6 +82,18 @@ void Grille::dessiner(int num_ligne, int num_colonne, Couleur c)
 
 bool Grille::est_vide(int num_ligne, int num_colonne)
 {
+
+    if(num_ligne<0||num_ligne>=nb_lignes)
+    {
+        return false;
+    }
+
+    if(num_colonne <0 || num_colonne >= nb_colonnes)
+    {
+        return false;
+    }
+
+
     if( contenu[num_ligne][num_colonne]==gris_fonce)
     {
         return true;

@@ -7,8 +7,7 @@ ZFigure::ZFigure(int origine_ligne, int origine_colonne, int p_couleur)
     this->id = Z_Figure;
     this->couleur_cellule = c;
 
-    this->origine_x = origine_ligne;
-    this->origine_y = origine_colonne;
+    this->setPosition(origine_ligne,origine_colonne);
 
 
 
@@ -27,9 +26,7 @@ ZFigure::ZFigure()
     this->couleur_cellule = c;
 
 
-    this->origine_x = 0;
-    this->origine_y = 5;
-
+    initialiser_coordonnees();
 
 
    this->nb_rotations_possibles = 2;

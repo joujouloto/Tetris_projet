@@ -111,6 +111,7 @@ vector<Figure> Jeu::get_tous_les_figures()
     nouvelles_figures.push_back(TFigure());
     nouvelles_figures.push_back(ZFigure());
 
+
     return nouvelles_figures;
 
     //return {Barre(),Carre(),JFigure(),LFigure(),SFigure(),TFigure(),ZFigure()}; CA FAIT PLANTER!!!
@@ -126,7 +127,11 @@ void Jeu::dessiner_figure_courante()
         dessiner(figure_courante.origine_x+cellule.ligne,
                  figure_courante.origine_y+cellule.colonne,
                  figure_courante.couleur_cellule);
+
+
     }
+
+    cout << figure_courante.origine_x << " " << figure_courante.origine_y << endl;
 }
 
 void Jeu::deplacer_vers_le_bas_la_figure_courante()
@@ -265,8 +270,6 @@ bool Jeu::figure_courante_est_en_haut()
     {
         if( figure_courante.origine_x+cellule.ligne-1 < 0  )
         {
-            int x = figure_courante.origine_x+cellule.ligne;
-            x=x;
             return true;
         }
     }
@@ -277,15 +280,7 @@ bool Jeu::figure_courante_est_en_haut()
 
 
 
-bool Jeu::cellule_vide(int num_ligne, int num_colonne)
-{
-    if(grille->contenu[num_ligne][num_colonne]!= gris_fonce)
-    {
-        return false;
-    }
 
-    return true;
-}
 
 
 
