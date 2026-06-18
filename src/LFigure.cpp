@@ -40,10 +40,19 @@ void LFigure::maj_position()
     int origine_colonne  = this->origine_y;
 
 
-    this->cellules[0] = { Position(origine_ligne,origine_colonne+1),
-    Position(origine_ligne+1,origine_colonne+1),
-    Position(origine_ligne+2,origine_colonne+1),
-    Position(origine_ligne+2,origine_colonne+2)};
+    /*
+        A VERIFIER LES BONNES POSITIONS CELLULES NOMBRES DANS CHAQUE FIGURE
+        J AI TROUVE DECALAGE A VERIFIER POUR CHAQUE!!!!
+
+    */
+
+
+
+
+    this->cellules[0] = { Position(origine_ligne,origine_colonne),
+    Position(origine_ligne+1,origine_colonne),
+    Position(origine_ligne+2,origine_colonne),
+    Position(origine_ligne+2,origine_colonne+1)};
 
      this->cellules[1] =
      { Position(origine_ligne,origine_colonne+2),
@@ -58,10 +67,10 @@ void LFigure::maj_position()
      Position(origine_ligne+2,origine_colonne+1)};
 
      this->cellules[3] =
-     { Position(origine_ligne+1,origine_colonne),
-     Position(origine_ligne+1,origine_colonne+1),
-     Position(origine_ligne+1,origine_colonne+2),
-     Position(origine_ligne+2,origine_colonne)};
+     { Position(origine_ligne,origine_colonne),
+     Position(origine_ligne,origine_colonne+1),
+     Position(origine_ligne,origine_colonne+2),
+     Position(origine_ligne+1,origine_colonne)};
 }
 
 

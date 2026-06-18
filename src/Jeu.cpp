@@ -109,13 +109,13 @@ vector<Figure> Jeu::get_tous_les_figures()
     vector<Figure> nouvelles_figures;
 
 
-    nouvelles_figures.push_back(Barre());
-    nouvelles_figures.push_back(Carre());
-    nouvelles_figures.push_back(JFigure());
+   // nouvelles_figures.push_back(Barre());
+    //nouvelles_figures.push_back(Carre());
+    //nouvelles_figures.push_back(JFigure());
     nouvelles_figures.push_back(LFigure());
-    nouvelles_figures.push_back(SFigure());
+   /* nouvelles_figures.push_back(SFigure());
     nouvelles_figures.push_back(TFigure());
-    nouvelles_figures.push_back(ZFigure());
+    nouvelles_figures.push_back(ZFigure());*/
 
 
     return nouvelles_figures;

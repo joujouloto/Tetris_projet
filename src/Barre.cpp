@@ -52,10 +52,10 @@ void Barre::maj_position()
         Position(origine_ligne,origine_colonne+3)};
 
     this->cellules[1] = {
-        Position(origine_ligne-1,origine_colonne+1),
-        Position(origine_ligne,origine_colonne+1),
-        Position(origine_ligne+1,origine_colonne+1),
-        Position(origine_ligne+2,origine_colonne+1)};
+        Position(origine_ligne,origine_colonne),
+        Position(origine_ligne+1,origine_colonne),
+        Position(origine_ligne+2,origine_colonne),
+        Position(origine_ligne+3,origine_colonne)};
 }
 
 
