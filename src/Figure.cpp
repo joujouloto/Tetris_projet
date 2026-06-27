@@ -289,4 +289,23 @@ void Figure::initialiser_coordonnees()
     origine_y = ORIGINE_Y_DEFAULT;
 }
 
+void Figure::afficher_position()
+{
+    cout << "origine x :" << this->origine_x << endl
+    << "origine y:" << this->origine_y << endl;
+
+
+    vector<Position> figure = this->cellules[this->rotation_etat];
+    int i=1;
+
+    for(Position cellule : figure)
+    {
+        cout << "Cellule " << i << " x:" << cellule.ligne <<
+        " y:" << cellule.colonne << endl;
+        i++;
+    }
+
+}
+
+
 

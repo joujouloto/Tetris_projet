@@ -109,13 +109,20 @@ vector<Figure> Jeu::get_tous_les_figures()
     vector<Figure> nouvelles_figures;
 
 
-   // nouvelles_figures.push_back(Barre());
-    //nouvelles_figures.push_back(Carre());
-    //nouvelles_figures.push_back(JFigure());
+    /*
+        Les figure existent dans des rectangles et les coordonnees
+        sont par rapport à l'origine de ce rectangle (origine =0,0)
+    */
+
+
+
+    nouvelles_figures.push_back(Barre());
+    nouvelles_figures.push_back(Carre());
+    nouvelles_figures.push_back(JFigure());
     nouvelles_figures.push_back(LFigure());
-   /* nouvelles_figures.push_back(SFigure());
+    nouvelles_figures.push_back(SFigure());
     nouvelles_figures.push_back(TFigure());
-    nouvelles_figures.push_back(ZFigure());*/
+    nouvelles_figures.push_back(ZFigure());
 
 
     return nouvelles_figures;
@@ -130,8 +137,8 @@ void Jeu::dessiner_figure_courante()
     for(Position cellule: figure)
     {
         grille->
-        dessiner(cellule.ligne,
-                 cellule.colonne,
+        dessiner(figure_courante.origine_x + cellule.ligne,
+                 figure_courante.origine_y + cellule.colonne,
                  figure_courante.couleur_cellule);
 
 
@@ -146,10 +153,10 @@ void Jeu::deplacer_vers_le_bas_la_figure_courante()
     if( !figure_courante_va_atteindre_le_bas() && !figure_courante.est_en_collision_en_bas(this->grille) )
     {
 
-        /*figure_courante.descendre();*/
+        figure_courante.descendre();
         dessiner_figure_courante();
-
-        jeu_termine = true;
+        figure_courante.afficher_position();
+        //jeu_termine = true;
 
 
     }
