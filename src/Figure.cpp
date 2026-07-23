@@ -152,10 +152,9 @@ bool Figure::est_en_collision_en_bas(Grille *grille)
 
     for(Position cellule : figure)
     {
-        int ligne = origine_x + cellule.ligne;
-        int colonne = origine_y + cellule.colonne;
 
-        if(!grille->est_vide(ligne + 1, colonne))
+
+        if(!grille->est_vide(cellule.ligne + 1, cellule.colonne))
         {
             return true;
         }
@@ -300,10 +299,19 @@ void Figure::afficher_position()
 
     for(Position cellule : figure)
     {
-        cout << "Cellule " << i << " x:" << cellule.ligne <<
-        " y:" << cellule.colonne << endl;
+        cout << "Cellule " << i << " x:" << cellule.ligne << " (" << cellule.ligne+origine_x << ")"
+        " y:" << cellule.colonne << " (" << cellule.colonne+origine_y << ")" <<endl;
         i++;
     }
+
+}
+
+bool Figure::peut_monter()
+{
+
+    int origine_x_qui_monte = origine_x-1;
+
+    return origine_x_qui_monte>=0;
 
 }
 

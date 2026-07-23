@@ -11,8 +11,8 @@ Grille::Grille()
 {
     //ctor
 
-    nb_colonnes = 15;
-    nb_lignes = 20;
+    nb_colonnes = NB_COLONNES_DEFAULT;
+    nb_lignes = NB_LIGNES_DEFAULT;
 
     couleur_fonds = Couleur(gris_fonce);
 
@@ -20,7 +20,7 @@ Grille::Grille()
 
     initialiser();
 
-    this->taille_pixels_cellule = 40;
+    this->taille_pixels_cellule = TAILLE_PIXELS_DEFAULT;
 
     initialiser();
 

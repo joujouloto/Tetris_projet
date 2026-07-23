@@ -12,7 +12,7 @@ using namespace std;
 
 
 #define ORIGINE_X_DEFAULT 0
-#define ORIGINE_Y_DEFAULT 0
+#define ORIGINE_Y_DEFAULT 5
 
 enum Forme {C_arre, B_arre, L_Figure, S_Figure, T_Figure,J_Figure,Z_Figure};
 
@@ -63,6 +63,9 @@ class Figure
 
         void initialiser_coordonnees();
         void afficher_position();
+
+
+        bool peut_monter();
 
 
     protected:

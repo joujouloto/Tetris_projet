@@ -150,60 +150,38 @@ void Jeu::dessiner_figure_courante()
 void Jeu::deplacer_vers_le_bas_la_figure_courante()
 {
     effacer_figure_courante();
-    if( !figure_courante_va_atteindre_le_bas() && !figure_courante.est_en_collision_en_bas(this->grille) )
-    {
-
-        figure_courante.descendre();
-        dessiner_figure_courante();
-        figure_courante.afficher_position();
-        //jeu_termine = true;
-
-
-    }
-    else if(figure_courante_va_atteindre_le_bas() || figure_courante.est_en_collision_en_bas(this->grille))
-    {
-        dessiner_figure_courante();
-        figure_courante = get_figure_aleatoire();
-
-        figure_courante.setCouleur(set_figure_courante_couleur_aleatoire());
-
-
-    }
-
-
-    if(figure_courante_est_en_haut()&&figure_courante.est_en_collision_en_haut(this->grille))
-    {
-        jeu_termine = true;
-    }
-
-
-
-
+    this->figure_courante.descendre();
+    dessiner_figure_courante();
 
 }
 
 void Jeu::deplacer_vers_la_droite_la_figure_courante()
 {
-    if( !figure_courante.est_en_collision_a_droite(this->grille))
-    {
-        effacer_figure_courante();
-        this->figure_courante.aller_a_droite();
-        dessiner_figure_courante();
-    }
-
+    effacer_figure_courante();
+    this->figure_courante.aller_a_droite();
+    dessiner_figure_courante();
 
 }
 
 void Jeu::deplacer_vers_la_gauche_la_figure_courante()
 {
-    if( !figure_courante.est_en_collision_a_gauche(this->grille))
-    {
-        effacer_figure_courante();
-        this->figure_courante.aller_a_gauche();
-        dessiner_figure_courante();
-    }
+    effacer_figure_courante();
+    this->figure_courante.aller_a_gauche();
+    dessiner_figure_courante();
+
 
 }
+
+void Jeu::deplacer_vers_le_haut_la_figure_courante()
+{
+    effacer_figure_courante();
+    this->figure_courante.monter();
+    dessiner_figure_courante();
+}
+
+
+
+
 
 Couleur Jeu::set_figure_courante_couleur_aleatoire()
 {

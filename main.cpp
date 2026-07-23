@@ -22,6 +22,8 @@
 #define ORIGINE_POS_X_PREMIERE_FENETRE 750
 #define ORIGINE_POS_Y_PREMIERE_FENETRE 50
 
+
+
 #define UNE_SECONDE 1000
 
 #define SDL_MAIN_USE_CALLBACKS 1  /* use the callbacks instead of main() */
@@ -43,13 +45,17 @@ bool touche_pressee = false;
 //On déclare la fenêtre principale
 
 SDL_Window *fenetre_principale;
+SDL_Window * fenetre_fin_partie;
 
 //On déclare le rendu qui va permettre de dessiner dans la fenêtre principale
 
 SDL_Renderer *rendu_fenetre_principale;
 
 
+
 Jeu jeu;
+
+
 
 
 void dessiner_case(SDL_FRect rect,int pos_x, int pos_y, int cellule_taille, Couleur c)
@@ -171,39 +177,55 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
     const bool *key_states = SDL_GetKeyboardState(NULL);
 
-    if(!touche_pressee)
+
+    if (!touche_pressee&&key_states[SDL_SCANCODE_RIGHT]) {
+        jeu.deplacer_vers_la_droite_la_figure_courante();  /* pressed what would be "W" on a US QWERTY keyboard. Move forward! */
+        touche_pressee= true;
+
+    }
+
+    if(!touche_pressee&&key_states[SDL_SCANCODE_LEFT])
     {
-        if (key_states[SDL_SCANCODE_RIGHT]) {
-            jeu.deplacer_vers_la_droite_la_figure_courante();  /* pressed what would be "W" on a US QWERTY keyboard. Move forward! */
+            jeu.deplacer_vers_la_gauche_la_figure_courante();
+            touche_pressee= true;
+    }
+
+    if(!touche_pressee&&key_states[SDL_SCANCODE_UP])
+    {
+        if(jeu.figure_courante.peut_monter())
+        {
+            jeu.deplacer_vers_le_haut_la_figure_courante();
             touche_pressee= true;
 
-        }
-        else if(key_states[SDL_SCANCODE_LEFT])
+            cout << " dans !touche_pressee&&key_states[SDL_SCANCODE_UP] " << endl;
+        }else
         {
-                jeu.deplacer_vers_la_gauche_la_figure_courante();
-                touche_pressee= true;
+            touche_pressee= true;
+            cout << "peut pas monter " << endl;
         }
 
     }
 
+    if(!touche_pressee&&key_states[SDL_SCANCODE_DOWN])
+    {
+            jeu.deplacer_vers_le_bas_la_figure_courante();
+            touche_pressee= true;
+    }
+
+    if(jeu.figure_courante_est_en_haut())
+    {
+        jeu.jeu_termine=true;
+    }
 
 
 
-
-
-    if(temps_courant > 0.2*UNE_SECONDE + dernier_temps   )
+    if(temps_courant > 1*UNE_SECONDE + dernier_temps   )
     {
 
         if(!jeu.jeu_termine&&!touche_pressee)
         {
 
-
-
-
-
-
-            jeu.deplacer_vers_le_bas_la_figure_courante();
-
+            //jeu.deplacer_vers_le_bas_la_figure_courante();
 
 
         }

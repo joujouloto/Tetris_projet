@@ -5,6 +5,10 @@
 
 #include "Couleur.h"
 
+#define NB_LIGNES_DEFAULT 20
+#define NB_COLONNES_DEFAULT 15
+#define TAILLE_PIXELS_DEFAULT 40
+
 
 
 using namespace std;
