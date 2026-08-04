@@ -66,6 +66,9 @@ class Figure
 
 
         bool peut_monter();
+        bool peut_descendre(int nb_lignes_grille);
+        bool peut_aller_a_gauche();
+        bool peut_aller_a_droite(int nb_colonnes_grille);
 
 
     protected:

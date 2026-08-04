@@ -315,5 +315,24 @@ bool Figure::peut_monter()
 
 }
 
+bool Figure::peut_descendre(int nb_lignes_grille)
+{
+    int origine_x_qui_descend = origine_x + 1;
 
+    return origine_x_qui_descend<nb_lignes_grille;
+}
+
+bool  Figure::peut_aller_a_gauche()
+{
+    int origine_y_qui_va_a_gauche = origine_y-1;
+
+    return origine_y_qui_va_a_gauche>=0;
+}
+
+bool  Figure::peut_aller_a_droite(int nb_colonnes_grille)
+{
+    int origine_y_qui_va_a_gauche = origine_y+1;
+
+    return origine_y_qui_va_a_gauche<nb_colonnes_grille;
+}
 

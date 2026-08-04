@@ -179,15 +179,36 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
 
     if (!touche_pressee&&key_states[SDL_SCANCODE_RIGHT]) {
-        jeu.deplacer_vers_la_droite_la_figure_courante();  /* pressed what would be "W" on a US QWERTY keyboard. Move forward! */
-        touche_pressee= true;
+
+       if(jeu.figure_courante.peut_aller_a_droite(jeu.grille->nb_colonnes))
+       {
+
+           jeu.deplacer_vers_la_droite_la_figure_courante();  /* pressed what would be "W" on a US QWERTY keyboard. Move forward! */
+            touche_pressee= true;
+       }
+       else
+       {
+           cout << "peut pas aller a droite " << endl;
+            touche_pressee= true;
+       }
+
 
     }
 
     if(!touche_pressee&&key_states[SDL_SCANCODE_LEFT])
     {
+        if(jeu.figure_courante.peut_aller_a_gauche())
+        {
             jeu.deplacer_vers_la_gauche_la_figure_courante();
             touche_pressee= true;
+        }
+        else
+        {
+            touche_pressee= true;
+            cout << " peut pas aller a gauche " << endl;
+        }
+
+
     }
 
     if(!touche_pressee&&key_states[SDL_SCANCODE_UP])
@@ -208,12 +229,25 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
     if(!touche_pressee&&key_states[SDL_SCANCODE_DOWN])
     {
+
+        if(jeu.figure_courante.peut_descendre(jeu.grille->nb_lignes))
+        {
             jeu.deplacer_vers_le_bas_la_figure_courante();
             touche_pressee= true;
+
+        }else
+        {
+            touche_pressee= true;
+            cout << "peut pas descendre " << endl;
+        }
+
     }
 
     if(jeu.figure_courante_est_en_haut())
     {
+
+
+
         jeu.jeu_termine=true;
     }
 
