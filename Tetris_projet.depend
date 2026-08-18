@@ -615,7 +615,7 @@
 	"Figure.h"
 	<vector>
 
-1782555917 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\main.cpp
+1787085257 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\main.cpp
 	<iostream>
 	<random>
 	"Figure.h"
@@ -630,11 +630,8 @@
 	"ZFigure.h"
 	"SFigure.h"
 	"TFigure.h"
-	<SDL3/SDL.h>
-	<SDL3/SDL_main.h>
-	<SDL3_image/SDL_image.h>
 
-1785777703 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\figure.h
+1787085540 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\figure.h
 	<string>
 	<map>
 	"Couleur.h"
@@ -647,11 +644,11 @@
 
 1765359405 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\position.h
 
-1782555629 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\grille.h
+1787085598 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\grille.h
 	<vector>
 	"Couleur.h"
 
-1782553784 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\jeu.h
+1787085386 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\jeu.h
 	"Grille.h"
 	"Figure.h"
 	<vector>
@@ -1185,7 +1182,7 @@
 1768153828 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\couleur.cpp
 	"Couleur.h"
 
-1785777869 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\figure.cpp
+1786107685 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\figure.cpp
 	"Figure.h"
 	<iostream>
 	<sstream>
@@ -1200,7 +1197,7 @@
 	<iostream>
 	"Couleur.h"
 
-1782556064 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\jeu.cpp
+1787085382 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\jeu.cpp
 	"Jeu.h"
 	"Carre.h"
 	"Barre.h"
@@ -1230,4 +1227,9 @@
 
 1781368508 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\zfigure.cpp
 	"ZFigure.h"
+
+1786110125 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\renderersdl.cpp
+	"RendererSDL.h"
+
+1786110078 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\renderersdl.h
 

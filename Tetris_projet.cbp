@@ -51,8 +51,10 @@
 		<Unit filename="include/Jeu.h" />
 		<Unit filename="include/LFigure.h" />
 		<Unit filename="include/Position.h" />
+		<Unit filename="include/RendererSDL.h" />
 		<Unit filename="include/SFigure.h" />
 		<Unit filename="include/TFigure.h" />
+		<Unit filename="include/Test.h" />
 		<Unit filename="include/ZFigure.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Barre.cpp" />
@@ -64,8 +66,10 @@
 		<Unit filename="src/Jeu.cpp" />
 		<Unit filename="src/LFigure.cpp" />
 		<Unit filename="src/Position.cpp" />
+		<Unit filename="src/RendererSDL.cpp" />
 		<Unit filename="src/SFigure.cpp" />
 		<Unit filename="src/TFigure.cpp" />
+		<Unit filename="src/Test.cpp" />
 		<Unit filename="src/ZFigure.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

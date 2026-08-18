@@ -23,18 +23,13 @@ class Grille
         void afficher();
         void dessiner(int num_ligne, int num_colonne, Couleur c);
 
-        int nb_colonnes;
-        int nb_lignes;
-
-        int taille_pixels_cellule;
-        Couleur couleur_fonds;
-
         bool est_vide(int num_ligne, int num_colonne);
 
-
-
     protected:
-
+        int nb_colonnes;
+        int nb_lignes;
+        int taille_pixels_cellule;
+        Couleur couleur_fonds;
 
 
 

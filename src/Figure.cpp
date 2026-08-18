@@ -322,17 +322,46 @@ bool Figure::peut_descendre(int nb_lignes_grille)
     return origine_x_qui_descend<nb_lignes_grille;
 }
 
-bool  Figure::peut_aller_a_gauche()
+bool  Figure::peut_aller_a_gauche(int nb_colonnes_grille)
 {
-    int origine_y_qui_va_a_gauche = origine_y-1;
 
-    return origine_y_qui_va_a_gauche>=0;
+    vector<Position> figure = this->cellules[rotation_etat];
+
+    Position cellule_la_plus_a_gauche = Position(0,nb_colonnes_grille);
+
+    for(Position cellule: figure)
+    {
+
+        if(cellule.colonne<cellule_la_plus_a_gauche.colonne)
+        {
+            cellule_la_plus_a_gauche = cellule;
+        }
+    }
+
+    int y_le_plus_a_gauche_inc_un = cellule_la_plus_a_gauche.colonne-1;
+
+    return y_le_plus_a_gauche_inc_un>=0;
 }
 
 bool  Figure::peut_aller_a_droite(int nb_colonnes_grille)
 {
-    int origine_y_qui_va_a_gauche = origine_y+1;
+    vector<Position> figure = this->cellules[rotation_etat];
 
-    return origine_y_qui_va_a_gauche<nb_colonnes_grille;
+    Position cellule_la_plus_a_droite = Position(0,0);
+
+    for(Position cellule: figure)
+    {
+
+        if(cellule.colonne>cellule_la_plus_a_droite.colonne)
+        {
+            cellule_la_plus_a_droite = cellule;
+        }
+    }
+
+    cout << "colonne plus a droite de la figure " << origine_y+cellule_la_plus_a_droite.colonne << endl;
+
+    int num_colonne_de_la_cellule_la_plus_droite_de_la_figure_inc_un = cellule_la_plus_a_droite.colonne + 1;
+
+    return num_colonne_de_la_cellule_la_plus_droite_de_la_figure_inc_un<nb_colonnes_grille;
 }
 

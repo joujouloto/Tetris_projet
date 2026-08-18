@@ -19,21 +19,15 @@ enum Forme {C_arre, B_arre, L_Figure, S_Figure, T_Figure,J_Figure,Z_Figure};
 class Figure
 {
     public:
-        int id;
+
         Figure ();
         Figure(int origine_ligne, int origine_colonne);
 
-        string nom_forme;
-        map<int,vector<Position>> cellules;
-        int cellule_taille;
-        int rotation_etat;
-        int nb_rotations_possibles;
 
-        int origine_x;
-        int origine_y;
+
 
         string to_string();
-        Couleur couleur_cellule;
+
 
         void setPosition(Position p);
         void setPosition(int p_x, int p_y);
@@ -67,14 +61,24 @@ class Figure
 
         bool peut_monter();
         bool peut_descendre(int nb_lignes_grille);
-        bool peut_aller_a_gauche();
+        bool peut_aller_a_gauche(int nb_colonnes_grille);
         bool peut_aller_a_droite(int nb_colonnes_grille);
 
 
     protected:
-
+        int id;
+        string nom_forme;
+        map<int,vector<Position>> cellules;
+        int cellule_taille;
+        int rotation_etat;
+        int nb_rotations_possibles;
+        int origine_x;
+        int origine_y;
+        Couleur couleur_cellule;
 
     private:
+
+
 
 
 
