@@ -20,7 +20,7 @@
 
 
 int main()
-{
+{/*
     Jeu jeu;
 
     while(!jeu.est_termine())
@@ -35,6 +35,15 @@ int main()
 
         jeu.afficher();
     }
+*/
+
+    Test test;
+
+
+    test.test_creation_grille_si_vide();
+
+
+
 
     return 0;
 }

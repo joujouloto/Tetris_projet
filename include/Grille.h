@@ -19,18 +19,19 @@ class Grille
     public:
         Grille();
         void initialiser();
-        vector <vector<int>> contenu;
         void afficher();
         void dessiner(int num_ligne, int num_colonne, Couleur c);
-
         bool est_vide(int num_ligne, int num_colonne);
+
+
+        vector < vector<int> > get_contenu();
 
     protected:
         int nb_colonnes;
         int nb_lignes;
         int taille_pixels_cellule;
         Couleur couleur_fonds;
-
+        vector <vector<int>> contenu;
 
 
     private:

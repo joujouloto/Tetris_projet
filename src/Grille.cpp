@@ -114,5 +114,8 @@ bool Grille::est_vide(int num_ligne, int num_colonne)
 }
 
 
-
+vector < vector<int> > Grille::get_contenu()
+{
+    return contenu;
+}
 
