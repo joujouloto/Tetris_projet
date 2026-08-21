@@ -7,6 +7,7 @@
 #include "Grille.h"
 #include "Couleur.h"
 #include "Position.h"
+#include "Test.h"
 
 
 #include "Carre.h"
@@ -41,6 +42,8 @@ int main()
 
 
     test.test_creation_grille_si_vide();
+
+
 
 
 

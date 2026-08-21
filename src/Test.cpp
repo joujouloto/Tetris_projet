@@ -2,6 +2,8 @@
 
 #include "Grille.h"
 
+#include <iostream>
+
 Test::Test()
 {
     //ctor
@@ -16,10 +18,15 @@ void Test::test_creation_grille_si_vide()
 {
     Grille grille;
 
+    int cellule = 0;
 
-    for(vector<vector<int>>::iterator it = grille.get_contenu().begin(); it!=grille.get_contenu().end() ; it++ )
+
+    for( vector<int> ligne : grille.get_contenu() )
     {
-
+        for( int i: ligne )
+        {
+            assert(i==gris_fonce);
+        }
     }
 
 

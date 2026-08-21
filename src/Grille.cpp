@@ -17,9 +17,6 @@ Grille::Grille()
     couleur_fonds = Couleur(gris_fonce);
 
 
-
-    initialiser();
-
     this->taille_pixels_cellule = TAILLE_PIXELS_DEFAULT;
 
     initialiser();
