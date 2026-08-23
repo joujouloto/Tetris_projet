@@ -13,6 +13,27 @@ Test::~Test()
 {
     //dtor
 }
+/*
+Test
+Grille initialement vide
+Occuper une case
+Déplacement gauche
+Déplacement droite
+Limite gauche
+Limite droite
+Collision avec le bas
+Collision avec une pièce
+Fixation dans la grille
+Nouvelle pièce
+Rotation
+Formes à 4 cellules
+Suppression d'une ligne
+Game over	*/
+
+void Test::afficher_message_ok()
+{
+    cout << endl << "--> ok" << endl;
+}
 
 void Test::test_creation_grille_si_vide()
 {
@@ -21,7 +42,7 @@ void Test::test_creation_grille_si_vide()
     int cellule = 0;
 
 
-    cout << "test creation grille vide" << endl;
+    cout << "test creation grille vide";
     for( vector<int> ligne : grille.get_contenu() )
     {
         for( int i: ligne )
@@ -29,7 +50,7 @@ void Test::test_creation_grille_si_vide()
             assert(i==gris_fonce);
         }
     }
-    cout << "--> ok" << endl;
+    afficher_message_ok();
 
 }
 
@@ -41,29 +62,29 @@ void Test::case_occupee()
 
     g.dessiner(0,0,cnoir);
 
-    cout << "Test case occupee 0,0 noir" << endl;
+    cout << "Test case occupee 0,0 noir";
 
     assert(!g.est_vide(0,0));
 
-    cout << "--> ok" << endl;
+    afficher_message_ok();
 
 
 
     Couleur crouge(r_ouge);
 
-    cout << "Test case occupee 5,5 rouge " << endl;
+    cout << "Test case occupee 5,5 rouge ";
     g.dessiner(5,5,crouge);
     assert(!g.est_vide(5,5));
-    cout << "--> ok" << endl;
+    afficher_message_ok();
 
 
     Couleur cvert(v_ert);
 
 
-    cout << "Test case occupee "<<g.get_nb_lignes()-1 << " ," << g.get_nb_colonnes()-1 << " rouge " << endl;
+    cout << "Test case occupee "<<g.get_nb_lignes()-1 << " ," << g.get_nb_colonnes()-1 << " rouge ";
     g.dessiner(g.get_nb_lignes()-1,g.get_nb_colonnes()-1,cvert);
     assert(!g.est_vide(g.get_nb_lignes()-1,g.get_nb_colonnes()-1));
-    cout << "--> ok" << endl;
+    afficher_message_ok();
 
 
 

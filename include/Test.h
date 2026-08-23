@@ -14,6 +14,8 @@ class Test
         void test_creation_grille_si_vide();
         void case_occupee();
 
+        void afficher_message_ok();
+
     protected:
 
     private:
