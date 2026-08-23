@@ -116,3 +116,14 @@ vector < vector<int> > Grille::get_contenu()
     return contenu;
 }
 
+int Grille::get_nb_lignes()
+{
+    return nb_lignes;
+}
+
+int Grille::get_nb_colonnes()
+{
+    return nb_colonnes;
+}
+
+

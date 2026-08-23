@@ -12,6 +12,7 @@ class Test
         virtual ~Test();
 
         void test_creation_grille_si_vide();
+        void case_occupee();
 
     protected:
 

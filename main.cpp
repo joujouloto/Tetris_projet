@@ -42,8 +42,8 @@ int main()
 
 
     test.test_creation_grille_si_vide();
+    test.case_occupee();
 
-    cout << "test creation grille vide ok" << endl;
 
 
 
