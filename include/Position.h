@@ -7,12 +7,16 @@ class Position
     public:
         Position ();
         Position(int p_ligne, int p_colonne);
+
+        int getLigne();
+        int getColonne();
+
+    protected:
         int ligne;
         int colonne;
-    protected:
-
 
     private:
+
 };
 
 #endif // POSITION_H

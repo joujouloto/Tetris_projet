@@ -6,7 +6,8 @@
 
 #include "Couleur.h"
 #include "Position.h"
-#include "Grille.h"
+
+class Grille;
 
 using namespace std;
 
@@ -64,17 +65,21 @@ class Figure
         bool peut_aller_a_gauche(int nb_colonnes_grille);
         bool peut_aller_a_droite(int nb_colonnes_grille);
 
+        map<int,vector<Position>> getCellules();
+        int getRotationEtat();
+
 
     protected:
         int id;
         string nom_forme;
-        map<int,vector<Position>> cellules;
+
         int cellule_taille;
         int rotation_etat;
         int nb_rotations_possibles;
         int origine_x;
         int origine_y;
         Couleur couleur_cellule;
+        map<int,vector<Position>> cellules;
 
     private:
 

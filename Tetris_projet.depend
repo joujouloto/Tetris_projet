@@ -632,20 +632,19 @@
 	"SFigure.h"
 	"TFigure.h"
 
-1787085540 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\figure.h
+1787590635 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\figure.h
 	<string>
 	<map>
 	"Couleur.h"
 	"Position.h"
-	"Grille.h"
 
-1767291238 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\couleur.h
+1787591088 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\couleur.h
 	<string>
 	<vector>
 
-1765359405 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\position.h
+1787590944 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\position.h
 
-1787498791 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\grille.h
+1787589693 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\grille.h
 	<vector>
 	"Couleur.h"
 
@@ -1180,10 +1179,10 @@
 	"Carre.h"
 	"Figure.h"
 
-1768153828 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\couleur.cpp
+1787591119 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\couleur.cpp
 	"Couleur.h"
 
-1786107685 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\figure.cpp
+1787591024 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\figure.cpp
 	"Figure.h"
 	<iostream>
 	<sstream>
@@ -1217,7 +1216,7 @@
 1781795393 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\lfigure.cpp
 	"LFigure.h"
 
-1765359460 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\position.cpp
+1787589904 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\position.cpp
 	"Position.h"
 
 1781804504 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\sfigure.cpp
@@ -1234,11 +1233,12 @@
 
 1786110078 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\renderersdl.h
 
-1787499025 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\test.cpp
+1787589751 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\test.cpp
 	"Test.h"
 	"Grille.h"
+	"Barre.h"
 	<iostream>
 
-1787499389 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\test.h
+1787589306 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\test.h
 	<assert.h>
 

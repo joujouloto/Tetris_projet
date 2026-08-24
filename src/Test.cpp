@@ -1,6 +1,7 @@
 #include "Test.h"
 
 #include "Grille.h"
+#include "Barre.h"
 
 #include <iostream>
 
@@ -85,6 +86,20 @@ void Test::case_occupee()
     g.dessiner(g.get_nb_lignes()-1,g.get_nb_colonnes()-1,cvert);
     assert(!g.est_vide(g.get_nb_lignes()-1,g.get_nb_colonnes()-1));
     afficher_message_ok();
+
+}
+
+void Test::deplacement_a_gauche()
+{
+    cout << "Deplacement à gauche ";
+
+    Grille g;
+    Barre b(0,0,noir);
+
+
+
+
+
 
 
 

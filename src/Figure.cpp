@@ -55,8 +55,8 @@ string Figure::to_string()
 
 void Figure::setPosition(Position p)
 {
-    this->origine_x = p.ligne;
-    this->origine_y = p.colonne;
+    this->origine_x = p.getLigne();
+    this->origine_y = p.getColonne();
 
 }
 
@@ -154,7 +154,7 @@ bool Figure::est_en_collision_en_bas(Grille *grille)
     {
 
 
-        if(!grille->est_vide(cellule.ligne + 1, cellule.colonne))
+        if(!grille->est_vide(cellule.getLigne() + 1, cellule.getColonne()))
         {
             return true;
         }
@@ -169,7 +169,7 @@ bool Figure::est_en_collision_en_haut(Grille * grille)
 
     for(Position cellule: figure)
     {
-        if(!grille->est_vide(cellule.ligne-1,cellule.colonne))
+        if(!grille->est_vide(cellule.getLigne()-1,cellule.getColonne()))
         {
             return true;
         }
@@ -184,7 +184,7 @@ bool Figure::est_en_collision_a_gauche(Grille * grille)
 
     for(Position cellule: figure)
     {
-        if(!grille->est_vide(cellule.ligne,cellule.colonne-1))
+        if(!grille->est_vide(cellule.getLigne(),cellule.getColonne()-1))
         {
             return true;
         }
@@ -199,7 +199,7 @@ bool Figure::est_en_collision_a_droite(Grille * grille)
 
     for(Position cellule: figure)
     {
-        if(!grille->est_vide(cellule.ligne,cellule.colonne+1))
+        if(!grille->est_vide(cellule.getLigne(),cellule.getColonne()+1))
         {
             return true;
         }
@@ -222,7 +222,7 @@ bool Figure::est_en_collision_en_rotation_droite(Grille * grille)
 
     for(Position cellule: figure)
     {
-        if(!grille->est_vide(cellule.ligne,cellule.colonne))
+        if(!grille->est_vide(cellule.getLigne(),cellule.getColonne()))
         {
             return true;
         }
@@ -247,7 +247,7 @@ bool Figure::est_en_collision_en_rotation_gauche(Grille * grille)
 
         for(Position cellule: figure)
         {
-            if(!grille->est_vide(cellule.ligne,cellule.colonne))
+            if(!grille->est_vide(cellule.getLigne(),cellule.getColonne()))
             {
                 return true;
             }
@@ -299,8 +299,8 @@ void Figure::afficher_position()
 
     for(Position cellule : figure)
     {
-        cout << "Cellule " << i << " x:" << cellule.ligne << " (" << cellule.ligne+origine_x << ")"
-        " y:" << cellule.colonne << " (" << cellule.colonne+origine_y << ")" <<endl;
+        cout << "Cellule " << i << " x:" << cellule.getLigne() << " (" << cellule.getLigne()+origine_x << ")"
+        " y:" << cellule.getColonne() << " (" << cellule.getColonne()+origine_y << ")" <<endl;
         i++;
     }
 
@@ -332,13 +332,13 @@ bool  Figure::peut_aller_a_gauche(int nb_colonnes_grille)
     for(Position cellule: figure)
     {
 
-        if(cellule.colonne<cellule_la_plus_a_gauche.colonne)
+        if(cellule.getColonne()<cellule_la_plus_a_gauche.getColonne())
         {
             cellule_la_plus_a_gauche = cellule;
         }
     }
 
-    int y_le_plus_a_gauche_inc_un = cellule_la_plus_a_gauche.colonne-1;
+    int y_le_plus_a_gauche_inc_un = cellule_la_plus_a_gauche.getColonne()-1;
 
     return y_le_plus_a_gauche_inc_un>=0;
 }
@@ -352,16 +352,27 @@ bool  Figure::peut_aller_a_droite(int nb_colonnes_grille)
     for(Position cellule: figure)
     {
 
-        if(cellule.colonne>cellule_la_plus_a_droite.colonne)
+        if(cellule.getColonne()>cellule_la_plus_a_droite.getColonne())
         {
             cellule_la_plus_a_droite = cellule;
         }
     }
 
-    cout << "colonne plus a droite de la figure " << origine_y+cellule_la_plus_a_droite.colonne << endl;
+    cout << "colonne plus a droite de la figure " << origine_y+cellule_la_plus_a_droite.getColonne() << endl;
 
-    int num_colonne_de_la_cellule_la_plus_droite_de_la_figure_inc_un = cellule_la_plus_a_droite.colonne + 1;
+    int num_colonne_de_la_cellule_la_plus_droite_de_la_figure_inc_un = cellule_la_plus_a_droite.getColonne() + 1;
 
     return num_colonne_de_la_cellule_la_plus_droite_de_la_figure_inc_un<nb_colonnes_grille;
+}
+
+map<int,vector<Position>> Figure::getCellules()
+{
+    return cellules;
+
+}
+
+int Figure::getRotationEtat()
+{
+    return rotation_etat;
 }
 

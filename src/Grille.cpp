@@ -3,6 +3,12 @@
 #include <iostream>
 
 #include "Couleur.h"
+#include "Position.h"
+
+#include <map>
+
+#include "Figure.h"
+
 
 
 using namespace std;
@@ -73,13 +79,23 @@ void Grille::dessiner(int num_ligne, int num_colonne, Couleur c)
     if((num_ligne>=0||num_ligne<this->nb_lignes) && (num_colonne>=0||num_colonne<this->nb_colonnes))
     {
 
-        contenu[num_ligne][num_colonne] = c.id;
+        contenu[num_ligne][num_colonne] = c.getId();
 
 
 
     }
 
+}
 
+void Grille::dessiner(Figure * f)
+{
+   vector<Position> cellules = f->getCellules()[f->getRotationEtat()];
+
+
+    for(Position cellule: cellules)
+    {
+        contenu[cellule.getLigne()][cellule.getColonne()] = f->getCouleur().getId();
+    }
 
 
 

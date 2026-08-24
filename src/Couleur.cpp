@@ -173,6 +173,11 @@ Couleur::Couleur( int p_couleur)
 }
 
 
+int Couleur::getId()
+{
+    return id;
+}
+
 
 
 

@@ -15,3 +15,14 @@ Position::Position(int p_ligne, int p_colonne)
 
 
 }
+
+int Position::getLigne()
+{
+    return ligne;
+}
+
+int Position::getColonne()
+{
+    return colonne;
+}
+

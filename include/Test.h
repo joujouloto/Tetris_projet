@@ -13,6 +13,7 @@ class Test
 
         void test_creation_grille_si_vide();
         void case_occupee();
+        void deplacement_a_gauche();
 
         void afficher_message_ok();
 

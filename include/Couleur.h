@@ -20,11 +20,11 @@ class Couleur
         int vert;
         int bleu;
         string nom_couleur;
-        int id;
 
+        int getId();
 
     protected:
-
+        int id;
 
     private:
 };

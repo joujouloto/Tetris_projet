@@ -13,6 +13,8 @@
 
 using namespace std;
 
+class Figure;// Déclaration anticipée
+
 
 class Grille
 {
@@ -21,6 +23,10 @@ class Grille
         void initialiser();
         void afficher();
         void dessiner(int num_ligne, int num_colonne, Couleur c);
+        void dessiner(Figure * f);
+
+
+
         bool est_vide(int num_ligne, int num_colonne);
 
         int get_nb_colonnes();
