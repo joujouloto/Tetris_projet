@@ -24,6 +24,7 @@ class Grille
         void afficher();
         void dessiner(int num_ligne, int num_colonne, Couleur c);
         void dessiner(Figure * f);
+        void effacer(Figure * f);
 
 
 
@@ -34,6 +35,7 @@ class Grille
 
 
         vector < vector<int> > get_contenu();
+        Couleur getCouleurFonds();
 
     protected:
 

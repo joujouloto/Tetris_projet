@@ -2,6 +2,7 @@
 
 #include "Grille.h"
 #include "Barre.h"
+#include "SFigure.h"
 
 #include <iostream>
 
@@ -91,17 +92,38 @@ void Test::case_occupee()
 
 void Test::deplacement_a_gauche()
 {
-    cout << "Deplacement à gauche ";
+    cout << "Deplacement a gauche ";
 
     Grille g;
-    Barre b(0,0,noir);
+    Barre b(0,1,noir);
+
+    cout << " Barre 0,1 noir " ;
+    g.dessiner(&b);
 
 
 
+    b.aller_a_gauche();
+
+    g.effacer(&b);
+
+    g.dessiner(&b);
+
+
+    assert(!g.est_vide(0,0));
+    afficher_message_ok();
 
 
 
+    cout << " sfigure rouge 5,5 (origine)";
+    SFigure sf(5,5,r_ouge);
+    g.dessiner(&sf);
 
+    sf.aller_a_gauche();
+    g.effacer(&sf);
 
+    g.dessiner(&sf);
+
+    assert(!g.est_vide(5,5));//voir dans sfigure la figure est compris dans un rectangle plus grand donc l'origine est 0,0 mais la case occupee est 0,1...etc
+    afficher_message_ok();
 
 }

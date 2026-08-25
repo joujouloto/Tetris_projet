@@ -142,4 +142,20 @@ int Grille::get_nb_colonnes()
     return nb_colonnes;
 }
 
+Couleur Grille::getCouleurFonds()
+{
+    return this->couleur_fonds;
+}
+
+void Grille::effacer(Figure * f)
+{
+    vector<Position> cellules = f->getCellules()[f->getRotationEtat()];
+
+
+    for(Position cellule: cellules)
+    {
+        contenu[cellule.getLigne()][cellule.getColonne()] = getCouleurFonds().getId();
+    }
+}
+
 

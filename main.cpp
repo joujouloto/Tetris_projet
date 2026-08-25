@@ -43,6 +43,7 @@ int main()
 
     test.test_creation_grille_si_vide();
     test.case_occupee();
+    test.deplacement_a_gauche();
 
 
 

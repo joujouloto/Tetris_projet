@@ -25,7 +25,7 @@ Jeu::Jeu()
 
 
 
-
+/*
     couleurs = c.get_cellules_couleur();
 
 
@@ -41,7 +41,7 @@ Jeu::Jeu()
 
     figure_courante.setCouleur(set_figure_courante_couleur_aleatoire());
     figure_suivante.setCouleur(set_figure_courante_couleur_aleatoire());
-
+*/
 }
 
 Figure Jeu::get_figure_aleatoire()
