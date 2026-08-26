@@ -68,6 +68,9 @@ class Figure
         map<int,vector<Position>> getCellules();
         int getRotationEtat();
 
+        int get_origine_y();
+        int get_origine_x();
+
 
     protected:
         int id;

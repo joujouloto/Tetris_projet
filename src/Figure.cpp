@@ -112,24 +112,33 @@ void Figure::rotation_sens_horaire(Grille * grille) //  attention la barre n'a q
 
 }
 
-void Figure::aller_a_gauche()
+void Figure::aller_a_gauche(int nb_colonnes_grille)
 {
-    int nouvel_abscisse_origine = origine_x;
-    int nouvelle_ordonne_origine = origine_y-1;
+    if(this->peut_aller_a_gauche(nb_colonnes_grille))
+    {
+        int nouvel_abscisse_origine = origine_x;
+        int nouvelle_ordonne_origine = origine_y-1;
 
 
-    setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
-    maj_position();
+        setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
+        maj_position();
+    }
+
+
+
 }
 
-void Figure::aller_a_droite()
+void Figure::aller_a_droite(int nb_colonnes_grille)
 {
-    int nouvel_abscisse_origine = origine_x;
-    int nouvelle_ordonne_origine = origine_y+1;
+    if(this->peut_aller_a_droite(nb_colonnes_grille))
+    {
 
-    setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
-    maj_position();
+        int nouvel_abscisse_origine = origine_x;
+        int nouvelle_ordonne_origine = origine_y+1;
 
+        setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
+        maj_position();
+    }
 }
 
 
@@ -374,5 +383,15 @@ map<int,vector<Position>> Figure::getCellules()
 int Figure::getRotationEtat()
 {
     return rotation_etat;
+}
+
+int Figure::get_origine_y()
+{
+    return origine_y;
+}
+
+int Figure::get_origine_x()
+{
+    return origine_x;
 }
 

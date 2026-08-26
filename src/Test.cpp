@@ -41,9 +41,6 @@ void Test::test_creation_grille_si_vide()
 {
     Grille grille;
 
-    int cellule = 0;
-
-
     cout << "test creation grille vide";
     for( vector<int> ligne : grille.get_contenu() )
     {
@@ -124,6 +121,68 @@ void Test::deplacement_a_gauche()
     g.dessiner(&sf);
 
     assert(!g.est_vide(5,5));//voir dans sfigure la figure est compris dans un rectangle plus grand donc l'origine est 0,0 mais la case occupee est 0,1...etc
+    afficher_message_ok();
+
+}
+
+void Test::deplacement_a_droite()
+{
+    cout << "Deplacement a gauche ";
+
+    Grille g;
+    Barre b(0,0,noir);
+
+    cout << " Barre 0,0 noir " ;
+    g.dessiner(&b);
+
+
+
+    b.aller_a_droite();
+
+    g.effacer(&b);
+
+    g.dessiner(&b);
+
+
+    assert(!g.est_vide(0,4));
+    afficher_message_ok();
+
+
+
+    cout << " sfigure rouge 5,5 (origine)";
+    SFigure sf(5,5,r_ouge);
+    g.dessiner(&sf);
+
+    sf.aller_a_droite();
+    g.effacer(&sf);
+
+    g.dessiner(&sf);
+
+    assert(!g.est_vide(5,6));//voir dans sfigure la figure est compris dans un rectangle plus grand donc l'origine est 0,0 mais la case occupee est 0,1...etc
+    afficher_message_ok();
+}
+
+void Test::limite_gauche()
+{
+    cout << "Limite gauche ";
+
+    Grille g;
+    Barre b(0,0,noir);
+
+    cout << " Barre 0,0 noir " ;
+    g.dessiner(&b);
+
+    cout << "Test de la fonction peut aller a gauche doit indiquer qu'elle peut pas car au bord ";
+
+    assert(!b.peut_aller_a_gauche(g.get_nb_colonnes()));
+    afficher_message_ok();
+
+
+
+    cout << "Test que aller a gauche ne modifie pas les coordonnees";
+    b.aller_a_gauche();
+    cout << "origine y " << b.get_origine_y() << endl;
+    assert(b.get_origine_y()==0);
     afficher_message_ok();
 
 }
