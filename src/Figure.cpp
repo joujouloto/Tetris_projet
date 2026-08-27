@@ -112,33 +112,25 @@ void Figure::rotation_sens_horaire(Grille * grille) //  attention la barre n'a q
 
 }
 
-void Figure::aller_a_gauche(int nb_colonnes_grille)
+void Figure::aller_a_gauche()
 {
-    if(this->peut_aller_a_gauche(nb_colonnes_grille))
-    {
+
         int nouvel_abscisse_origine = origine_x;
         int nouvelle_ordonne_origine = origine_y-1;
 
 
         setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
         maj_position();
-    }
-
-
-
 }
 
-void Figure::aller_a_droite(int nb_colonnes_grille)
+void Figure::aller_a_droite()
 {
-    if(this->peut_aller_a_droite(nb_colonnes_grille))
-    {
+    int nouvel_abscisse_origine = origine_x;
+    int nouvelle_ordonne_origine = origine_y+1;
 
-        int nouvel_abscisse_origine = origine_x;
-        int nouvelle_ordonne_origine = origine_y+1;
+    setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
+    maj_position();
 
-        setPosition(nouvel_abscisse_origine,nouvelle_ordonne_origine);
-        maj_position();
-    }
 }
 
 
@@ -367,7 +359,7 @@ bool  Figure::peut_aller_a_droite(int nb_colonnes_grille)
         }
     }
 
-    cout << "colonne plus a droite de la figure " << origine_y+cellule_la_plus_a_droite.getColonne() << endl;
+
 
     int num_colonne_de_la_cellule_la_plus_droite_de_la_figure_inc_un = cellule_la_plus_a_droite.getColonne() + 1;
 

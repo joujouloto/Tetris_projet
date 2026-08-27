@@ -615,7 +615,7 @@
 	"Figure.h"
 	<vector>
 
-1787775409 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\main.cpp
+1787857969 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\main.cpp
 	<iostream>
 	<random>
 	"Figure.h"
@@ -632,7 +632,7 @@
 	"SFigure.h"
 	"TFigure.h"
 
-1787776117 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\figure.h
+1787776188 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\figure.h
 	<string>
 	<map>
 	"Couleur.h"
@@ -1182,7 +1182,7 @@
 1787591119 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\couleur.cpp
 	"Couleur.h"
 
-1787775611 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\figure.cpp
+1787857503 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\figure.cpp
 	"Figure.h"
 	<iostream>
 	<sstream>
@@ -1236,13 +1236,14 @@
 
 1786110078 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\renderersdl.h
 
-1787775698 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\test.cpp
+1787857407 source:c:\users\julie\documents\projets_cplusplus\tetris_projet\src\test.cpp
 	"Test.h"
 	"Grille.h"
 	"Barre.h"
 	"SFigure.h"
+	"Carre.h"
 	<iostream>
 
-1787774758 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\test.h
+1787857684 c:\users\julie\documents\projets_cplusplus\tetris_projet\include\test.h
 	<assert.h>
 

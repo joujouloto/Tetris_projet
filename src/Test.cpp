@@ -3,6 +3,8 @@
 #include "Grille.h"
 #include "Barre.h"
 #include "SFigure.h"
+#include "Carre.h"
+#include "TFigure.h"
 
 #include <iostream>
 
@@ -180,9 +182,55 @@ void Test::limite_gauche()
 
 
     cout << "Test que aller a gauche ne modifie pas les coordonnees";
-    b.aller_a_gauche();
+
+    if(b.peut_aller_a_gauche(g.get_nb_colonnes()))
+    {
+        b.aller_a_gauche();
+    }
+
     cout << "origine y " << b.get_origine_y() << endl;
     assert(b.get_origine_y()==0);
     afficher_message_ok();
 
 }
+
+void Test::limite_droite()
+{
+    Grille g;
+    cout << "Limite droite ";
+
+    cout << " Carre 0,"<<g.get_nb_colonnes()-2<<" vert ";
+
+    Carre c(0,g.get_nb_colonnes()-2,v_ert);
+
+    cout << "peut aller droite ";
+
+
+    if(c.peut_aller_a_droite(g.get_nb_colonnes()))
+    {
+        c.aller_a_droite();
+    }
+
+    assert(c.get_origine_y()==g.get_nb_colonnes()-2);
+    afficher_message_ok();
+}
+
+void Test::limite_bas()
+{
+    Grille g;
+    cout << "Limite bas ";cout << endl;
+
+    cout << "TFigure "<<g.get_nb_lignes()-1<<",0 jaune";
+    TFigure tf(g.get_nb_lignes()-1,0,jaune);
+
+
+    if(tf.peut_descendre(g.get_nb_lignes()))
+    {
+        tf.descendre();
+    }
+    assert(tf.get_origine_x()==g.get_nb_lignes()-1);
+    afficher_message_ok();
+
+
+}
+

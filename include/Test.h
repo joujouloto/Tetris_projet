@@ -16,6 +16,8 @@ class Test
         void deplacement_a_gauche();//a ameliorer
         void deplacement_a_droite();//a ameliorer
         void limite_gauche();
+        void limite_droite();
+        void limite_bas();
 
         void afficher_message_ok();
 

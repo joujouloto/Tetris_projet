@@ -46,6 +46,8 @@ int main()
     tests.deplacement_a_gauche();
     tests.deplacement_a_droite();
     tests.limite_gauche();
+    tests.limite_droite();
+    tests.limite_bas();
 
 
 
