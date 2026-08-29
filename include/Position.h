@@ -1,6 +1,10 @@
 #ifndef POSITION_H
 #define POSITION_H
 
+#include <string>
+
+using namespace std;
+
 
 class Position
 {
@@ -10,6 +14,8 @@ class Position
 
         int getLigne();
         int getColonne();
+
+        string toString();
 
     protected:
         int ligne;

@@ -60,16 +60,19 @@ class Figure
         void afficher_position();
 
 
-        bool peut_monter();
-        bool peut_descendre(int nb_lignes_grille);
-        bool peut_aller_a_gauche(int nb_colonnes_grille);
-        bool peut_aller_a_droite(int nb_colonnes_grille);
+        bool peut_monter(Grille * g);
+        bool peut_descendre(Grille * g);
+        bool peut_aller_a_gauche(Grille * g);
+        bool peut_aller_a_droite(Grille * g);
 
         map<int,vector<Position>> getCellules();
         int getRotationEtat();
 
         int get_origine_y();
         int get_origine_x();
+
+        vector<Position> donner_reelles_coordonnees_cellules();
+        void voir_positions_reelles_cellules();
 
 
     protected:

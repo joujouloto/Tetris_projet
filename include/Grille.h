@@ -22,9 +22,15 @@ class Grille
         Grille();
         void initialiser();
         void afficher();
+
         void dessiner(int num_ligne, int num_colonne, Couleur c);
+        void occuper(int num_ligne, int num_colonne);
+
         void dessiner(Figure * f);
         void effacer(Figure * f);
+
+
+        bool n_est_pas_occupee(int num_ligne, int num_colonne);
 
 
 

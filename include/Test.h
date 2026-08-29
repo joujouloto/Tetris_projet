@@ -18,6 +18,11 @@ class Test
         void limite_gauche();
         void limite_droite();
         void limite_bas();
+        void limite_haut();
+
+        void collision_avec_une_piece();
+
+        void voir_position_reelles();
 
         void afficher_message_ok();
 

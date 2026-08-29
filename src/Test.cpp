@@ -5,6 +5,7 @@
 #include "SFigure.h"
 #include "Carre.h"
 #include "TFigure.h"
+#include "ZFigure.h"
 
 #include <iostream>
 
@@ -25,7 +26,8 @@ Déplacement gauche
 Déplacement droite
 Limite gauche
 Limite droite
-Collision avec le bas
+Collision avec le bas (limite bas)
+Collision avec le haut (limite haut)
 Collision avec une pièce
 Fixation dans la grille
 Nouvelle pièce
@@ -171,19 +173,20 @@ void Test::limite_gauche()
     Grille g;
     Barre b(0,0,noir);
 
+
     cout << " Barre 0,0 noir " ;
     g.dessiner(&b);
 
     cout << "Test de la fonction peut aller a gauche doit indiquer qu'elle peut pas car au bord ";
 
-    assert(!b.peut_aller_a_gauche(g.get_nb_colonnes()));
+    assert(!b.peut_aller_a_gauche(&g));
     afficher_message_ok();
 
 
 
     cout << "Test que aller a gauche ne modifie pas les coordonnees";
 
-    if(b.peut_aller_a_gauche(g.get_nb_colonnes()))
+    if(b.peut_aller_a_gauche(&g))
     {
         b.aller_a_gauche();
     }
@@ -206,10 +209,13 @@ void Test::limite_droite()
     cout << "peut aller droite ";
 
 
-    if(c.peut_aller_a_droite(g.get_nb_colonnes()))
+    if(c.peut_aller_a_droite(&g))
     {
         c.aller_a_droite();
     }
+
+    cout << " c.get_origine_y()= "<< c.get_origine_y()<< "g.get_nb_colonnes()-2="<< g.get_nb_colonnes()-2 << endl;
+
 
     assert(c.get_origine_y()==g.get_nb_colonnes()-2);
     afficher_message_ok();
@@ -224,7 +230,7 @@ void Test::limite_bas()
     TFigure tf(g.get_nb_lignes()-1,0,jaune);
 
 
-    if(tf.peut_descendre(g.get_nb_lignes()))
+    if(tf.peut_descendre(&g))
     {
         tf.descendre();
     }
@@ -232,5 +238,53 @@ void Test::limite_bas()
     afficher_message_ok();
 
 
+}
+
+void Test::limite_haut()
+{
+    cout << "Limite haut " << endl;
+
+    Grille g;
+
+    cout << " ZFigure 0 0 violet";
+    ZFigure zf(0,0,violet);
+
+
+
+
+    if(zf.peut_monter(&g))
+    {
+        zf.monter();
+    }
+    assert(zf.get_origine_x()==0);
+    afficher_message_ok();
+}
+
+void Test::collision_avec_une_piece()
+{
+    cout << "collision avec une piece " <<endl;
+
+
+    Barre b(0,0,noir);
+    cout << " Barre 0,0 noir ";
+
+
+    Grille g;
+
+    g.occuper(0,4);
+
+    assert(!b.peut_aller_a_droite(&g));
+
+    afficher_message_ok();
+
+}
+
+void Test::voir_position_reelles()
+{
+    Barre b(0,0,noir);
+
+    b.voir_positions_reelles_cellules();
+
+    afficher_message_ok();
 }
 

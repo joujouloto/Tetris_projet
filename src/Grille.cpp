@@ -87,6 +87,21 @@ void Grille::dessiner(int num_ligne, int num_colonne, Couleur c)
 
 }
 
+void Grille::occuper(int num_ligne, int num_colonne)
+{
+    Couleur noirc(noir);
+
+
+
+     if((num_ligne>=0||num_ligne<this->nb_lignes) && (num_colonne>=0||num_colonne<this->nb_colonnes))
+    {
+
+        contenu[num_ligne][num_colonne] = noirc.getId();
+
+    }
+}
+
+
 void Grille::dessiner(Figure * f)
 {
    vector<Position> cellules = f->getCellules()[f->getRotationEtat()];
@@ -156,6 +171,11 @@ void Grille::effacer(Figure * f)
     {
         contenu[cellule.getLigne()][cellule.getColonne()] = getCouleurFonds().getId();
     }
+}
+
+bool Grille::n_est_pas_occupee(int num_ligne, int num_colonne)
+{
+    return contenu[num_ligne][num_colonne]==gris_fonce;
 }
 
 

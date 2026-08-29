@@ -41,6 +41,8 @@ int main()
     Test tests;
 
 
+
+
     tests.test_creation_grille_si_vide();
     tests.case_occupee();
     tests.deplacement_a_gauche();
@@ -48,6 +50,10 @@ int main()
     tests.limite_gauche();
     tests.limite_droite();
     tests.limite_bas();
+    tests.limite_haut();
+    tests.voir_position_reelles();
+    tests.collision_avec_une_piece();
+
 
 
 

@@ -307,63 +307,131 @@ void Figure::afficher_position()
 
 }
 
-bool Figure::peut_monter()
+bool Figure::peut_monter(Grille * g)
 {
 
-    int origine_x_qui_monte = origine_x-1;
+    vector < Position> reelles_position = donner_reelles_coordonnees_cellules();
 
-    return origine_x_qui_monte>=0;
+    bool n_est_pas_occupee = false;
 
-}
-
-bool Figure::peut_descendre(int nb_lignes_grille)
-{
-    int origine_x_qui_descend = origine_x + 1;
-
-    return origine_x_qui_descend<nb_lignes_grille;
-}
-
-bool  Figure::peut_aller_a_gauche(int nb_colonnes_grille)
-{
-
-    vector<Position> figure = this->cellules[rotation_etat];
-
-    Position cellule_la_plus_a_gauche = Position(0,nb_colonnes_grille);
-
-    for(Position cellule: figure)
+    for(Position p: reelles_position)
     {
-
-        if(cellule.getColonne()<cellule_la_plus_a_gauche.getColonne())
-        {
-            cellule_la_plus_a_gauche = cellule;
-        }
+       if(p.getLigne()-1<0)
+       {
+           return false;
+       }
     }
 
-    int y_le_plus_a_gauche_inc_un = cellule_la_plus_a_gauche.getColonne()-1;
-
-    return y_le_plus_a_gauche_inc_un>=0;
-}
-
-bool  Figure::peut_aller_a_droite(int nb_colonnes_grille)
-{
-    vector<Position> figure = this->cellules[rotation_etat];
-
-    Position cellule_la_plus_a_droite = Position(0,0);
-
-    for(Position cellule: figure)
+    for(Position p: reelles_position)
     {
+       n_est_pas_occupee = g->n_est_pas_occupee(p.getLigne()-1, p.getColonne());
 
-        if(cellule.getColonne()>cellule_la_plus_a_droite.getColonne())
-        {
-            cellule_la_plus_a_droite = cellule;
-        }
+       if(!n_est_pas_occupee)
+       {
+           return n_est_pas_occupee;
+       }
     }
 
 
+    return n_est_pas_occupee;
 
-    int num_colonne_de_la_cellule_la_plus_droite_de_la_figure_inc_un = cellule_la_plus_a_droite.getColonne() + 1;
+}
 
-    return num_colonne_de_la_cellule_la_plus_droite_de_la_figure_inc_un<nb_colonnes_grille;
+bool Figure::peut_descendre(Grille * g)
+{
+    vector <Position> reelles_positions = donner_reelles_coordonnees_cellules();
+
+
+
+    bool n_est_pas_occupee = false;
+
+    for(Position p: reelles_positions)
+    {
+
+
+       if(p.getLigne()+1>=g->get_nb_lignes())
+       {
+           return false;
+       }
+    }
+
+    for(Position p: reelles_positions)
+    {
+       n_est_pas_occupee = g->n_est_pas_occupee(p.getLigne()+1, p.getColonne());
+
+       if(!n_est_pas_occupee)
+       {
+           return n_est_pas_occupee;
+       }
+    }
+
+
+    return n_est_pas_occupee;
+
+}
+
+bool  Figure::peut_aller_a_gauche(Grille * g)
+{
+    bool n_est_pas_occupee = true;
+
+
+    vector <Position> reelles_positions = donner_reelles_coordonnees_cellules();
+
+    for(Position p: reelles_positions)
+    {
+       if(p.getColonne()-1<0)
+       {
+           return false;
+       }
+    }
+
+     for(Position p: reelles_positions)
+    {
+       n_est_pas_occupee = g->n_est_pas_occupee(p.getLigne(), p.getColonne()-1);
+
+        if(!n_est_pas_occupee)
+       {
+           return n_est_pas_occupee;
+       }
+    }
+
+    return n_est_pas_occupee;
+
+
+}
+
+bool  Figure::peut_aller_a_droite(Grille * g)
+{
+
+    bool n_est_pas_occupee = true;
+
+    vector <Position> reelles_positions = donner_reelles_coordonnees_cellules();
+
+    for(Position p: reelles_positions)
+    {
+       if(p.getColonne()+1>=g->get_nb_colonnes())
+       {
+           return false;
+       }
+    }
+
+
+    for(Position p: cellules[this->getRotationEtat()])
+    {
+       n_est_pas_occupee = g->n_est_pas_occupee(p.getLigne(),p.getColonne()+1 );
+
+       if(!n_est_pas_occupee)//si OCCUPEE
+       {
+           return n_est_pas_occupee;
+       }
+    }
+
+    return n_est_pas_occupee;
+
+
+
+
+
 }
 
 map<int,vector<Position>> Figure::getCellules()
@@ -385,5 +453,36 @@ int Figure::get_origine_y()
 int Figure::get_origine_x()
 {
     return origine_x;
+}
+
+vector<Position> Figure::donner_reelles_coordonnees_cellules()
+{
+    vector <Position> cellules_reelles_position;
+
+    vector <Position> cellules_position_relatives = cellules[this->getRotationEtat()];
+
+
+    for( Position position_reelle : cellules_position_relatives)
+    {
+        cellules_reelles_position.
+        push_back(Position(position_reelle.getLigne()+origine_x,
+                               position_reelle.getColonne()+origine_y));
+    }
+
+
+    return cellules_reelles_position;
+}
+
+void Figure::voir_positions_reelles_cellules()
+{
+    vector cellules_position_reelles = donner_reelles_coordonnees_cellules();
+
+
+    for(Position p: cellules_position_reelles)
+    {
+        cout << p.toString();
+    }
+
+
 }
 

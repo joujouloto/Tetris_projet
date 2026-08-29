@@ -1,6 +1,8 @@
 #include "Position.h"
 
 
+#include <sstream>
+
 Position::Position()
 {
     ligne = -1;
@@ -25,4 +27,24 @@ int Position::getColonne()
 {
     return colonne;
 }
+
+string Position::toString()
+{
+    stringstream ss;
+
+
+    ss << "(";
+
+
+    ss << this->ligne;
+    ss << ",";
+    ss <<  this->colonne;
+    ss << ")" ;
+
+
+     return ss.str();
+}
+
+
+
 
